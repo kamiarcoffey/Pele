@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C5F48182358E22E0075F11E /* PlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F48172358E22E0075F11E /* PlaylistModel.swift */; };
+		1C5F48192358E22E0075F11E /* PlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F48172358E22E0075F11E /* PlaylistModel.swift */; };
 		1C64A15D2358B77B00E088ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C64A15C2358B77B00E088ED /* AppDelegate.swift */; };
 		1C64A15F2358B77B00E088ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C64A15E2358B77B00E088ED /* SceneDelegate.swift */; };
 		1C64A1622358B77B00E088ED /* workoutApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C64A1602358B77B00E088ED /* workoutApp.xcdatamodeld */; };
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C5F48172358E22E0075F11E /* PlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistModel.swift; sourceTree = "<group>"; };
 		1C64A1592358B77B00E088ED /* workoutApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workoutApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C64A15C2358B77B00E088ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C64A15E2358B77B00E088ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +81,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C5F48162358E2060075F11E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1C64A15C2358B77B00E088ED /* AppDelegate.swift */,
+				1C64A15E2358B77B00E088ED /* SceneDelegate.swift */,
+				1C64A1652358B77C00E088ED /* Assets.xcassets */,
+				1C64A16A2358B77C00E088ED /* LaunchScreen.storyboard */,
+				1C64A16D2358B77C00E088ED /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		1C64A1502358B77B00E088ED = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +116,11 @@
 		1C64A15B2358B77B00E088ED /* workoutApp */ = {
 			isa = PBXGroup;
 			children = (
-				1C64A15C2358B77B00E088ED /* AppDelegate.swift */,
-				1C64A15E2358B77B00E088ED /* SceneDelegate.swift */,
+				1C5F48162358E2060075F11E /* Supporting Files */,
 				1C64A1632358B77B00E088ED /* ContentView.swift */,
-				1C64A1652358B77C00E088ED /* Assets.xcassets */,
-				1C64A16A2358B77C00E088ED /* LaunchScreen.storyboard */,
-				1C64A16D2358B77C00E088ED /* Info.plist */,
 				1C64A1602358B77B00E088ED /* workoutApp.xcdatamodeld */,
 				1C64A1672358B77C00E088ED /* Preview Content */,
+				1C5F48172358E22E0075F11E /* PlaylistModel.swift */,
 			);
 			path = workoutApp;
 			sourceTree = "<group>";
@@ -270,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C5F48182358E22E0075F11E /* PlaylistModel.swift in Sources */,
 				1C64A1622358B77B00E088ED /* workoutApp.xcdatamodeld in Sources */,
 				1C64A15D2358B77B00E088ED /* AppDelegate.swift in Sources */,
 				1C64A1642358B77B00E088ED /* ContentView.swift in Sources */,
@@ -282,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C64A1772358B77C00E088ED /* workoutAppTests.swift in Sources */,
+				1C5F48192358E22E0075F11E /* PlaylistModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
