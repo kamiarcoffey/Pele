@@ -8,14 +8,19 @@
 
 import Foundation
 
+class WorkoutPlaylist {
+    
+    public var playList = [String: [String]]()
+
+    
+    
+}
+
 struct WorkoutPlaylist {
 
 public var playList = [String: [String]]()
 
-public struct Routines {
-    var routineName : String
-    var exerciseList : [String]
-}
+
 
 public var routinesArray = [Routines]()
 
