@@ -16,6 +16,17 @@
 		1C0B46232359FBE800C9AB24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0B46212359FBE800C9AB24 /* LaunchScreen.storyboard */; };
 		1C0B462E2359FBE800C9AB24 /* workoutApp_v1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B462D2359FBE800C9AB24 /* workoutApp_v1Tests.swift */; };
 		1C0B46392359FBE800C9AB24 /* workoutApp_v1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B46382359FBE800C9AB24 /* workoutApp_v1UITests.swift */; };
+		1C9709A9235A2446003DE2C7 /* PlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464C2359FC6800C9AB24 /* PlaylistModel.swift */; };
+		1C9709AA235A2447003DE2C7 /* PlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464C2359FC6800C9AB24 /* PlaylistModel.swift */; };
+		1C9709AB235A2488003DE2C7 /* ExerciseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464A2359FC6800C9AB24 /* ExerciseSet.swift */; };
+		1C9709AC235A248A003DE2C7 /* ExerciseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464A2359FC6800C9AB24 /* ExerciseSet.swift */; };
+		1C9709AD235A248D003DE2C7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464B2359FC6800C9AB24 /* Exercise.swift */; };
+		1C9709AE235A248D003DE2C7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464B2359FC6800C9AB24 /* Exercise.swift */; };
+		1C9709AF235A2491003DE2C7 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464D2359FC6800C9AB24 /* Activity.swift */; };
+		1C9709B0235A2492003DE2C7 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464D2359FC6800C9AB24 /* Activity.swift */; };
+		1C9709B1235A2495003DE2C7 /* Rep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464E2359FC6800C9AB24 /* Rep.swift */; };
+		1C9709B2235A2495003DE2C7 /* Rep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464E2359FC6800C9AB24 /* Rep.swift */; };
+		1C9709B4235A2548003DE2C7 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9709B3235A2548003DE2C7 /* UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +67,7 @@
 		1C0B464C2359FC6800C9AB24 /* PlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistModel.swift; sourceTree = "<group>"; };
 		1C0B464D2359FC6800C9AB24 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		1C0B464E2359FC6800C9AB24 /* Rep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rep.swift; sourceTree = "<group>"; };
+		1C9709B3235A2548003DE2C7 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +118,7 @@
 		1C0B46122359FBE700C9AB24 /* workoutApp_v1 */ = {
 			isa = PBXGroup;
 			children = (
+				1C9709B6235A2553003DE2C7 /* PersistentStorage */,
 				1C0B46492359FC6800C9AB24 /* Models */,
 				1C0B46132359FBE700C9AB24 /* AppDelegate.swift */,
 				1C0B46152359FBE700C9AB24 /* SceneDelegate.swift */,
@@ -155,6 +168,14 @@
 				1C0B464E2359FC6800C9AB24 /* Rep.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1C9709B6235A2553003DE2C7 /* PersistentStorage */ = {
+			isa = PBXGroup;
+			children = (
+				1C9709B3235A2548003DE2C7 /* UserDefaults.swift */,
+			);
+			path = PersistentStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,10 +309,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C9709AB235A2488003DE2C7 /* ExerciseSet.swift in Sources */,
 				1C0B46192359FBE700C9AB24 /* workoutApp_v1.xcdatamodeld in Sources */,
+				1C9709A9235A2446003DE2C7 /* PlaylistModel.swift in Sources */,
 				1C0B46142359FBE700C9AB24 /* AppDelegate.swift in Sources */,
 				1C0B461B2359FBE700C9AB24 /* ContentView.swift in Sources */,
+				1C9709AD235A248D003DE2C7 /* Exercise.swift in Sources */,
+				1C9709B4235A2548003DE2C7 /* UserDefaults.swift in Sources */,
+				1C9709AF235A2491003DE2C7 /* Activity.swift in Sources */,
 				1C0B46162359FBE700C9AB24 /* SceneDelegate.swift in Sources */,
+				1C9709B1235A2495003DE2C7 /* Rep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +326,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C9709B0235A2492003DE2C7 /* Activity.swift in Sources */,
+				1C9709AC235A248A003DE2C7 /* ExerciseSet.swift in Sources */,
+				1C9709AE235A248D003DE2C7 /* Exercise.swift in Sources */,
 				1C0B462E2359FBE800C9AB24 /* workoutApp_v1Tests.swift in Sources */,
+				1C9709AA235A2447003DE2C7 /* PlaylistModel.swift in Sources */,
+				1C9709B2235A2495003DE2C7 /* Rep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

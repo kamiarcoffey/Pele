@@ -10,7 +10,7 @@ import Foundation
 
 class WorkoutPlaylist {
     
-    private var playList = [String: [Exercise]]
+    private var playList: [String: [Exercise]]
     
     init(with startingPlaylist: [String: [Exercise]]) {
         self.playList = startingPlaylist
@@ -36,14 +36,14 @@ class WorkoutPlaylist {
     }
     
     
-    func getPlaylist() {
+    func getPlaylist() -> [String: [Exercise]] {
         populateWilcard()
         return self.playList
     }
     
-    func getPlaylistNames() {
+    func getPlaylistNames() -> [String] {
         populateWilcard()
-        return playList.keys.sort()
+        return playList.keys.sorted(by: <)
     }
     
 }
