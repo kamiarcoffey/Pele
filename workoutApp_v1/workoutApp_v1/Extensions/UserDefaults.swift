@@ -6,92 +6,59 @@
 //  Copyright © 2019 Kamiar Coffey. All rights reserved.
 //
 
+/*
+ 
+ A workout should be able to:
+
+ 1.
+ 2.
+ 3.
+ 
+ 
+use a class var for computed property of reps or something
+ 
+ 
+ 
+ */
+
+
+// TODO: change [String : [Exercise]] to something more typeSafe
+
 import Foundation
 
-class UserDefaultsSingleton {
+struct ConstantKeys {
+       static let playList = "playList"
+       /// exsericsePool is a list of all exercises - this is needed despite the static playlist dictionary because some exercises can exist outside a set playlist
+       /// the alternative is to have a dictionary entry of 'unassigned' but that smells
+       /// exercisePool should ideally be a set
+       static let exercisePool = "exercisePool"
+       
+       // Preclude possibility of having this initialized
+       private init () {}
+   }
 
-
-}
-
-/*
-struct Defaults {
+extension UserDefaults {
     
-    static let fullPlaylistDictionaryKey = "userDefaults.workoutPlaylists"
-    static let exercisePool = "userDefaults.exercisesList"
-    
-    func add(new WorkoutRoutine: String) {
-        if var workoutPlaylist = UserDefaults.standard.dictionary(forKey: Defaults.fullPlaylistDictionaryKey) as? [String: [String]] {
-            //workoutPlaylist.update(routine: WorkoutRoutine, with: [])
-            workoutPlaylist[WorkoutRoutine] = []
-            UserDefaults.standard.set(workoutPlaylist, forKey: Defaults.fullPlaylistDictionaryKey)
-        } else {
-            var workoutPlaylist = [String: [String]]()
-            workoutPlaylist[WorkoutRoutine] = []
-            UserDefaults.standard.set(workoutPlaylist, forKey: Defaults.fullPlaylistDictionaryKey)
+    static func setRoutinePlaylists(with currentPlaylist: [Routine]) {
+        do {
+            try UserDefaults.standard.set(PropertyListEncoder().encode(currentPlaylist), forKey: ConstantKeys.playList)
+        } catch {
+            print(error)
         }
     }
     
-    func add(_ newExerciseList: [String], to routineName: String){
-        // User Defaults not mutable, create local var for mutableCopy()
-        var workoutPlaylist = UserDefaults.standard.dictionary(forKey: Defaults.fullPlaylistDictionaryKey) as! [String: [String]]
-        var excerciseList = workoutPlaylist[routineName]
-        excerciseList! += newExerciseList
-        workoutPlaylist[routineName] = excerciseList
-        UserDefaults.standard.set(workoutPlaylist, forKey: Defaults.fullPlaylistDictionaryKey)
-        excerciseList?.forEach { self.add(exercise: $0)}
+    static func routinePlaylists() -> [Routine] {
+        let data = UserDefaults.standard.object(forKey: ConstantKeys.playList)
+        do {
+            return try PropertyListDecoder().decode([Routine].self, from: data as! Data)
+        } catch {
+            print(error)
+            return [Routine]()
+        }
     }
     
-    func deleteRoutine(routineName:String) {
-        var workoutPlaylist = UserDefaults.standard.dictionary(forKey: Defaults.fullPlaylistDictionaryKey) as! [String: [String]]
-        workoutPlaylist.removeValue(forKey: routineName)
-        UserDefaults.standard.set(workoutPlaylist, forKey: Defaults.fullPlaylistDictionaryKey)
+    static func __clearAllData(){
+        UserDefaults.standard.removeObject(forKey: ConstantKeys.playList)
     }
-        
-    func remove(fromWorkout parentWorkout: String, this exercise: String) {
-        var workoutPlaylist = UserDefaults.standard.dictionary(forKey: Defaults.fullPlaylistDictionaryKey) as! [String: [String]]
-        var exerciseList = workoutPlaylist[parentWorkout]
-        exerciseList = exerciseList!.filter{ $0 != exercise }
-        workoutPlaylist[parentWorkout] = exerciseList
-        UserDefaults.standard.set(workoutPlaylist, forKey: Defaults.fullPlaylistDictionaryKey)
-    }
-    
-    func getWorkoutPlaylists() -> [String:[String]] {
-        return UserDefaults.standard.dictionary(forKey: Defaults.fullPlaylistDictionaryKey) as? [String: [String]] ?? [:]
-    }
-    
-    
-    func getExercises(for playlist: String) -> [String] {
-        let playlists = UserDefaults.standard.dictionary(forKey: Defaults.fullPlaylistDictionaryKey) as? [String: [String]] ?? [:]
-        return playlists[playlist] ?? ["No Exercises Listed Under This Playlist"]
-    }
-    
-    func getAllUniqueExercises() -> [String] {
-        let playlists = UserDefaults.standard.dictionary(forKey: Defaults.fullPlaylistDictionaryKey) as? [String: [String]] ?? [:]
-        let excerciseList = UserDefaults.standard.value(forKey: Defaults.exercisePool) as? [String] ?? ["Always Add Squats"]
-        return Array(Set(playlists.values.flatMap{$0}).union(Set(excerciseList))) // make sure nothing is left out
-    }
-    
-    // MARK: - exercise Pool
-    func add(exercise name: String) {
-        var excerciseList = UserDefaults.standard.value(forKey: Defaults.exercisePool) as? [String] ?? []
-        excerciseList.append(name)
-        UserDefaults.standard.set(excerciseList, forKey: Defaults.exercisePool)
-    }
-    
-    func deleteExercise(exerciseName:String) {
-        var exercises = UserDefaults.standard.value(forKey: Defaults.exercisePool) as? [String] ?? []
-        exercises = exercises.filter { $0 != exerciseName }
-        UserDefaults.standard.set(exercises, forKey: Defaults.exercisePool)
-        // also delete from any playlists it is found in!
-        let workoutPlaylist = UserDefaults.standard.dictionary(forKey: Defaults.fullPlaylistDictionaryKey) as! [String: [String]]
-        workoutPlaylist.keys.forEach{self.remove(fromWorkout: $0, this: exerciseName)}
-    }
-
-    func __clearAllData(){
-        UserDefaults.standard.removeObject(forKey: Defaults.fullPlaylistDictionaryKey)
-    }
-    
     
 }
- 
- */

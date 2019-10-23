@@ -62,12 +62,12 @@
 		1C0B46342359FBE800C9AB24 /* workoutApp_v1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = workoutApp_v1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C0B46382359FBE800C9AB24 /* workoutApp_v1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutApp_v1UITests.swift; sourceTree = "<group>"; };
 		1C0B463A2359FBE800C9AB24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C0B464A2359FC6800C9AB24 /* ExerciseSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSet.swift; sourceTree = "<group>"; };
-		1C0B464B2359FC6800C9AB24 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
-		1C0B464C2359FC6800C9AB24 /* PlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistModel.swift; sourceTree = "<group>"; };
-		1C0B464D2359FC6800C9AB24 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
-		1C0B464E2359FC6800C9AB24 /* Rep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rep.swift; sourceTree = "<group>"; };
-		1C9709B3235A2548003DE2C7 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		1C0B464A2359FC6800C9AB24 /* ExerciseSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExerciseSet.swift; path = "workoutApp_v1/Data Structures/ExerciseSet.swift"; sourceTree = SOURCE_ROOT; };
+		1C0B464B2359FC6800C9AB24 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = workoutApp_v1/Models/Exercise.swift; sourceTree = SOURCE_ROOT; };
+		1C0B464C2359FC6800C9AB24 /* PlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaylistModel.swift; path = workoutApp_v1/Models/PlaylistModel.swift; sourceTree = SOURCE_ROOT; };
+		1C0B464D2359FC6800C9AB24 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = workoutApp_v1/Models/Activity.swift; sourceTree = SOURCE_ROOT; };
+		1C0B464E2359FC6800C9AB24 /* Rep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Rep.swift; path = "workoutApp_v1/Data Structures/Rep.swift"; sourceTree = SOURCE_ROOT; };
+		1C9709B3235A2548003DE2C7 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaults.swift; path = workoutApp_v1/Extensions/UserDefaults.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +118,9 @@
 		1C0B46122359FBE700C9AB24 /* workoutApp_v1 */ = {
 			isa = PBXGroup;
 			children = (
-				1C9709B6235A2553003DE2C7 /* PersistentStorage */,
+				1C3111DC236008DB00AB6413 /* Data Structures */,
+				1C3111DB2360089B00AB6413 /* Protocols */,
+				1C9709B6235A2553003DE2C7 /* Extensions */,
 				1C0B46492359FC6800C9AB24 /* Models */,
 				1C0B46132359FBE700C9AB24 /* AppDelegate.swift */,
 				1C0B46152359FBE700C9AB24 /* SceneDelegate.swift */,
@@ -161,21 +163,35 @@
 		1C0B46492359FC6800C9AB24 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1C0B464A2359FC6800C9AB24 /* ExerciseSet.swift */,
+				1C0B464D2359FC6800C9AB24 /* Activity.swift */,
 				1C0B464B2359FC6800C9AB24 /* Exercise.swift */,
 				1C0B464C2359FC6800C9AB24 /* PlaylistModel.swift */,
-				1C0B464D2359FC6800C9AB24 /* Activity.swift */,
-				1C0B464E2359FC6800C9AB24 /* Rep.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		1C9709B6235A2553003DE2C7 /* PersistentStorage */ = {
+		1C3111DB2360089B00AB6413 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1C3111DC236008DB00AB6413 /* Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				1C0B464A2359FC6800C9AB24 /* ExerciseSet.swift */,
+				1C0B464E2359FC6800C9AB24 /* Rep.swift */,
+			);
+			path = "Data Structures";
+			sourceTree = "<group>";
+		};
+		1C9709B6235A2553003DE2C7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				1C9709B3235A2548003DE2C7 /* UserDefaults.swift */,
 			);
-			path = PersistentStorage;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

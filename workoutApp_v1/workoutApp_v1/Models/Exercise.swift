@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Exercise : Activity {
+class Exercise : Codable, Activity {
     
     var name: String
     var weights: Bool

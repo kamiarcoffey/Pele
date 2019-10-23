@@ -1,5 +1,5 @@
 //
-//  PlayListModel.swift
+//  playListModel.swift
 //  workoutApp
 //
 //  Created by Kamiar Coffey on 10/17/19.
@@ -8,42 +8,60 @@
 
 import Foundation
 
-class WorkoutPlaylist {
+struct Routine: Codable {
+    var name: String
+    var exerciseList: [Exercise]
     
-    private var playList: [String: [Exercise]]
-    
-    init(with startingPlaylist: [String: [Exercise]]) {
-        self.playList = startingPlaylist
+    var getExerciseList: [Exercise] {
+        return exerciseList
     }
     
-    private func getAllExercices() -> [Exercise] {
-        return playList.values.flatMap{ $0.map{$0}}
+    var getName: String {
+        return name
     }
+}
+
+// maybe WorkoutplayLists implement Collection
+// not a dictionary because I want to preserver ordering
+// alternative is to add some additional component to sort the dictionary according to the way users arrange it - yuck
+
+class WorkoutplayList {
     
-    private func getAllExerciceNames() -> [String] {
-        return playList.values.flatMap{ $0.map{$0.getName()}}
+    private var playLists: [Routine]
+    
+    init(with startingPlayLists: [Routine]) {
+        self.playLists = startingPlayLists
+    }
+        
+    
+    private func getAllExercises() -> [Exercise] {
+        return playLists.flatMap{ $0.getExerciseList }
+    }
+
+    private func getAllExerciseNames() -> [String] {
+        return playLists.map{ $0.getName }
     }
 
     private func populateWilcard() {
-        let name = "All Exercises"
-        let routines = getAllExercices()
-        self.playList[name] = routines
+        let newRoutine = Routine(name: "All Exercises", exerciseList: getAllExercises())
+        self.playLists.append(newRoutine)
     }
     
     // allows for passing in just the name
-    func addPlaylist(with name: String, having routine: [Exercise] = [Exercise]()) {
-        self.playList[name] = routine
+    func addplayLists(with name: String, having exercises: [Exercise] = [Exercise]()) {
+        let newRoutine = Routine(name: name, exerciseList: exercises)
+        playLists.append(newRoutine)
+        UserDefaults.setRoutinePlaylists(with: self.playLists)
     }
     
-    
-    func getPlaylist() -> [String: [Exercise]] {
+    func getplayLists() -> [Routine] {
         populateWilcard()
-        return self.playList
+        return self.playLists
     }
     
-    func getPlaylistNames() -> [String] {
+    func getplayListsNames() -> [String] {
         populateWilcard()
-        return playList.keys.sorted(by: <)
+        return playLists.map{ $0.getName }
     }
     
 }

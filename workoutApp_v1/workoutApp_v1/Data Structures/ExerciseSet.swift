@@ -8,12 +8,12 @@
 
 import Foundation
 
-class ExerciseSet {
+class ExerciseSet: Codable {
     
     var reps: [Rep]
     
-    init() {
-        reps = [Rep]()
+    init(with reps: [Rep]) {
+        self.reps = reps
     }
     
     func addReps(new reps: [Rep]) {

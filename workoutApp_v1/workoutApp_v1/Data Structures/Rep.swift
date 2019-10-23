@@ -8,10 +8,12 @@
 
 import Foundation
 
-class Rep {
+class Rep: Codable {
     
     let weightLifted: Int
     let exercise: Exercise
+    
+    
     
     init(of exerciseType: Exercise, lifted weight: Int) {
         weightLifted = weight
