@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Activity {
+public protocol Activity {
     
     var name: String { get set }
     var weights: Bool { get set }

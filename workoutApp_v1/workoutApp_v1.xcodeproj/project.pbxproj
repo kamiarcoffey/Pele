@@ -16,17 +16,22 @@
 		1C0B46232359FBE800C9AB24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0B46212359FBE800C9AB24 /* LaunchScreen.storyboard */; };
 		1C0B462E2359FBE800C9AB24 /* workoutApp_v1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B462D2359FBE800C9AB24 /* workoutApp_v1Tests.swift */; };
 		1C0B46392359FBE800C9AB24 /* workoutApp_v1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B46382359FBE800C9AB24 /* workoutApp_v1UITests.swift */; };
-		1C9709A9235A2446003DE2C7 /* PlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464C2359FC6800C9AB24 /* PlaylistModel.swift */; };
-		1C9709AA235A2447003DE2C7 /* PlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464C2359FC6800C9AB24 /* PlaylistModel.swift */; };
+		1C74CA4F23620AC20027F826 /* RoutineBuilderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74CA4E23620AC20027F826 /* RoutineBuilderController.swift */; };
+		1C74CA5023620AC20027F826 /* RoutineBuilderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74CA4E23620AC20027F826 /* RoutineBuilderController.swift */; };
+		1C9709A9235A2446003DE2C7 /* WorkoutPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464C2359FC6800C9AB24 /* WorkoutPlaylist.swift */; };
 		1C9709AB235A2488003DE2C7 /* ExerciseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464A2359FC6800C9AB24 /* ExerciseSet.swift */; };
-		1C9709AC235A248A003DE2C7 /* ExerciseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464A2359FC6800C9AB24 /* ExerciseSet.swift */; };
 		1C9709AD235A248D003DE2C7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464B2359FC6800C9AB24 /* Exercise.swift */; };
-		1C9709AE235A248D003DE2C7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464B2359FC6800C9AB24 /* Exercise.swift */; };
 		1C9709AF235A2491003DE2C7 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464D2359FC6800C9AB24 /* Activity.swift */; };
 		1C9709B0235A2492003DE2C7 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464D2359FC6800C9AB24 /* Activity.swift */; };
 		1C9709B1235A2495003DE2C7 /* Rep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464E2359FC6800C9AB24 /* Rep.swift */; };
-		1C9709B2235A2495003DE2C7 /* Rep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B464E2359FC6800C9AB24 /* Rep.swift */; };
-		1C9709B4235A2548003DE2C7 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9709B3235A2548003DE2C7 /* UserDefaults.swift */; };
+		1C9709B4235A2548003DE2C7 /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9709B3235A2548003DE2C7 /* UserDefaults+Keys.swift */; };
+		1C9BB1452362074600E0D700 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9BB1442362074600E0D700 /* Routine.swift */; };
+		1CC719732360A19D0091193B /* ExerciseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC719722360A19D0091193B /* ExerciseManager.swift */; };
+		1CC719752360A1F60091193B /* UserDefaults+Playlists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC719742360A1F60091193B /* UserDefaults+Playlists.swift */; };
+		1CC719772360A2060091193B /* UserDefaults+Exercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC719762360A2060091193B /* UserDefaults+Exercises.swift */; };
+		1CC719792360A41D0091193B /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC719782360A41D0091193B /* File.swift */; };
+		1CC7197B2360DDF90091193B /* UserDefaultsSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC7197A2360DDF90091193B /* UserDefaultsSave.swift */; };
+		1CC7197D2360E3930091193B /* UserExerciseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC7197C2360E3930091193B /* UserExerciseFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +56,7 @@
 		1C0B46132359FBE700C9AB24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C0B46152359FBE700C9AB24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1C0B46182359FBE700C9AB24 /* workoutApp_v1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = workoutApp_v1.xcdatamodel; sourceTree = "<group>"; };
-		1C0B461A2359FBE700C9AB24 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1C0B461A2359FBE700C9AB24 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = workoutApp_v1/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		1C0B461C2359FBE800C9AB24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C0B461F2359FBE800C9AB24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1C0B46222359FBE800C9AB24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,11 +68,19 @@
 		1C0B46382359FBE800C9AB24 /* workoutApp_v1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutApp_v1UITests.swift; sourceTree = "<group>"; };
 		1C0B463A2359FBE800C9AB24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C0B464A2359FC6800C9AB24 /* ExerciseSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExerciseSet.swift; path = "workoutApp_v1/Data Structures/ExerciseSet.swift"; sourceTree = SOURCE_ROOT; };
-		1C0B464B2359FC6800C9AB24 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = workoutApp_v1/Models/Exercise.swift; sourceTree = SOURCE_ROOT; };
-		1C0B464C2359FC6800C9AB24 /* PlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaylistModel.swift; path = workoutApp_v1/Models/PlaylistModel.swift; sourceTree = SOURCE_ROOT; };
-		1C0B464D2359FC6800C9AB24 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = workoutApp_v1/Models/Activity.swift; sourceTree = SOURCE_ROOT; };
+		1C0B464B2359FC6800C9AB24 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		1C0B464C2359FC6800C9AB24 /* WorkoutPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutPlaylist.swift; path = workoutApp_v1/Models/WorkoutPlaylist.swift; sourceTree = SOURCE_ROOT; };
+		1C0B464D2359FC6800C9AB24 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = "/Users/kamiar/github/fall2019/iOS-individual-project/workoutApp_v1/workoutApp_v1/Protocols/Activity.swift"; sourceTree = "<absolute>"; };
 		1C0B464E2359FC6800C9AB24 /* Rep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Rep.swift; path = "workoutApp_v1/Data Structures/Rep.swift"; sourceTree = SOURCE_ROOT; };
-		1C9709B3235A2548003DE2C7 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaults.swift; path = workoutApp_v1/Extensions/UserDefaults.swift; sourceTree = SOURCE_ROOT; };
+		1C74CA4E23620AC20027F826 /* RoutineBuilderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineBuilderController.swift; sourceTree = "<group>"; };
+		1C9709B3235A2548003DE2C7 /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserDefaults+Keys.swift"; path = "workoutApp_v1/Extensions/UserDefaults+Keys.swift"; sourceTree = SOURCE_ROOT; };
+		1C9BB1442362074600E0D700 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Routine.swift; path = "workoutApp_v1/Data Structures/Routine.swift"; sourceTree = SOURCE_ROOT; };
+		1CC719722360A19D0091193B /* ExerciseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseManager.swift; sourceTree = "<group>"; };
+		1CC719742360A1F60091193B /* UserDefaults+Playlists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Playlists.swift"; sourceTree = "<group>"; };
+		1CC719762360A2060091193B /* UserDefaults+Exercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Exercises.swift"; sourceTree = "<group>"; };
+		1CC719782360A41D0091193B /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		1CC7197A2360DDF90091193B /* UserDefaultsSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSave.swift; sourceTree = "<group>"; };
+		1CC7197C2360E3930091193B /* UserExerciseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExerciseFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,13 +131,14 @@
 		1C0B46122359FBE700C9AB24 /* workoutApp_v1 */ = {
 			isa = PBXGroup;
 			children = (
+				1C0B461A2359FBE700C9AB24 /* ContentView.swift */,
 				1C3111DC236008DB00AB6413 /* Data Structures */,
 				1C3111DB2360089B00AB6413 /* Protocols */,
 				1C9709B6235A2553003DE2C7 /* Extensions */,
 				1C0B46492359FC6800C9AB24 /* Models */,
 				1C0B46132359FBE700C9AB24 /* AppDelegate.swift */,
 				1C0B46152359FBE700C9AB24 /* SceneDelegate.swift */,
-				1C0B461A2359FBE700C9AB24 /* ContentView.swift */,
+				1C74CA5123620AC90027F826 /* Controllers */,
 				1C0B461C2359FBE800C9AB24 /* Assets.xcassets */,
 				1C0B46212359FBE800C9AB24 /* LaunchScreen.storyboard */,
 				1C0B46242359FBE800C9AB24 /* Info.plist */,
@@ -163,9 +177,9 @@
 		1C0B46492359FC6800C9AB24 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1C0B464D2359FC6800C9AB24 /* Activity.swift */,
-				1C0B464B2359FC6800C9AB24 /* Exercise.swift */,
-				1C0B464C2359FC6800C9AB24 /* PlaylistModel.swift */,
+				1C0B464C2359FC6800C9AB24 /* WorkoutPlaylist.swift */,
+				1CC719722360A19D0091193B /* ExerciseManager.swift */,
+				1CC7197C2360E3930091193B /* UserExerciseFactory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,6 +187,9 @@
 		1C3111DB2360089B00AB6413 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				1C0B464D2359FC6800C9AB24 /* Activity.swift */,
+				1CC7197A2360DDF90091193B /* UserDefaultsSave.swift */,
+				1CC719782360A41D0091193B /* File.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -180,16 +197,28 @@
 		1C3111DC236008DB00AB6413 /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
-				1C0B464A2359FC6800C9AB24 /* ExerciseSet.swift */,
 				1C0B464E2359FC6800C9AB24 /* Rep.swift */,
+				1C0B464A2359FC6800C9AB24 /* ExerciseSet.swift */,
+				1C0B464B2359FC6800C9AB24 /* Exercise.swift */,
+				1C9BB1442362074600E0D700 /* Routine.swift */,
 			);
 			path = "Data Structures";
+			sourceTree = "<group>";
+		};
+		1C74CA5123620AC90027F826 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1C74CA4E23620AC20027F826 /* RoutineBuilderController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		1C9709B6235A2553003DE2C7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1C9709B3235A2548003DE2C7 /* UserDefaults.swift */,
+				1C9709B3235A2548003DE2C7 /* UserDefaults+Keys.swift */,
+				1CC719742360A1F60091193B /* UserDefaults+Playlists.swift */,
+				1CC719762360A2060091193B /* UserDefaults+Exercises.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -325,13 +354,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CC719732360A19D0091193B /* ExerciseManager.swift in Sources */,
 				1C9709AB235A2488003DE2C7 /* ExerciseSet.swift in Sources */,
+				1CC719752360A1F60091193B /* UserDefaults+Playlists.swift in Sources */,
+				1C9BB1452362074600E0D700 /* Routine.swift in Sources */,
+				1CC7197D2360E3930091193B /* UserExerciseFactory.swift in Sources */,
 				1C0B46192359FBE700C9AB24 /* workoutApp_v1.xcdatamodeld in Sources */,
-				1C9709A9235A2446003DE2C7 /* PlaylistModel.swift in Sources */,
+				1C9709A9235A2446003DE2C7 /* WorkoutPlaylist.swift in Sources */,
 				1C0B46142359FBE700C9AB24 /* AppDelegate.swift in Sources */,
 				1C0B461B2359FBE700C9AB24 /* ContentView.swift in Sources */,
+				1CC7197B2360DDF90091193B /* UserDefaultsSave.swift in Sources */,
+				1C74CA4F23620AC20027F826 /* RoutineBuilderController.swift in Sources */,
 				1C9709AD235A248D003DE2C7 /* Exercise.swift in Sources */,
-				1C9709B4235A2548003DE2C7 /* UserDefaults.swift in Sources */,
+				1C9709B4235A2548003DE2C7 /* UserDefaults+Keys.swift in Sources */,
+				1CC719792360A41D0091193B /* File.swift in Sources */,
+				1CC719772360A2060091193B /* UserDefaults+Exercises.swift in Sources */,
 				1C9709AF235A2491003DE2C7 /* Activity.swift in Sources */,
 				1C0B46162359FBE700C9AB24 /* SceneDelegate.swift in Sources */,
 				1C9709B1235A2495003DE2C7 /* Rep.swift in Sources */,
@@ -343,11 +380,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C9709B0235A2492003DE2C7 /* Activity.swift in Sources */,
-				1C9709AC235A248A003DE2C7 /* ExerciseSet.swift in Sources */,
-				1C9709AE235A248D003DE2C7 /* Exercise.swift in Sources */,
+				1C74CA5023620AC20027F826 /* RoutineBuilderController.swift in Sources */,
 				1C0B462E2359FBE800C9AB24 /* workoutApp_v1Tests.swift in Sources */,
-				1C9709AA235A2447003DE2C7 /* PlaylistModel.swift in Sources */,
-				1C9709B2235A2495003DE2C7 /* Rep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +423,7 @@
 		1C0B463B2359FBE800C9AB24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -449,6 +484,7 @@
 		1C0B463C2359FBE800C9AB24 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -503,6 +539,7 @@
 		1C0B463E2359FBE800C9AB24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"workoutApp_v1/Preview Content\"";
@@ -523,6 +560,7 @@
 		1C0B463F2359FBE800C9AB24 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"workoutApp_v1/Preview Content\"";

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ExerciseSet: Codable {
+public class ExerciseSet: Codable {
     
     var reps: [Rep]
     

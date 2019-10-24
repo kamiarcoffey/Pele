@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Rep: Codable {
+public class Rep: Codable {
     
     let weightLifted: Int
     let exercise: Exercise
