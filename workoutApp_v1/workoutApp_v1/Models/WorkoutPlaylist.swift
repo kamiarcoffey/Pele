@@ -14,16 +14,33 @@ import Foundation
 // not a dictionary because I want to preserver ordering
 // alternative is to add some additional component to sort the dictionary according to the way users arrange it - yuck
 
-public class WorkoutPlaylist {
+public class WorkoutPlaylist : ObservableObject {
     
-    private var playlists: [Routine]
     
-    init() {
-        self.playlists = UserDefaults.routinePlaylists()
+    public func deleteItem(at indexSet: IndexSet) {
+        self.playlists.remove(atOffsets: indexSet)
+        self.setPlaylists()
+    }
+    
+    func move(from source: IndexSet, to destination: Int) {
+        self.playlists.move(fromOffsets: source, toOffset: destination)
+        self.setPlaylists()
     }
 
-    private func setPlaylists(_ updatedList: [Routine]) {
-        self.playlists = updatedList
+//    @Published var routines: [Routine] = [
+//        .init(name: "Leg Day", exerciseList: [Exercise(with: "Squats", isWeights: true)])
+//    ]
+    
+    @Published var playlists: [Routine]
+    
+    init() {
+//        self.playlists = UserDefaults.routinePlaylists()
+        self.playlists = [
+                .init(name: "Leg Day", exerciseList: [Exercise(with: "Squats", isWeights: true)])
+            ]
+    }
+
+    private func setPlaylists() {
         UserDefaults.setRoutinePlaylists(with: self.playlists)
     }
         
@@ -45,6 +62,11 @@ public class WorkoutPlaylist {
         UserDefaults.setRoutinePlaylists(with: self.playlists)
     }
     
+    public func addRoutone(_ newRoutine: Routine) {
+        playlists.append(newRoutine)
+        UserDefaults.setRoutinePlaylists(with: self.playlists)
+    }
+    
     public func addExercise(from routineNamed: String, having exercise: Exercise) {
         if let index = self.getAllExerciseNames().firstIndex(of: routineNamed) {
             self.playlists[index].exerciseList.append(exercise)
@@ -52,11 +74,13 @@ public class WorkoutPlaylist {
         }
     }
     
+    /*
     public func removeRoutine(with routineName: String) {
         let updatedPlaylists = self.playlists.filter { $0.getName != routineName }
         self.setPlaylists(updatedPlaylists)
     }
     
+ 
     public func removeExercise(from routineNamed: String, having exerciseName: String) {
         if let index = self.getAllExerciseNames().firstIndex(of: routineNamed) {
             var updateRoutine = self.playlists.remove(at: index)
@@ -67,9 +91,10 @@ public class WorkoutPlaylist {
             UserDefaults.setRoutinePlaylists(with: self.playlists)
         }
     }
+    */
     
     
-    // MARK: for the view/controller
+    // MARK: for the view/controller -- NOT needed with Observable?
     func getPlaylists() -> [Routine] {
         let newRoutine = Routine(name: "All Exercises", exerciseList: self.getAllExercises())
         return self.playlists + [newRoutine]

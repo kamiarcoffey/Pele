@@ -9,9 +9,9 @@
 import Foundation
 
 
-struct Routine: Identifiable, Codable, Hashable {
+public struct Routine: Identifiable, Codable, Hashable {
     
-    let id = UUID()
+    public let id = UUID()
     var name: String
     var exerciseList: [Exercise]
     

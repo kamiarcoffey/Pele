@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3FD22221-152C-48DA-AC8B-0F1F0C220687"
+            uuid = "1612A6AC-7E38-4523-8C4C-364AC03FA140"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "workoutApp_v1/Data Structures/Routine.swift"
+            filePath = "workoutApp_v1/Controllers/RoutinesViewModelController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
