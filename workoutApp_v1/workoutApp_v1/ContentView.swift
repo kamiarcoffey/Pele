@@ -6,99 +6,23 @@
 //  Copyright © 2019 Kamiar Coffey. All rights reserved.
 //
 
+
 import SwiftUI
 
-struct RoutinePost: View {
-    @State var routine: Routine
-
-    var body: some View {
-        HStack {
-            Text(routine.name)
-                .fontWeight(.bold)
-            Text(routine.exerciseCount)
-            
-
-        }
-    }
-}
-
-
-
-// MARK: @Observed Object is the model so what do you need VM for?
-
-//class RoutinesViewModelController: ObservableObject {
-//
-////    can make this a BindableObject?
-////    var didChange = PassthroughSubject<Void, Never>()
-//
-//    func deleteItem(at indexSet: IndexSet) {
-//        self.routines.remove(atOffsets: indexSet)
-//    }
-//
-//    @Published var routines: [Routine] = [
-//        .init(name: "Leg Day", exerciseList: [Exercise(with: "Squats", isWeights: true)])
-//    ]
-//
-//}
-
-struct AddRoutine: View {
-    
-    
-    // does this replace viewDidLoad?
-    @Binding var isPresenting: Bool
-    
-    
-    /* replaces UITextField */
-    @State private var newRoutineName = ""
-    
-    var didAddRoutine: (String) -> ()
-    
-    var body: some View {
-        VStack {
-            
-            HStack{
-                Text("Routine Name")
-                TextField("Always Add Leg Day", text: $newRoutineName)
-            }
-//            Button(action: {
-//                //
-//                }, label: {
-//                    Text("Done")
-//                        .padding(.all, 16)
-//            })
-            Button(action: {
-                /* passing a binding - this will toggle up to parent */
-                /* replaces when an MVC would dismiss itself - not dismissed by parent */
-                
-                self.didAddRoutine(.init(self.newRoutineName))
-                
-                self.isPresenting.toggle()
-                }, label: {
-                    Text("Done")
-                    .padding(.all, 16)
-            })
-            Spacer()
-        }.padding(.all, 16)
-    }
-}
-
-
 struct ContentView: View {
-
-    // var named model is the observer
+        
+    // var named routines is the observer
     @ObservedObject var routines = WorkoutPlaylist()
-    
+
     @State var isPresentingAddRoutineModal = false
-    
+
     var body: some View {
         TabView {
             NavigationView {
                 VStack(spacing: 16){
                     List {
                         ForEach(routines.playlists, id: \.self) { routine in
-//                            Text(user.name)
                             RoutinePost(routine: routine)
-//                            UserRow(user: user)
                         }
                         .onDelete(perform: routines.deleteItem)
                         .onMove(perform: routines.move)
@@ -114,27 +38,23 @@ struct ContentView: View {
                         .sheet(isPresented: $isPresentingAddRoutineModal, content: {
                             AddRoutine(isPresenting: self.$isPresentingAddRoutineModal, didAddRoutine: {
                                 routine in
-//                                self.routines.addRoutine(routine)
+                                //                                self.routines.addRoutine(routine)
+                                /* piping string vs routine? */
+                                /* manipulate model here since this is where the model is vs letting the subview do it? */
                                 self.routines.addPlaylists(with: routine)
                             })
                         })
-                    
-                    Divider()
-                    
-                    List {
-                        Text("Exercises Here")
-                    }
                 }
             }.padding(.all, 6)
                 .tabItem {
-//                    Image(systemName: "1.home")
-                    Text("Build A Routine")
-                }.tag(0)
+                    //                    Image(systemName: "1.home")
+                    Text("Routines")
+            }.tag(0)
             Text("Second View")
                 .tabItem {
-//                    Image(systemName: "2.square")
-                    Text("Start A Workout")
-                }.tag(1)
+                    //                    Image(systemName: "2.square")
+                    Text("History")
+            }.tag(1)
         }
     }
 }

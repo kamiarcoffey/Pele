@@ -11,9 +11,13 @@ import Foundation
 // TODO: RangeReplaceableCollection
 // TODO: code duplucate with WorkoutPlaylist?
 // TODO: make this an object pool?
-public class ExerciseManager {
+public class ExerciseManager: ObservableObject {
     
-    var exercisePool: Set<Exercise>
+    @Published var exercisePool: Set<Exercise>
+    
+    var getExercisePool: [Exercise] {
+        return Array(self.exercisePool)
+    }
     
     init() {
         self.exercisePool = UserDefaults.fetchExercisePool()
@@ -36,11 +40,11 @@ public class ExerciseManager {
         UserDefaults.setExercisePool(with: self.exercisePool)
     }
     
-    public func addExerciseRaw(with name: String, is weights: Bool) {
-        let newExercise = Exercise(with: name, isWeights: weights)
-        self.exercisePool.insert(newExercise)
-        UserDefaults.setExercisePool(with: self.exercisePool)
-    }
+//    public func addExerciseRaw(with name: String, is weights: Bool) {
+//        let newExercise = Exercise(name, weights: weights)
+//        self.exercisePool.insert(newExercise)
+//        UserDefaults.setExercisePool(with: self.exercisePool)
+//    }
     
     public func removeExercise(_ asObject: Exercise) {
         self.exercisePool.remove(asObject)
@@ -51,7 +55,7 @@ public class ExerciseManager {
         let newPool = self.exercisePool.filter{ $0.getName() != named }
         self.setPool(newPool)
     }
-    
+
     
     
     

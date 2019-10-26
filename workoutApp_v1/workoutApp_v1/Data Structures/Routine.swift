@@ -9,11 +9,17 @@
 import Foundation
 
 
-public struct Routine: Identifiable, Codable, Hashable {
+public class Routine: Identifiable, Codable, Hashable {
     
-    public let id = UUID()
+    public let id: UUID
     var name: String
     var exerciseList: [Exercise]
+    
+    init(with name: String, with exericses: [Exercise]) {
+        self.name = name
+        self.exerciseList = exericses
+        self.id = UUID()
+    }
     
     var getExerciseList: [Exercise] {
         return exerciseList
@@ -25,6 +31,14 @@ public struct Routine: Identifiable, Codable, Hashable {
     
     var getName: String {
         return name
+    }
+    
+    func containsExercise(_ checkExercise: Exercise) -> Bool {
+        return self.exerciseList.contains(checkExercise)
+    }
+    
+    func addExercises(_ newExercises: [Exercise]) {
+        self.exerciseList += newExercises
     }
 }
 

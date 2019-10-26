@@ -16,6 +16,7 @@ import Foundation
 
 public class WorkoutPlaylist : ObservableObject {
     
+    @Published var playlists: [Routine]
     
     public func deleteItem(at indexSet: IndexSet) {
         self.playlists.remove(atOffsets: indexSet)
@@ -30,13 +31,11 @@ public class WorkoutPlaylist : ObservableObject {
 //    @Published var routines: [Routine] = [
 //        .init(name: "Leg Day", exerciseList: [Exercise(with: "Squats", isWeights: true)])
 //    ]
-    
-    @Published var playlists: [Routine]
-    
+        
     init() {
 //        self.playlists = UserDefaults.routinePlaylists()
         self.playlists = [
-                .init(name: "Leg Day", exerciseList: [Exercise(with: "Squats", isWeights: true)])
+            .init(with: "Leg Day", with: [Exercise("Squats", true)])
             ]
     }
 
@@ -57,7 +56,7 @@ public class WorkoutPlaylist : ObservableObject {
     // MARK: public API
     // addPlaylists allows for passing in just the name
     public func addPlaylists(with name: String, having exercises: [Exercise] = [Exercise]()) {
-        let newRoutine = Routine(name: name, exerciseList: exercises)
+        let newRoutine = Routine(with: name, with: exercises)
         playlists.append(newRoutine)
         UserDefaults.setRoutinePlaylists(with: self.playlists)
     }
@@ -96,7 +95,7 @@ public class WorkoutPlaylist : ObservableObject {
     
     // MARK: for the view/controller -- NOT needed with Observable?
     func getPlaylists() -> [Routine] {
-        let newRoutine = Routine(name: "All Exercises", exerciseList: self.getAllExercises())
+        let newRoutine = Routine(with: "All Exercises", with: self.getAllExercises())
         return self.playlists + [newRoutine]
 
     }

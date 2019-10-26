@@ -9,14 +9,15 @@
 import Foundation
 
 
-public class Exercise : Codable, Hashable, Activity {
+public class Exercise : Identifiable, Codable, Hashable, Activity {
     
+    public let id = UUID()
     public var name: String
     public var weights: Bool
     
-    init(with name: String, isWeights weights: Bool) {
+    init(_ name: String, _ isWeights: Bool) {
         self.name = name
-        self.weights = weights
+        self.weights = isWeights
     }
     
     public func getName() -> String {
@@ -34,6 +35,6 @@ extension Exercise {
      
     // name is enough to uniquley identify an Exercise
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
+        hasher.combine(id)
    }
 }
