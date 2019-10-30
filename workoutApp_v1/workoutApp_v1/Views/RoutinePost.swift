@@ -13,12 +13,12 @@ struct RoutinePost: View {
     @State var routine: Routine
     
     @State var isPresentingEditRoutineModal = false
-    
+    @State var isPresentingPlayRoutine = false
     
     var body: some View {
         HStack {
             Button(action: {
-                //
+                self.isPresentingPlayRoutine.toggle()
             }, label: {
                 Image(systemName: "play")
             })
@@ -36,6 +36,9 @@ struct RoutinePost: View {
             })
         }.sheet(isPresented: $isPresentingEditRoutineModal, content: {
             EditRoutine(routineBeingEdited: self.routine, isPresenting: self.$isPresentingEditRoutineModal)
+        })
+        .sheet(isPresented: $isPresentingEditRoutineModal, content: {
+            PlayRoutine(routineBeingRun: self.routine)
         })
     }
 }
