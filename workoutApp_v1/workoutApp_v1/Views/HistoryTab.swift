@@ -7,8 +7,9 @@
 //
 
 import SwiftUI
+import Foundation
 
-struct HistoryView: View {
+struct HistoryTab: View {
     
     @ObservedObject var workoutListViewModel: WorkoutListViewModel
     

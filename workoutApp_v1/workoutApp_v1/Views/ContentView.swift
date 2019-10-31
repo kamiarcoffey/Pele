@@ -21,12 +21,14 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            RoutineTabView()
+            RoutineTab()
+                .padding(.top)
                 .tabItem {
                     Image(systemName: "list.dash")
                     Text("Routines")
             }.tag(0)
-            HistoryView()
+            
+            HistoryTab()
                 .tabItem {
                     Image(systemName: "clock")
                     Text("History")
@@ -34,6 +36,16 @@ struct ContentView: View {
         }
     }
 }
+
+
+// Depricated 
+/*
+StartWorkoutTab()
+    .tabItem {
+        Image(systemName: "play")
+        Text("Start Workout")
+}.tag(1)
+ */
 
 
 

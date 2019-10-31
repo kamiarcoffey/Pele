@@ -15,7 +15,7 @@ struct EditRoutine: View {
     
     // the binding to indicate if user wishes to create a new exercise and add it to the pool
     @State var isPresentingAddExercise = false
-    
+
     // the binding to indicate if this view should appear
     @Binding var isPresenting: Bool
     
@@ -23,7 +23,6 @@ struct EditRoutine: View {
 //    @State var exercises: [Exercise] = ExerciseManager().getExercisePool
     @State var exercises = ExerciseManager()
 
-        
     /* Perhaps this is for the view controller */
     @State var selectedExercises: [Exercise] = []
     
@@ -71,14 +70,15 @@ struct EditRoutine: View {
                         .background(Color.green)
                 }),
                                     trailing: Button(action: {
-                                        print("adding selected")
                                         self.routineBeingEdited.addExercises(self.selectedExercises)
+                                        self.isPresenting.toggle()
                                     }, label: {
                                         Text("Add Selected Exercises")
                                             .foregroundColor(.white)
                                             .padding(.all, 6)
                                             .background(Color.green)
                                     }))
+
                     .sheet(isPresented: $isPresentingAddExercise, content: {
                         AddExercise(isPresenting: self.$isPresentingAddExercise, didAddExercise: { exercise in
                             self.exercises.addExercise(exercise)
