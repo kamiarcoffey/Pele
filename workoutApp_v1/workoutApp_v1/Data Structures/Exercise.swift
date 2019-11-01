@@ -38,3 +38,29 @@ extension Exercise {
         hasher.combine(id)
    }
 }
+
+/*
+class TransformableContainer: NSManagedObject {
+    @NSManaged var transformableAttribute: ExerciseContainer
+}
+
+
+ class ExerciseContainer: NSObject, NSCoding {
+    
+    var exercise: Exercise
+    
+    init(exercise: Exercise) {
+        self.exercise = exercise
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.exercise = aDecoder.decodeObject(self.exercise)
+        
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(exercise, forKey: "exercise")
+    }
+}
+*/

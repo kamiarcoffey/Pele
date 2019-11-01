@@ -32,4 +32,32 @@ class CoreDataManager {
         return workouts
     }
     
+    func saveExercise(exercise: Exercise) { // Workout is an NSManagedObject type. Exercise is local
+        
+        let workoutEntity = NSEntityDescription.entity(forEntityName: "Workout", in: self.moc)!
+        let workout = NSManagedObject(entity: workoutEntity, insertInto: self.moc)
+        
+        workout.setValue(exercise.getName(), forKey: "name")
+        workout.setValue(NSDate(), forKey: "date")
+
+        do {
+            try self.moc.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+            return
+        }
+    }
+    
+    
+    func saveExerciseAsTransformable() {
+       
+    }
+    
+    func fetchExercuseFromTransformable() {
+        
+    }
+        
+
+    
 }
+

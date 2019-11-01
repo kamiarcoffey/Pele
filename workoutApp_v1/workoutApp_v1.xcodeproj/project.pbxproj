@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1C05B81F236B5DC60053F6A0 /* NumberFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C05B81E236B5DC60053F6A0 /* NumberFieldViewModel.swift */; };
+		1C074232236C7C5000C15C80 /* modelWithTransformable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C074230236C7C5000C15C80 /* modelWithTransformable.xcdatamodeld */; };
+		1C074234236C859200C15C80 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C074233236C859200C15C80 /* Builder.swift */; };
 		1C0B46142359FBE700C9AB24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B46132359FBE700C9AB24 /* AppDelegate.swift */; };
 		1C0B46162359FBE700C9AB24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B46152359FBE700C9AB24 /* SceneDelegate.swift */; };
 		1C0B46192359FBE700C9AB24 /* workoutApp_v1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B46172359FBE700C9AB24 /* workoutApp_v1.xcdatamodeld */; };
@@ -62,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		1C05B81E236B5DC60053F6A0 /* NumberFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFieldViewModel.swift; sourceTree = "<group>"; };
+		1C074231236C7C5000C15C80 /* modelWithTransformable.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = modelWithTransformable.xcdatamodel; sourceTree = "<group>"; };
+		1C074233236C859200C15C80 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		1C0B46102359FBE700C9AB24 /* workoutApp_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workoutApp_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C0B46132359FBE700C9AB24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C0B46152359FBE700C9AB24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 				1C0B46492359FC6800C9AB24 /* Models */,
 				1CAF20E62369D9E200D365BC /* Supporting Files */,
 				1C0B46172359FBE700C9AB24 /* workoutApp_v1.xcdatamodeld */,
+				1C074230236C7C5000C15C80 /* modelWithTransformable.xcdatamodeld */,
 				1C0B46242359FBE800C9AB24 /* Info.plist */,
 				1C0B461E2359FBE800C9AB24 /* Preview Content */,
 			);
@@ -207,6 +212,7 @@
 			children = (
 				1C0B464D2359FC6800C9AB24 /* Activity.swift */,
 				1CC7197A2360DDF90091193B /* UserDefaultsSave.swift */,
+				1C074233236C859200C15C80 /* Builder.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -417,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C074232236C7C5000C15C80 /* modelWithTransformable.xcdatamodeld in Sources */,
 				1CAF20E82369DA4600D365BC /* WorkoutListViewModel.swift in Sources */,
 				1CC719732360A19D0091193B /* ExerciseManager.swift in Sources */,
 				1C05B81F236B5DC60053F6A0 /* NumberFieldViewModel.swift in Sources */,
@@ -440,6 +447,7 @@
 				1C4960C82369ED6200B81498 /* PlayRoutine.swift in Sources */,
 				1C9709B4235A2548003DE2C7 /* UserDefaults+Keys.swift in Sources */,
 				1CC719772360A2060091193B /* UserDefaults+Exercises.swift in Sources */,
+				1C074234236C859200C15C80 /* Builder.swift in Sources */,
 				1C6721BB23650E11005A5C7A /* EditRoutine.swift in Sources */,
 				1C9709AF235A2491003DE2C7 /* Activity.swift in Sources */,
 				1C6721BD23650E2C005A5C7A /* AddExercise.swift in Sources */,
@@ -776,6 +784,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		1C074230236C7C5000C15C80 /* modelWithTransformable.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1C074231236C7C5000C15C80 /* modelWithTransformable.xcdatamodel */,
+			);
+			currentVersion = 1C074231236C7C5000C15C80 /* modelWithTransformable.xcdatamodel */;
+			path = modelWithTransformable.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		1C0B46172359FBE700C9AB24 /* workoutApp_v1.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

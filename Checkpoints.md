@@ -1,3 +1,45 @@
+#### Checkpoint HW4
+
+###### Included in this checkpoint:
+ * Entirely new UI using SwiftUI
+
+ * CoreData model built - note! I will be changing this to a Transformable model that can accept NSCoder/Decoder protocol objects
+ rather than 'stringly typed' primitives
+
+ * this will add a layer of abstraction that will decouple the CoreData implementation further from the UI
+
+ * CoreData stack is set up
+
+ * CoreData ViewModel is set up
+
+ * New protocols added
+
+ * Builder design pattern for constructing events
+
+ * UserDefaults re-architected for type safety via an extension to UserDefaults class
+
+
+###### Major Architecture Changes
+ * SwiftUI (rather than UIKit and/or IB)
+  * SwiftUI was released from Beta this summer (Aug 2019). As a result I have decided to entirely re-do the front end with SwiftUI
+  * allows declarative, programatic construction of UI rather than InterfaceBuilder
+  
+ * Switched to MVVM rather than MVC
+  * with SwiftUI, there are new bindings and state patterns that make MVVM preferred to MVC
+  * this change will not affect the back end models or high-level protocols.
+
+###### Items from scheduled checkpoints that have been completed:
+
+10/25: Building main event logging screen. Includes:
+ 1) MVC for logging events - Yes
+ 2) Front End UI for logging Events and workouts - Yes
+ 3) Controller to manage data flow and pass objects to Core Data - Yes
+
+11/1: Persistent storage for User Defaults. Includes
+ 1) User Defaults MVC - Done
+ 2) User-based key/value dictionary storage - Done
+
+
 #### Checkpoint HW3
 
 ###### Included in this checkpoint:
@@ -16,7 +58,7 @@
 
 * Model for creating, editing, saving workout playlists / routines
 
-Items from sheduled checkpoints that have been completed:
+###### Items from sheduled checkpoints that have been completed:
 
 10/11: MVC outline and app set up. Includes:
 1) CoreData model is functional, but final implementation will depend on structure of cardio classes too. - Yes
