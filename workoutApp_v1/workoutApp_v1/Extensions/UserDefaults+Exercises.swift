@@ -10,7 +10,7 @@ import Foundation
 
 extension UserDefaults {
     
-    public static func setExercisePool(with currentExercises: Set<Exercise>) {
+    public static func setExercisePool(with currentExercises: [PeleExercise]) {
         do {
             try UserDefaults.standard.set(PropertyListEncoder().encode(currentExercises), forKey: ConstantKeys.exercisePool)
         } catch {
@@ -18,13 +18,13 @@ extension UserDefaults {
         }
     }
     
-    public static func fetchExercisePool() -> Set<Exercise> {
+    public static func fetchExercisePool() -> [PeleExercise] {
         let data = UserDefaults.standard.object(forKey: ConstantKeys.exercisePool)
         do {
-            return try PropertyListDecoder().decode(Set<Exercise>.self, from: data as? Data ?? Data())
+            return try PropertyListDecoder().decode([PeleExercise].self, from: data as? Data ?? Data())
         } catch {
             print(error)
-            return Set<Exercise>()
+            return [PeleExercise]()
         }
     }
     

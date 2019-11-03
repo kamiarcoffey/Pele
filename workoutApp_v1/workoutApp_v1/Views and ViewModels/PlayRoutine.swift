@@ -20,8 +20,8 @@ struct PlayRoutine: View {
     
     @State private var isShowingQuitAlert = false
     
-    @State var routine: Routine
-    @State var exerciseList: [Exercise]
+    @State var routine: PeleRoutine
+    @State var exerciseList: [PeleExercise]
     @State private var selectedExercise = 0
     
     @State private var reps: Int = 0
@@ -29,7 +29,7 @@ struct PlayRoutine: View {
     
     var body: some View {
         VStack {
-            Picker(selection: $selectedExercise, label: Text("Next Exercise")) {
+            Picker(selection: $selectedExercise, label: Text("")) {
                 ForEach(0 ..< exerciseList.count) {
                     Text(self.exerciseList[$0].getName())
                 }

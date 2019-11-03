@@ -11,7 +11,7 @@ import Foundation
 
 extension UserDefaults {
     
-    static func setRoutinePlaylists(with currentPlaylist: [Routine]) {
+    static func setRoutinePlaylists(with currentPlaylist: [PeleRoutine]) {
         do {
             try UserDefaults.standard.set(PropertyListEncoder().encode(currentPlaylist), forKey: ConstantKeys.playList)
         } catch {
@@ -19,13 +19,13 @@ extension UserDefaults {
         }
     }
     
-    static func routinePlaylists() -> [Routine] {
+    static func routinePlaylists() -> [PeleRoutine] {
         let data = UserDefaults.standard.object(forKey: ConstantKeys.playList)
         do {
-            return try PropertyListDecoder().decode([Routine].self, from: data as? Data ?? Data())
+            return try PropertyListDecoder().decode([PeleRoutine].self, from: data as? Data ?? Data())
         } catch {
             print(error)
-            return [Routine]()
+            return [PeleRoutine]()
         }
     }
     

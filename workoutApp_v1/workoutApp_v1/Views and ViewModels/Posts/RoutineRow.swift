@@ -10,7 +10,7 @@ import SwiftUI
 
 
 struct RoutineRow: View {
-    @State var routine: Routine
+    @State var routine: PeleRoutine
     @State var isPresentingEditRoutineModal = false
     
     var body: some View {
@@ -23,21 +23,17 @@ struct RoutineRow: View {
                         Text("Count: \(routine.exerciseCount)")
                     }
                     
-                    List {
-                        ForEach(routine.getExerciseList, id: \.self) { thisExercise in
-                            ExercisePost(exercise: thisExercise)
-                        }
-                    }
                 }
-                .padding()
+                Spacer()
                 VStack {
-                    Text("Edit Routine")
+                    Spacer()
                     Image(systemName: "square.and.pencil")
+                    Text("Edit")
                     .padding()
                 }.onTapGesture {
                     self.isPresentingEditRoutineModal.toggle()
                 }
-                .overlay(Rectangle().stroke(Color.gray, lineWidth:2))
+                .overlay(Rectangle().stroke(Color.black, lineWidth:1).scaledToFill())
             }
         }
         .sheet(isPresented: $isPresentingEditRoutineModal, content: {
@@ -47,4 +43,12 @@ struct RoutineRow: View {
 }
 
 
+// Depricated
 
+/*
+ List {
+    ForEach(routine.getExerciseList, id: \.self) { thisExercise in
+        ExerciseRow(exercise: thisExercise)
+    }
+}
+ */

@@ -15,20 +15,21 @@ struct AddExercise: View {
     @State private var newExerciseName = ""
     @State private var isWeights = true
     
-    var didAddExercise: (Exercise) -> ()
+    var didAddExercise: (PeleExercise) -> ()
     
     var body: some View {
         VStack {
             
             HStack{
                 Text("Exercise Name")
+                .padding(.all, 16)
                 TextField("ex: squats", text: $newExerciseName)
+                .padding(.all, 16)
             }
-            Spacer()
             Toggle(isOn: $isWeights) {
                 Text("This Excercise is weights-based?")
+                .padding(.all, 16)
             }
-            Spacer()
             Button(action: {
                 self.didAddExercise(.init(self.newExerciseName, self.isWeights))
                 self.isPresenting.toggle()
@@ -36,7 +37,6 @@ struct AddExercise: View {
                 Text("Done")
                     .padding(.all, 16)
             })
-            Spacer()
         }
 //        .padding(.all, 16)
     }

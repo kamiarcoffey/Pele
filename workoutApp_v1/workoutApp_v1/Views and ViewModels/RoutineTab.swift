@@ -12,7 +12,7 @@ import Foundation
 struct RoutineTab : View {
     
     // var named routines is the observer
-    @ObservedObject var routines = WorkoutPlaylist()
+    @ObservedObject var routines = RoutineManager()
     
     @State var isPresentingAddRoutineModal = false
     
@@ -36,7 +36,7 @@ struct RoutineTab : View {
                     .padding(.all, 6)
                     .background(Color.green)
             }))
-            .sheet(isPresented: $isPresentingAddRoutineModal, content: {
+            .popover(isPresented: $isPresentingAddRoutineModal, content: {
                 AddRoutine(isPresenting: self.$isPresentingAddRoutineModal, didAddRoutine: { routine in
                         self.routines.addPlaylists(with: routine)
                 })

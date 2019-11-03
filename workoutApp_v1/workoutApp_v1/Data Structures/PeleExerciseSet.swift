@@ -8,15 +8,15 @@
 
 import Foundation
 
-public class ExerciseSet: Codable {
+public class PeleExerciseSet: Codable {
     
-    var reps: [Rep]
+    var reps: [PeleRep]
     
-    init(with reps: [Rep]) {
+    init(with reps: [PeleRep]) {
         self.reps = reps
     }
     
-    func addReps(new reps: [Rep]) {
+    func addReps(new reps: [PeleRep]) {
         self.reps += reps
     }
     

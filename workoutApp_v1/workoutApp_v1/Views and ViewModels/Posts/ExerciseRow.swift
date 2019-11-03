@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-struct ExercisePost: View {
+struct ExerciseRow: View {
     
-    @State var exercise: Exercise
+    @State var exercise: PeleExercise
     
     var body: some View {
         HStack {

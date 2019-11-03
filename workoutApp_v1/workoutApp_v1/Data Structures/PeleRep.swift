@@ -8,14 +8,14 @@
 
 import Foundation
 
-public class Rep: Codable {
+public class PeleRep: Codable {
     
     let weightLifted: Int
-    let exercise: Exercise
+    let exercise: PeleExercise
     
     
     
-    init(of exerciseType: Exercise, lifted weight: Int) {
+    init(of exerciseType: PeleExercise, lifted weight: Int) {
         weightLifted = weight
         exercise = exerciseType
     }

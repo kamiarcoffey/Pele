@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19A603" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ExerciseSet" representedClassName="ExerciseSet" syncable="YES">
+        <attribute name="exerciseName" optional="YES" attributeType="String"/>
+        <attribute name="isWeights" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="numReps" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="sets" inverseEntity="Workout"/>
+    </entity>
+    <entity name="Workout" representedClassName="Workout" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="sets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ExerciseSet" inverseName="workout" inverseEntity="ExerciseSet"/>
+    </entity>
+    <elements>
+        <element name="ExerciseSet" positionX="-36" positionY="36" width="128" height="118"/>
+        <element name="Workout" positionX="-63" positionY="-18" width="128" height="103"/>
+    </elements>
+</model>

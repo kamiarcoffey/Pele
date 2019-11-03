@@ -9,19 +9,19 @@
 import Foundation
 
 
-public class Routine: Identifiable, Codable, Hashable {
+public class PeleRoutine: Identifiable, Codable, Hashable {
     
     public let id: UUID
     var name: String
-    var exerciseList: [Exercise]
+    var exerciseList: [PeleExercise]
     
-    init(with name: String, with exericses: [Exercise]) {
+    init(with name: String, with exericses: [PeleExercise]) {
         self.name = name
         self.exerciseList = exericses
         self.id = UUID()
     }
     
-    var getExerciseList: [Exercise] {
+    var getExerciseList: [PeleExercise] {
         return exerciseList
     }
     
@@ -33,17 +33,17 @@ public class Routine: Identifiable, Codable, Hashable {
         return name
     }
     
-    func containsExercise(_ checkExercise: Exercise) -> Bool {
+    func containsExercise(_ checkExercise: PeleExercise) -> Bool {
         return self.exerciseList.contains(checkExercise)
     }
     
-    func addExercises(_ newExercises: [Exercise]) {
+    func addExercises(_ newExercises: [PeleExercise]) {
         self.exerciseList += newExercises
     }
 }
 
-extension Routine {
-    public static func == (lhs: Routine, rhs: Routine) -> Bool {
+extension PeleRoutine {
+    public static func == (lhs: PeleRoutine, rhs: PeleRoutine) -> Bool {
         return (lhs.getName == rhs.getName)
      }
       
