@@ -13,8 +13,7 @@ import Combine
 
 class WorkoutListViewModel: ObservableObject {
     
-    @Published
-    var workouts = [WorkoutViewModel]()
+    @Published var workouts = [WorkoutViewModel]()
     
     init() {
         fetchAllWorkouts()
@@ -51,5 +50,9 @@ class WorkoutViewModel: Hashable {
     
     public func hash(into hasher: inout Hasher) {
          hasher.combine(id)
+    }
+    
+    var getDate: String {
+        return date
     }
 }
