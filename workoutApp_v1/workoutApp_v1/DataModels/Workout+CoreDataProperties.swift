@@ -43,3 +43,23 @@ extension Workout {
     @NSManaged public func removeFromSets(_ values: NSSet)
 
 }
+
+/* Make Workout conform to Manged */
+/* give workouts a default sorting by date */
+extension Workout: Manged {
+    static var defaultSortDescriptors: [NSSortDescriptor] {
+        return [NSSortDescriptor(key: #keyPath(date), ascending: false)]
+    }
+}
+
+/* implement insertion behavior */
+extension Workout {
+    static func insert(into context: NSManagedObjectContext, loggedWorkout: Activity) -> Workout {
+        let workout: Workout = context.insertObject()
+        workout.name = loggedWorkout.name
+        workout.date = Date() // date gets set when the workout is completed - not when started, or anything to do with UI
+        return workout
+    }
+}
+
+

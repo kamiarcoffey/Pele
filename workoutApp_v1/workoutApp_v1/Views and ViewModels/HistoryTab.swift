@@ -11,20 +11,19 @@ import Foundation
 
 struct HistoryTab: View {
     
-    // @ObservedObject var workoutListViewModel: WorkoutListViewModel
+    @ObservedObject var workoutListViewModel: WorkoutListViewModel
     
-//    init() {
-//        self.workoutListViewModel = WorkoutListViewModel()
-//    }
-
+    init() {
+        self.workoutListViewModel = WorkoutListViewModel()
+    }
     
     var body: some View {
-                    
-        List {
-            Text("PlaceHolder")
-//            ForEach(self.workoutListViewModel.workouts, id: \.name) { order in
-//                Text(order.name)
-//            }
+        NavigationView {
+            List {
+                ForEach(self.workoutListViewModel.workouts, id: \.name) { workout in
+                    Text(workout.name)
+                }
+            }
         }
     }
 }

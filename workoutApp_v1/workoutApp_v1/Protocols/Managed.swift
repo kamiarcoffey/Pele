@@ -18,9 +18,23 @@ protocol Manged: class, NSFetchRequestResult {
 
 
 /* give a default implementation if empty*/
+/* implement Generic request structure */
 
 extension Manged {
     static var defaultSortDescriptors: [NSSortDescriptor] {
         return []
+    }
+    
+    static var sortedFetchRequest: NSFetchRequest<Self> {
+        let request = NSFetchRequest<Self>(entityName: entityName)
+        request.sortDescriptors = defaultSortDescriptors
+        return request
+    }
+}
+
+/* implement entityName for NSMangedObjects conformting to Manged */
+extension Manged where Self: NSManagedObject {
+    static var entityName: String {
+        return entity().name ?? "empty"
     }
 }

@@ -11,23 +11,23 @@ import Foundation
 protocol Builder {
 
     func setName(name: String)
-    func setDate(date: NSDate)
+    func setDate(date: Date)
 }
 
 enum Parts {
-    case exercise(name: String, date: NSDate)
+    case exercise(name: String, date: Date)
 }
 
 class ExerciseProduct {
 
     private var name = ""
-    private var date = NSDate()
+    private var date = Date()
 
     func addName(name: String) {
         self.name = name
     }
     
-    func addDate(date: NSDate) {
+    func addDate(date: Date) {
         self.date = date
     }
 
@@ -51,7 +51,7 @@ class ExerciseBuilder: Builder {
     }
     
     
-    func setDate(date: NSDate) {
+    func setDate(date: Date) {
         exercise.addDate(date: date)
 
     }
