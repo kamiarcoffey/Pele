@@ -10,17 +10,15 @@ import SwiftUI
 
 struct WorkoutRow: View {
     
-    @State var workout: Activity
+    @State var workout: WorkoutViewModel
     
     var body: some View {
-        NavigationLink(destination:  WorkoutDetailView(workout: workout)) {
+        NavigationLink(destination: WorkoutDetailView(workout: workout)) {
             List {
-                Text("Place Holder")
-                Text("\(workout.name)")
-                    .fontWeight(.bold)
+                Text(workout.name)
+                    .fontWeight(.semibold)
             }
         }
     }
+    
 }
-
-

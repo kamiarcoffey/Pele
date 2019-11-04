@@ -10,10 +10,11 @@ import SwiftUI
 import Foundation
 
 struct WorkoutDetailView: View {
-    @State var workout: Activity
+    
+    @State var workout: WorkoutViewModel
     
     var body: some View {
-        Text("workout.name")
+        Text(workout.name)
     }
     
 }
