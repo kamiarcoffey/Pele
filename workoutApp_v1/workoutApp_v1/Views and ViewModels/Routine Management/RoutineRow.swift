@@ -14,7 +14,7 @@ struct RoutineRow: View {
     @State var isPresentingEditRoutineModal = false
     
     var body: some View {
-        NavigationLink(destination:  PlayRoutine(routine: routine, exerciseList: routine.getExerciseList)) {
+        NavigationLink(destination:  PlayRoutine(routine: routine)) {
             HStack {
                 HStack {
                     VStack {

@@ -14,7 +14,16 @@ struct WorkoutDetailView: View {
     @State var workout: WorkoutViewModel
     
     var body: some View {
-        Text(workout.name)
+        List {
+        
+            Text(workout.name)
+        }
+        .navigationBarItems(trailing: Button(action: {
+            print("deleting workout")
+            //
+        }, label: {
+            Image(systemName: "trash")
+        }))
     }
     
 }

@@ -21,10 +21,6 @@ public class RoutineManager : ObservableObject {
         self.playlists.move(fromOffsets: source, toOffset: destination)
         self.setPlaylists()
     }
-
-//    @Published var routines: [Routine] = [
-//        .init(name: "Leg Day", exerciseList: [Exercise(with: "Squats", isWeights: true)])
-//    ]
         
     init() {
 //        self.playlists = UserDefaults.routinePlaylists()
@@ -55,7 +51,7 @@ public class RoutineManager : ObservableObject {
         UserDefaults.setRoutinePlaylists(with: self.playlists)
     }
     
-    public func addRoutone(_ newRoutine: PeleRoutine) {
+    public func addRoutine(_ newRoutine: PeleRoutine) {
         playlists.append(newRoutine)
         UserDefaults.setRoutinePlaylists(with: self.playlists)
     }
