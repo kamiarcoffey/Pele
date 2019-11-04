@@ -16,38 +16,29 @@ struct SetLogPost: View {
     @ObservedObject var setReps = NumericalFieldViewModel()
     @ObservedObject var setWeight = NumericalFieldViewModel()
     var generateNewSet: () -> Void
-
     
-//    init() {
-//        self.setReps =  NumericalFieldViewModel()
-//        self.setWeight = NumericalFieldViewModel()
-//    }
+    
+    //    init() {
+    //        self.setReps =  NumericalFieldViewModel()
+    //        self.setWeight = NumericalFieldViewModel()
+    //    }
     
     var body: some View {
-        ScrollView {
+        VStack {
+            Text("Log Set")
+                .padding(10)
             HStack {
                 VStack {
-                    Text("Set 1")
-                    VStack {
-                        VStack {
-                            VStack {
-                                Text("Reps")
-                                TextField("reps", text: $setReps.text)
-                            }
-                            VStack {
-                                Text("Weight")
-                                TextField("weight", text: $setWeight.text)
-                            }
-                        }
-                    }
+                    Text("Reps")
+                    TextField("reps", text: $setReps.text)
                 }
-                Button(action: {
-                    print("added!")
-                }, label: {
-                    Text("Add")
-                })
+                VStack {
+                    Text("Weight")
+                    TextField("weight", text: $setWeight.text)
+                }
+                .padding(10)
             }
-            Button(action: self.generateNewSet) {Text("hold")}
+            Button(action: self.generateNewSet) {Text("Do Another Set")}
         }
     }
 }

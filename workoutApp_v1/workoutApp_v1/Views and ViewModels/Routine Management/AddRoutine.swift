@@ -15,7 +15,6 @@ struct AddRoutine: View {
     
     @Binding var isPresenting: Bool
     
-    /* replaces UITextField */
     @State private var newRoutineName = ""
     
     var didAddRoutine: (String) -> ()
@@ -28,11 +27,7 @@ struct AddRoutine: View {
                 TextField("Always Add Leg Day", text: $newRoutineName)
             }
             Button(action: {
-                /* passing a binding - this will toggle up to parent */
-                /* replaces when an MVC would dismiss itself - not dismissed by parent */
-                
                 self.didAddRoutine(.init(self.newRoutineName))
-                
                 self.isPresenting.toggle()
             }, label: {
                 Text("Done")

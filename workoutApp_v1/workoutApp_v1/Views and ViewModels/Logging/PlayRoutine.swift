@@ -22,10 +22,9 @@ struct PlayRoutine: View {
     
     var body: some View {
         ScrollView(.horizontal, content: {
-            HStack(spacing: 10) {
-                ForEach(routine.getExerciseList) { exercise in
-                    LogExercise(exercise: exercise)
-                }
+            ForEach(routine.getExerciseList) { exercise in
+                Text(exercise.name)
+                LogExercise(exercise: exercise)
             }
             .padding(.leading, 10)
         })

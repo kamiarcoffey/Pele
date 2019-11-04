@@ -24,7 +24,7 @@ struct LogExercise: View {
     
     var body: some View {
         
-        List {
+        VStack {
             ForEach(playRoutineViewModel.setsInProgress, id: \.self) { setInProgress in
                 SetLogPost(setInProgress: setInProgress, exerciseInProgress: self.exercise) { self.playRoutineViewModel.generateAdditionalSet()
                 }

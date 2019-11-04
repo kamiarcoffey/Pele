@@ -1,5 +1,5 @@
 //
-//  PeleExerciseManager.swift
+//  ExerciseManager.swift
 //  workoutApp_v1
 //
 //  Created by Kamiar Coffey on 11/3/19.
@@ -11,6 +11,16 @@ import Foundation
 public class ExerciseManager: ObservableObject {
     
     @Published var exercisePool: [PeleExercise]
+    
+    public func deleteItem(at indexSet: IndexSet) {
+        self.exercisePool.remove(atOffsets: indexSet)
+        self.setExercisePool()
+    }
+    
+    func move(from source: IndexSet, to destination: Int) {
+        self.exercisePool.move(fromOffsets: source, toOffset: destination)
+        self.setExercisePool()
+    }
     
     init() {
         self.exercisePool = UserDefaults.fetchExercisePool()
@@ -37,16 +47,6 @@ public class ExerciseManager: ObservableObject {
         self.setExercisePool()
     }
     
-    
-    public func deleteItem(at indexSet: IndexSet) {
-        self.exercisePool.remove(atOffsets: indexSet)
-        self.setExercisePool()
-    }
-    
-    func move(from source: IndexSet, to destination: Int) {
-        self.exercisePool.move(fromOffsets: source, toOffset: destination)
-        self.setExercisePool()
-    }
     
     var getExercisePool: [PeleExercise] {
         return Array(self.exercisePool)
