@@ -21,3 +21,16 @@ public class PeleExerciseSet: Codable {
     }
     
 }
+
+
+
+class PeleWorkout: Session {
+    var name = "test"
+    var date = Date()
+    var weights = true
+
+    
+    func getName() -> String {
+        return name
+    }
+}

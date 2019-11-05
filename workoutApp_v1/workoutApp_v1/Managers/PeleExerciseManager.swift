@@ -12,15 +12,15 @@ public class ExerciseManager: ObservableObject {
     
     @Published var exercisePool: [PeleExercise]
     
-    public func deleteItem(at indexSet: IndexSet) {
-        self.exercisePool.remove(atOffsets: indexSet)
-        self.setExercisePool()
-    }
-    
-    func move(from source: IndexSet, to destination: Int) {
-        self.exercisePool.move(fromOffsets: source, toOffset: destination)
-        self.setExercisePool()
-    }
+   public func deleteItem(at indexSet: IndexSet) {
+       self.exercisePool.remove(atOffsets: indexSet)
+       self.setExercisePool()
+   }
+   
+   func move(from source: IndexSet, to destination: Int) {
+       self.exercisePool.move(fromOffsets: source, toOffset: destination)
+       self.setExercisePool()
+   }
     
     init() {
         self.exercisePool = UserDefaults.fetchExercisePool()

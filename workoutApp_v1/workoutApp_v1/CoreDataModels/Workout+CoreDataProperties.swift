@@ -54,7 +54,7 @@ extension Workout: Manged {
 
 /* implement insertion behavior */
 extension Workout {
-    static func insert(into context: NSManagedObjectContext, loggedWorkout: Activity) -> Workout {
+    static func insert(into context: NSManagedObjectContext, loggedWorkout: Session) -> Workout {
         let workout: Workout = context.insertObject()
         workout.name = loggedWorkout.name
         workout.date = Date() // date gets set when the workout is completed - not when started, or anything to do with UI

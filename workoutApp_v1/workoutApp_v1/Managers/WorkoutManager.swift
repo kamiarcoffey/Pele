@@ -22,7 +22,7 @@ class WorkoutManager {
     func getAllWorkouts() -> [Workout] { // Workout is an NSManagedObject type
         var workouts = [Workout]()
         
-        Workout.insert(into: self.moc, loggedWorkout: PeleWorkout())
+        Workout.insert(into: self.moc, loggedWorkout: PeleWorkout(name: "test"))
         
         //implements let workoutReqest: NSFetchRequest<Workout> = Workout.fetchRequest() using defined protocols
         print("attempting to fetch all workouts")
@@ -40,7 +40,7 @@ class WorkoutManager {
         return workouts
     }
 
-    func saveWorkout(workout: Activity) { // Workout is an NSManagedObject type
+    func saveWorkout(workout: Session) { // Workout is an NSManagedObject type
         self.moc.performChanges {
             _ = Workout.insert(into: self.moc, loggedWorkout: workout) // where loggedWorkout is Activity protocol
         }

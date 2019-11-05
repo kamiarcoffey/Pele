@@ -11,11 +11,11 @@ import Foundation
 public class PeleRep: Codable {
     
     let weightLifted: Int
-    let exercise: PeleExercise
+    let exercise: PeleWorkout
     
     
     
-    init(of exerciseType: PeleExercise, lifted weight: Int) {
+    init(of exerciseType: PeleWorkout, lifted weight: Int) {
         weightLifted = weight
         exercise = exerciseType
     }

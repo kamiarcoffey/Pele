@@ -23,10 +23,7 @@ public class RoutineManager : ObservableObject {
     }
         
     init() {
-//        self.playlists = UserDefaults.routinePlaylists()
-        self.playlists = [
-            .init(with: "Leg Day", with: [PeleExercise("Squats", true)])
-            ]
+        self.playlists = UserDefaults.routinePlaylists()
     }
 
     private func setPlaylists() {
@@ -40,7 +37,7 @@ public class RoutineManager : ObservableObject {
     }
 
     private func getAllExerciseNames() -> [String] {
-        return playlists.map{ $0.getName }
+        return self.getAllExercises().map{ $0.getName() }
     }
     
     // MARK: public API

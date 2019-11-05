@@ -1,19 +1,17 @@
 //
-//  Routine.swift
+//  PeleRoutine.swift
 //  workoutApp_v1
 //
 //  Created by Kamiar Coffey on 10/24/19.
 //  Copyright © 2019 Kamiar Coffey. All rights reserved.
 //
-
 import Foundation
-
 
 public class PeleRoutine: Identifiable, Codable, Hashable {
     
     public let id: UUID
     var name: String
-    var exerciseList: [PeleExercise]
+    var exerciseList: [PeleExercise] // [Activity]
     
     init(with name: String, with exericses: [PeleExercise]) {
         self.name = name
@@ -21,7 +19,7 @@ public class PeleRoutine: Identifiable, Codable, Hashable {
         self.id = UUID()
     }
     
-    var getExerciseList: [PeleExercise] {
+    var getExerciseList: [PeleExercise]  { // [Activity]
         return exerciseList
     }
     

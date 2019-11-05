@@ -31,9 +31,9 @@ class PlayRoutineViewModel: ObservableObject {
     // this will belong to a specific exercise
     // it can have an undetermined number of LogSetViewModel (one for each set of that exercise)
     @Published var setsInProgress: [LogSetViewModel]
-    private var exercise: PeleExercise
+    private var exercise: Activity
     
-    init(with exercise: PeleExercise) {
+    init(with exercise: Activity) {
         self.exercise = exercise
         setsInProgress = []
         generateAdditionalSet()
@@ -43,7 +43,7 @@ class PlayRoutineViewModel: ObservableObject {
     
     
     func generateAdditionalSet() {
-        setsInProgress.append(LogSetViewModel(with: self.exercise))
+        setsInProgress.append(LogSetViewModel(with: self.exercise as! PeleExercise))
     }
     
     func logSet(finishedSet: LogSetViewModel) {
@@ -61,7 +61,6 @@ class LogSetViewModel: Hashable {
 
     var exercise: PeleExercise
     var id = UUID()
-    var isWeights: Bool
     var exerciseName: String
     var numReps: Int
     var weight: Int
@@ -71,7 +70,6 @@ class LogSetViewModel: Hashable {
 
     init(with exercise: PeleExercise) {
         self.exercise = exercise
-        self.isWeights = exercise.weights
         self.exerciseName = exercise.name
         self.numReps = 0
         self.weight = 0

@@ -15,7 +15,7 @@ struct AddExercise: View {
     @State private var newExerciseName = ""
     @State private var isWeights = true
     
-    var didAddExercise: (PeleExercise) -> ()
+    var didAddExercise: (PeleExercise) -> () // (Activity)
     
     var body: some View {
         VStack {
@@ -31,7 +31,7 @@ struct AddExercise: View {
                 .padding(.all, 16)
             }
             Button(action: {
-                self.didAddExercise(.init(self.newExerciseName, self.isWeights))
+                self.didAddExercise(PeleExercise(self.newExerciseName))
                 self.isPresenting.toggle()
             }, label: {
                 Text("Done")

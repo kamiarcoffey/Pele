@@ -60,7 +60,6 @@ struct EditRoutine: View {
                         }
                         .onDelete(perform: exercises.deleteItem)
                         .onMove(perform: exercises.move)
-                        
                     }
                     
                     VStack {
@@ -75,7 +74,7 @@ struct EditRoutine: View {
                             }
                         }
                     }
-                    .padding(EdgeInsets.init(top: +10, leading: +10, bottom: +10, trailing: +10))
+//                    .padding(EdgeInsets.init(top: +10, leading: +10, bottom: +10, trailing: +10))
 
                 }
                 .navigationBarTitle(Text("Your Exercises"))
