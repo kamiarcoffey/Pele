@@ -23,7 +23,7 @@ struct PlayRoutine: View {
     var body: some View {
         ScrollView(.horizontal, content: {
             ForEach(routine.getExerciseList) { exercise in
-                Text(exercise.getName)
+                Text(exercise.getName())
                 LogExercise(exercise: exercise)
             }
             .padding(.leading, 10)

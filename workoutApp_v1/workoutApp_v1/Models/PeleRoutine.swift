@@ -33,6 +33,8 @@ public class PeleRoutine: Identifiable, Codable, Hashable {
     
     func containsExercise(_ checkExercise: PeleExercise) -> Bool {
         return self.exerciseList.contains(checkExercise)
+        // guard let concreteType = checkExercise as? PeleExercise else { return false }
+        // return self.exerciseList.map{}.contains(concreteType)
     }
     
     func addExercises(_ newExercises: [PeleExercise]) {

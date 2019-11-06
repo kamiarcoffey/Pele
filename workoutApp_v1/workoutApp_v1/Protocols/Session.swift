@@ -14,7 +14,12 @@ public protocol Session : Codable {
     var name: String { get set }
     var date: Date { get set }
     var exercises: [PeleExercise] { get set } // [Activity]
-    
     func getName() -> String
+}
+
+extension Session {
+    func getName() -> String {
+        return name
+    }
 }
 

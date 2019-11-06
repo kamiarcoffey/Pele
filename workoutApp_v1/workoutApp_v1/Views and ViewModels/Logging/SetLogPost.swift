@@ -17,6 +17,10 @@ struct SetLogPost: View {
     @ObservedObject var setWeight = NumericalFieldViewModel()
     var generateNewSet: () -> Void
     
+    // var completedSet: () -> //
+    // pipe it all the way back up or save it here?
+    // pipe it
+
     
     //    init() {
     //        self.setReps =  NumericalFieldViewModel()

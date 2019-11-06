@@ -8,31 +8,29 @@
 
 import Foundation
 
+public struct Rep: RepProtocol, Codable {
+    var weightLifted: Int
+    public var weight: Int { return weightLifted }
+}
+
+public struct PeleExerciseSet: SetProtocol {
+    public typealias typeOfRep = Rep
+    public var reps: [Rep]
+}
 
 
-
-
-public class PeleExercise : Identifiable, Codable, Hashable, WeightsExercise {
+public class PeleExercise : WeightsExercise, Identifiable, Codable, Hashable {
     
-    
-    // TODO: use Stragety pattern for this
-    public func calculateCalories() -> Double {
-        return 10
-    }
-    
-    public var isWeights: Bool
     public var id: UUID
     public var name: String
     public var targetMuscle: MuscleGroup
     public var sets: [PeleExerciseSet]
 
-    
     init(_ name: String, target muscle: MuscleGroup, sets: [PeleExerciseSet]) {
         self.name = name
         self.id = UUID()
         self.targetMuscle = muscle
         self.sets = sets
-        self.isWeights = true // TODO: shouldn't this alreadu be there from extention to Weights Exercise?
     }
     
     convenience init(_ name: String) {

@@ -24,6 +24,11 @@
 		1C3843EC2371E9F900C5D498 /* PeleRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3843EB2371E9F900C5D498 /* PeleRoutine.swift */; };
 		1C3843EE2371EA1E00C5D498 /* PeleWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3843ED2371EA1E00C5D498 /* PeleWorkout.swift */; };
 		1C3843F02371EB8200C5D498 /* PeleExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3843EF2371EB8200C5D498 /* PeleExercise.swift */; };
+		1C42AB2123724293004CED33 /* SetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42AB2023724293004CED33 /* SetProtocol.swift */; };
+		1C42AB23237242BA004CED33 /* CardioExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42AB22237242BA004CED33 /* CardioExercise.swift */; };
+		1C42AB25237242D3004CED33 /* WeightsExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42AB24237242D3004CED33 /* WeightsExercise.swift */; };
+		1C42AB27237242E9004CED33 /* MuscleGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42AB26237242E9004CED33 /* MuscleGroups.swift */; };
+		1C42AB29237242F9004CED33 /* RepProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42AB28237242F9004CED33 /* RepProtocol.swift */; };
 		1C4960C82369ED6200B81498 /* PlayRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4960C72369ED6200B81498 /* PlayRoutine.swift */; };
 		1C5D7D2A236F48E600106802 /* RoutineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D7D29236F48E600106802 /* RoutineManager.swift */; };
 		1C5D7D2C236F496800106802 /* PeleExerciseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D7D2B236F496800106802 /* PeleExerciseManager.swift */; };
@@ -94,6 +99,11 @@
 		1C3843EB2371E9F900C5D498 /* PeleRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeleRoutine.swift; sourceTree = "<group>"; };
 		1C3843ED2371EA1E00C5D498 /* PeleWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeleWorkout.swift; sourceTree = "<group>"; };
 		1C3843EF2371EB8200C5D498 /* PeleExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeleExercise.swift; sourceTree = "<group>"; };
+		1C42AB2023724293004CED33 /* SetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProtocol.swift; sourceTree = "<group>"; };
+		1C42AB22237242BA004CED33 /* CardioExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardioExercise.swift; sourceTree = "<group>"; };
+		1C42AB24237242D3004CED33 /* WeightsExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightsExercise.swift; sourceTree = "<group>"; };
+		1C42AB26237242E9004CED33 /* MuscleGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroups.swift; sourceTree = "<group>"; };
+		1C42AB28237242F9004CED33 /* RepProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepProtocol.swift; sourceTree = "<group>"; };
 		1C4960C72369ED6200B81498 /* PlayRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayRoutine.swift; sourceTree = "<group>"; };
 		1C5D7D29236F48E600106802 /* RoutineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineManager.swift; sourceTree = "<group>"; };
 		1C5D7D2B236F496800106802 /* PeleExerciseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeleExerciseManager.swift; sourceTree = "<group>"; };
@@ -257,6 +267,11 @@
 				1C5D7D3D236F4FD200106802 /* Managed.swift */,
 				1C0B464D2359FC6800C9AB24 /* Session.swift */,
 				1C3843E92371E94400C5D498 /* Activity.swift */,
+				1C42AB26237242E9004CED33 /* MuscleGroups.swift */,
+				1C42AB28237242F9004CED33 /* RepProtocol.swift */,
+				1C42AB24237242D3004CED33 /* WeightsExercise.swift */,
+				1C42AB22237242BA004CED33 /* CardioExercise.swift */,
+				1C42AB2023724293004CED33 /* SetProtocol.swift */,
 				1C074233236C859200C15C80 /* Builder.swift */,
 			);
 			path = Protocols;
@@ -480,6 +495,7 @@
 				1C6721B723650DCB005A5C7A /* ExerciseRow.swift in Sources */,
 				1C3105CB2370B6240037BBC9 /* LogExercise.swift in Sources */,
 				1CC7197D2360E3930091193B /* UserExerciseFactory.swift in Sources */,
+				1C42AB2123724293004CED33 /* SetProtocol.swift in Sources */,
 				1CAF20E22369D5F500D365BC /* WorkoutManager.swift in Sources */,
 				1C5D7D2A236F48E600106802 /* RoutineManager.swift in Sources */,
 				1CC1C8492369CA85008D5542 /* HistoryTab.swift in Sources */,
@@ -489,18 +505,22 @@
 				1C74CA53236280150027F826 /* AddRoutine.swift in Sources */,
 				1C3843F02371EB8200C5D498 /* PeleExercise.swift in Sources */,
 				1C6721B423650D9E005A5C7A /* BoxView.swift in Sources */,
+				1C42AB27237242E9004CED33 /* MuscleGroups.swift in Sources */,
 				1C0B461B2359FBE700C9AB24 /* ContentView.swift in Sources */,
 				1C3843EA2371E94400C5D498 /* Activity.swift in Sources */,
 				1CAF20E42369D69300D365BC /* NSManagedObjectContextExtension.swift in Sources */,
+				1C42AB23237242BA004CED33 /* CardioExercise.swift in Sources */,
 				1C4960C82369ED6200B81498 /* PlayRoutine.swift in Sources */,
 				1C3843EC2371E9F900C5D498 /* PeleRoutine.swift in Sources */,
 				1C9709B4235A2548003DE2C7 /* UserDefaults+Keys.swift in Sources */,
 				1CC719772360A2060091193B /* UserDefaults+Exercises.swift in Sources */,
 				1C074234236C859200C15C80 /* Builder.swift in Sources */,
+				1C42AB29237242F9004CED33 /* RepProtocol.swift in Sources */,
 				1C818EDD236CEB6900FE279D /* Arrays.swift in Sources */,
 				1C10A873236F43F20094E7F2 /* DataModel.xcdatamodeld in Sources */,
 				1C6721BB23650E11005A5C7A /* EditRoutine.swift in Sources */,
 				1C9709AF235A2491003DE2C7 /* Session.swift in Sources */,
+				1C42AB25237242D3004CED33 /* WeightsExercise.swift in Sources */,
 				1C6721BD23650E2C005A5C7A /* AddExercise.swift in Sources */,
 				1C0B46162359FBE700C9AB24 /* SceneDelegate.swift in Sources */,
 				1CC1C84F2369CE21008D5542 /* RoutineTab.swift in Sources */,

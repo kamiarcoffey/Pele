@@ -6,6 +6,8 @@
 //  Copyright © 2019 Kamiar Coffey. All rights reserved.
 //
 
+// TODO: Replace PeleExercise with Activity where appropriate
+
 import Foundation
 
 public class RoutineManager : ObservableObject {
