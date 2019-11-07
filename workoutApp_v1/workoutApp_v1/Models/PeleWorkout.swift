@@ -25,6 +25,13 @@ public struct PeleWorkout: Session, Codable {
         self.exercises = exercises
     }
     
+    init(_ name: String, date: Date, id: UUID,  with exercises: [PeleExercise]) {  //[Activity]
+        self.name = name
+        self.date = date
+        self.id = id
+        self.exercises = exercises
+    }
+    
     // convinience init with empty activity list
     init(name: String) {
         self.init(name, with: [PeleExercise]()) // [Activity]

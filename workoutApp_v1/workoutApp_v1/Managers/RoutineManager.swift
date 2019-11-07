@@ -32,12 +32,12 @@ public class RoutineManager : ObservableObject {
         UserDefaults.setRoutinePlaylists(with: self.playlists)
     }
         
-
-    // MARK: private functions
-    private func getAllExercises() -> [PeleExercise] {
+    // MARK: For the ViewModel
+    public func getAllExercises() -> [PeleExercise] {
         return playlists.flatMap{ $0.getExerciseList }
     }
 
+    // MARK: private functions
     private func getAllExerciseNames() -> [String] {
         return self.getAllExercises().map{ $0.getName() }
     }

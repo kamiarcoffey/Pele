@@ -12,7 +12,7 @@ import Foundation
 struct RoutineTab : View {
     
     // var named routines is the observer
-    @ObservedObject var routines = RoutineManager()
+    @ObservedObject var routines = RoutineListViewModel()
     
     @State var isPresentingAddRoutineModal = false
     

@@ -62,4 +62,14 @@ extension Workout {
     }
 }
 
+extension Workout: ConvertableToLocal {
+    
+    typealias T = PeleWorkout
+
+   // convert yourself to an NSObject T
+    func convertToLocal() -> T {
+        return T(self.name ?? "DB obhect has no name", date: self.date ?? Date(), id: self.id ?? UUID(), with: [PeleExercise]())
+    }
+}
+
 

@@ -21,7 +21,8 @@ class WorkoutListViewModel: ObservableObject {
     }
     
     func fetchAllWorkouts() {
-        self.workouts = WorkoutManager.shared.getAllWorkouts().map(WorkoutViewModel.init)
+        self.workouts = WorkoutManager.shared.getAllPeleWorkouts().map(WorkoutViewModel.init)
+//        self.workouts = WorkoutManager.shared.getAllWorkouts().map(WorkoutViewModel.init)
     }
     
 //    func saveExercise(exercise: Exercise) {
@@ -30,7 +31,8 @@ class WorkoutListViewModel: ObservableObject {
     
 }
 
-class WorkoutViewModel: Hashable {
+class WorkoutViewModel: Hashable { // is this the same thing as NSManagedObject? NO. This should turn PeleWorkout into something the view can handle...
+    // it will matter more when I start manipulating PeleWorkout things
     static func == (lhs: WorkoutViewModel, rhs: WorkoutViewModel) -> Bool {
         return lhs.id == rhs.id
     }
@@ -42,9 +44,9 @@ class WorkoutViewModel: Hashable {
     let formatter = DateFormatter()
     
     // MARK: if you change workoutReqest.returnsObjectsAsFaults = false, make sure you convert the NSObject before piping it to the View
-    init(workout: Workout) {
-        self.name = workout.name!
-        self.date = formatter.string(from: workout.date!)
+    init(workout: Session) { // Workout is an NSManged Object.... does it have to implement Session too?
+        self.name = workout.name
+        self.date = formatter.string(from: workout.date)
 
     }
     

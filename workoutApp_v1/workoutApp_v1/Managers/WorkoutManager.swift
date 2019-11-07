@@ -18,6 +18,10 @@ class WorkoutManager {
     private init(moc: NSManagedObjectContext) {
         self.moc = moc
     }
+    
+    func getAllPeleWorkouts() -> [Session] {
+        getAllWorkouts().map{ $0.convertToLocal() }
+    }
 
     func getAllWorkouts() -> [Workout] { // Workout is an NSManagedObject type
         var workouts = [Workout]()
