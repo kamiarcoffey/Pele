@@ -17,17 +17,37 @@ import Foundation
 
 struct PlayRoutine: View {
     
-    @State var routine: PeleRoutine
+    var routine: PeleRoutine
     @State private var isShowingQuitAlert = false
+    @ObservedObject var playRoutineViewModel: PlayRoutineViewModel
+    
+    init(routine: PeleRoutine) {
+        self.routine = routine
+        self.playRoutineViewModel = PlayRoutineViewModel(with: routine)
+    }
+    
     
     var body: some View {
-        ScrollView(.horizontal, content: {
-            ForEach(routine.getExerciseList) { exercise in
-                Text(exercise.getName())
-                LogExercise(exercise: exercise)
-            }
-            .padding(.leading, 10)
-        })
+        VStack {
+            Button(action: {
+                print("Logging")
+                // playRoutineModel.save
+            }, label: {
+                Text("Finish This Workout")
+                    .foregroundColor(.white)
+                    .padding(.all, 6)
+                    .background(Color(red: 167, green:6, blue:0 ))
+            })
+            Divider()
+            ScrollView(.horizontal, content: {
+                HStack{
+                    ForEach(playRoutineViewModel.workoutsInProgress, id: \.id) { exerciseViewModel in
+                        LogExercise(exerciseViewModel: exerciseViewModel)
+                    }
+                    .padding(.leading, 10)
+                }
+            })
+        }
     }
 }
 

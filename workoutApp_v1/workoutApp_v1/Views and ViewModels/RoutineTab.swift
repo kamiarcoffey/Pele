@@ -34,7 +34,7 @@ struct RoutineTab : View {
                 Text("Add Routine")
                     .foregroundColor(.white)
                     .padding(.all, 6)
-                    .background(Color.green)
+                    .background(Color.orange)
             }))
             .popover(isPresented: $isPresentingAddRoutineModal, content: {
                 AddRoutine(isPresenting: self.$isPresentingAddRoutineModal, didAddRoutine: { routine in

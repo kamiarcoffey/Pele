@@ -13,9 +13,30 @@ public struct Rep: RepProtocol, Codable {
     public var weight: Int { return weightLifted }
 }
 
-public struct PeleExerciseSet: SetProtocol {
+public struct PeleExerciseSet: SetProtocol, Hashable {
     public typealias typeOfRep = Rep
     public var reps: [Rep]
+    public var id = UUID()
+    
+    init() {
+        self.reps = []
+    }
+    
+    init(reps: [Rep]) {
+        self.reps = reps
+    }
+}
+
+extension PeleExerciseSet {
+    
+    public static func == (lhs: PeleExerciseSet, rhs: PeleExerciseSet) -> Bool {
+       return (lhs.id == rhs.id)
+    }
+     
+    // id is enough to uniquley identify an Exercise
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+   }
 }
 
 

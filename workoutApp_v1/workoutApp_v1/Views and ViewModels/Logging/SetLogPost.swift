@@ -11,13 +11,14 @@ import SwiftUI
 
 struct SetLogPost: View {
     
-    @State var setInProgress: LogSetViewModel
-    @State var exerciseInProgress: PeleExercise
-    @ObservedObject var setReps = NumericalFieldViewModel()
-    @ObservedObject var setWeight = NumericalFieldViewModel()
-    var generateNewSet: () -> Void
+    @State var setInProgress: PeleExerciseSet
+//    @ObservedObject var setReps = NumericalFieldViewModel()
+//    @ObservedObject var setWeight = NumericalFieldViewModel()
+    @State private var setReps = ""
+    @State private var setWeight = ""
+    var completedSet: (PeleExerciseSet) -> ()
     
-    // var completedSet: () -> //
+    // var generateSet: () -> //
     // pipe it all the way back up or save it here?
     // pipe it
 
@@ -34,15 +35,35 @@ struct SetLogPost: View {
             HStack {
                 VStack {
                     Text("Reps")
-                    TextField("reps", text: $setReps.text)
+                    TextField("", text: $setReps)
+                        .background(Color.gray).opacity(0.5)
+                     .foregroundColor(.white)
+
+//                    TextField("reps", text: $setReps.text)
                 }
+                    .border(Color.gray.opacity(0.5), width: 0.5)
+
+                .padding(10)
                 VStack {
                     Text("Weight")
-                    TextField("weight", text: $setWeight.text)
+                    TextField("", text: $setWeight)
+                        .background(Color(.gray).opacity(0.5))
+                    .foregroundColor(.white)
+
+
+//                    TextField("weight", text: $setWeight.text)
                 }
+                    .border(Color.gray.opacity(0.5), width: 0.5)
+
                 .padding(10)
             }
-            Button(action: self.generateNewSet) {Text("Do Another Set")}
+            Button(action: {
+                let reps = [Rep](repeating: Rep(weightLifted: Int(self.setWeight) ?? 0), count: Int(self.setReps) ?? 0)
+                self.completedSet(PeleExerciseSet(reps: reps))
+            }, label: {
+                Text("Log This Set")
+                    .padding(.all, 16)
+            })
         }
     }
 }

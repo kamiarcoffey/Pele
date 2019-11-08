@@ -6,6 +6,9 @@
 //  Copyright © 2019 Kamiar Coffey. All rights reserved.
 //
 
+
+// #a70600
+
 import SwiftUI
 
 struct EditRoutine: View {
@@ -84,7 +87,7 @@ struct EditRoutine: View {
                     Text("Create New Exercise")
                         .foregroundColor(.white)
                         .padding(.all, 6)
-                        .background(Color.green)
+                        .background(Color(red: 0.67, green: 0.6, blue:0.0 ))
                 }),
                                     trailing: Button(action: {
                                         self.routineBeingEdited.addExercises(self.selectedExercises)
@@ -93,7 +96,7 @@ struct EditRoutine: View {
                                         Text("Add Selected Exercises")
                                             .foregroundColor(.white)
                                             .padding(.all, 6)
-                                            .background(Color.green)
+                                            .background(Color(red: 1.67, green: 0.6, blue:0.0, opacity: 1.0 ))
                                     }))
                     
                     .sheet(isPresented: $isPresentingAddExercise, content: {

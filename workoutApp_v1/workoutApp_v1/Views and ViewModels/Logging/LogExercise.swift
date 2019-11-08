@@ -9,32 +9,42 @@
 import Foundation
 import SwiftUI
 
+// TODO: find a better way thhan hardcoding 200 for frame min width
+
 // the view for each exercise in a routine. This view will have a variable number of subViews
 
 struct LogExercise: View {
-    
-    var exercise: PeleExercise
-    @ObservedObject var playRoutineViewModel: PlayRoutineViewModel
-    
-    
-    init(exercise: PeleExercise) {
-        self.exercise = exercise
-        self.playRoutineViewModel = PlayRoutineViewModel(with: exercise)
-    }
+        
+    @State var exerciseViewModel = SetViewModel()
     
     var body: some View {
-        
         VStack {
-            ForEach(playRoutineViewModel.setsInProgress, id: \.self) { setInProgress in
-                SetLogPost(setInProgress: setInProgress, exerciseInProgress: self.exercise) { self.playRoutineViewModel.generateAdditionalSet()
+            ScrollView {
+                VStack {
+                    ForEach(exerciseViewModel.setsInProgress, id: \.id) { setInProgress in
+                        SetLogPost(setInProgress: setInProgress, completedSet: { newSet in
+                            self.exerciseViewModel.logSet(finishedSet: newSet)
+                        })
+                    }
+                    Button(action: {
+                        self.exerciseViewModel.generateAdditionalSet()
+                    }, label: {
+                        Text("Do Another Set")
+                            .padding(.all, 16)
+                    })
                 }
+                .frame(minWidth: 200, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+        //        .background(Color.gray)
+                .border(Color.gray.opacity(0.5), width: 0.5)
             }
         }
-        .border(Color.gray.opacity(0.5), width: 0.5)
+
     }
 }
 
 
-
-// UI formatting for shadows and colors like Rushi Sangani?
-// https://medium.com/@rushisangani/swiftui-create-horizontal-list-57305b93f988
+// for empty callback trigger
+/*
+ SetLogPost(setInProgress: setInProgress, exerciseInProgress: self.exercise) { self.exercise.generateAdditionalSet()
+ }
+ */

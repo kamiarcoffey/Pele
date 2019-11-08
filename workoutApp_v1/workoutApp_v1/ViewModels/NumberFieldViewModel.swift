@@ -16,7 +16,7 @@ import Combine
  */
 
 class NumericalFieldViewModel: ObservableObject {
-    @Published var text = ""
+    @Published var text: String = ""
     private var subCancellable: AnyCancellable!
     private var validCharSet = CharacterSet(charactersIn: "1234567890.")
 
@@ -41,7 +41,7 @@ class NumericalFieldViewModel: ObservableObject {
 
 struct NumberTextField: View {
     private class NumberFieldViewModel: ObservableObject {
-        @Published var text = ""
+        @Published var text: String = ""
         private var subCancellable: AnyCancellable!
         private var validCharSet = CharacterSet(charactersIn: "1234567890")
 
