@@ -29,20 +29,20 @@ struct PlayRoutine: View {
     
     var body: some View {
         VStack {
-            Button(action: {
-                print("Logging")
-                // playRoutineModel.save
-            }, label: {
-                Text("Finish This Workout")
-                    .foregroundColor(.white)
-                    .padding(.all, 6)
-                    .background(Color(red: 167, green:6, blue:0 ))
-            })
+//            Button(action: {
+//                print("Logging")
+//                // playRoutineModel.save
+//            }, label: {
+//                Text("Finish This Workout")
+//                    .foregroundColor(.white)
+//                    .padding(.all, 6)
+//                    .background(Color(red: 167, green:6, blue:0 ))
+//            })
             Divider()
             ScrollView(.horizontal, content: {
                 HStack{
                     ForEach(playRoutineViewModel.workoutsInProgress, id: \.id) { exerciseViewModel in
-                        LogExercise(exerciseViewModel: exerciseViewModel)
+                        LogExercise(setViewModel: exerciseViewModel)
                     }
                     .padding(.leading, 10)
                 }

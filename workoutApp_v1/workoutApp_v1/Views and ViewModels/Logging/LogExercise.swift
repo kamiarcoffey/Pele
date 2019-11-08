@@ -15,19 +15,19 @@ import SwiftUI
 
 struct LogExercise: View {
         
-    @State var exerciseViewModel = SetViewModel()
-    
+    @ObservedObject var setViewModel: SetViewModel
+
     var body: some View {
         VStack {
             ScrollView {
                 VStack {
-                    ForEach(exerciseViewModel.setsInProgress, id: \.id) { setInProgress in
+                    ForEach(setViewModel.setsInProgress, id: \.id) { setInProgress in
                         SetLogPost(setInProgress: setInProgress, completedSet: { newSet in
-                            self.exerciseViewModel.logSet(finishedSet: newSet)
+                            self.setViewModel.logSet(finishedSet: newSet)
                         })
                     }
                     Button(action: {
-                        self.exerciseViewModel.generateAdditionalSet()
+                        self.setViewModel.generateAdditionalSet()
                     }, label: {
                         Text("Do Another Set")
                             .padding(.all, 16)
