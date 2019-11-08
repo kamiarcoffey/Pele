@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct SetLogPost: View {
+struct LogSet: View {
     
     @State var setInProgress: PeleExerciseSet
 //    @ObservedObject var setReps = NumericalFieldViewModel()

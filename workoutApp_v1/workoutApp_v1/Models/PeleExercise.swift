@@ -40,7 +40,7 @@ extension PeleExerciseSet {
 }
 
 
-public class PeleExercise : WeightsExercise, Identifiable, Codable, Hashable {
+public struct PeleExercise : WeightsExercise, Identifiable, Codable, Hashable {
     
     public var id: UUID
     public var name: String
@@ -54,13 +54,25 @@ public class PeleExercise : WeightsExercise, Identifiable, Codable, Hashable {
         self.sets = sets
     }
     
-    convenience init(_ name: String) {
+    init(_ name: String) {
         self.init(name, target: MuscleGroup.booty, sets: [PeleExerciseSet]())
+    }
+    
+    init(_ name: String, sets: [PeleExerciseSet]) {
+        self.init(name, target: MuscleGroup.booty, sets: sets)
+        print("this one")
     }
     
     public func getName() -> String {
         return self.name
     }
+    
+//    init(previous exercise: PeleExercise, newSets:[PeleExerciseSet]) {
+//        self.name = exercise.name
+//        self.id = exercise.id
+//        self.targetMuscle = exercise.targetMuscle
+//        self.sets = exercise.sets + newSets
+//    }
 }
 
 

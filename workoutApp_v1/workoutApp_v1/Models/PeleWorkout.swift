@@ -8,33 +8,50 @@
 
 import Foundation
 
-public struct PeleWorkout: Session, Codable {    
+public struct PeleWorkout: Session, Codable {
+    
+//    public typealias T = PeleExercise
+
     public var name: String
     public var date: Date
     public var id: UUID
-    public var exercises: [PeleExercise] //[Activity]
+    public var exercises: [PeleExercise] //[PeleExercise]
     
     public func getName() -> String {
         return name
     }
     
-    init(_ name: String, with exercises: [PeleExercise]) {  //[Activity]
+    init(_ name: String, with exercises: [PeleExercise]) {  //[PeleExercise]
         self.name = name
         self.date = Date()
         self.id = UUID()
         self.exercises = exercises
     }
     
-    init(_ name: String, date: Date, id: UUID,  with exercises: [PeleExercise]) {  //[Activity]
+    init(_ name: String, date: Date, id: UUID,  with exercises: [PeleExercise]) {  //[PeleExercise]
         self.name = name
         self.date = date
         self.id = id
         self.exercises = exercises
     }
     
-    // convinience init with empty activity list
+    // convinience init with empty PeleExercise list
     init(name: String) {
-        self.init(name, with: [PeleExercise]()) // [Activity]
+        self.init(name, with: [PeleExercise]()) // [PeleExercise]
+    }
+
+    
+    init() {
+        self.init(name: "")
+    }
+    
+    // TODO: make this variadic
+    mutating public func add(new exercise: PeleExercise) {
+        self.exercises.append(exercise)
+    }
+    
+    mutating func setName(name: String){
+        self.name = name
     }
     
 }

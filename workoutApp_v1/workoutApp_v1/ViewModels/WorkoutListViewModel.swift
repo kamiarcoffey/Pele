@@ -43,7 +43,7 @@ class WorkoutViewModel: Hashable { // is this the same thing as NSManagedObject?
     let formatter = DateFormatter()
     
     // MARK: if you change workoutReqest.returnsObjectsAsFaults = false, make sure you convert the NSObject before piping it to the View
-    init(workout: Session) { // Workout is an NSManged Object.... does it have to implement Session too?
+    init(workout: Session) {
         self.name = workout.name
         self.date = formatter.string(from: workout.date)
 

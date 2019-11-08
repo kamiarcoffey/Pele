@@ -9,7 +9,7 @@
 import Foundation
 
 // Activity is a thing you do - squats, jumping jacks etc..
-public protocol Activity : Codable {
+public protocol Activity : Codable{
     var name: String { get set }
     var isWeights: Bool { get }
     func getName() -> String
@@ -19,6 +19,18 @@ public protocol Activity : Codable {
 extension Activity {
     func getName() -> String { return name }
 }
+
+//extension Activity {
+//    
+//    public static func == (lhs: Activity, rhs: Activity) -> Bool {
+//       return (lhs.name == rhs.name)
+//    }
+//     
+//    // id is enough to uniquley identify an Exercise
+//    public func hash(into hasher: inout Hasher) {
+//        hasher.combine(name)
+//   }
+//}
 
 
 

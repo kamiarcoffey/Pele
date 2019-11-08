@@ -12,54 +12,32 @@ import Combine
 
 class PlayRoutineViewModel: ObservableObject {
     @Published var workoutsInProgress: [SetViewModel]
+    @Published var completedWorkout: PeleWorkout
+    
     private var routine: PeleRoutine
+    
     
     // this will be pre-generated depending on the exercises in the workout selected to play
     
     init(with routine: PeleRoutine) {
         self.routine = routine
+        self.completedWorkout = PeleWorkout(name: routine.getName)
         workoutsInProgress = []
-        for exercise in routine.exerciseList {
+        for _ in routine.exerciseList { // for exercise in 
             workoutsInProgress.append(SetViewModel())
         }
     }
+    
+    public func addExercise(new exercise: PeleExercise) {
+        completedWorkout.add(new: exercise)
+    }
+    
+//    public func updateWorkoutInProgress(with newSets: [Activity]) { // newSets are PeleExerciseSet
+//        let indexOfExercise = workoutsInProgress.firstIndex(of: exercise) ?? 0
+//        let updatedExercise = PeleExercise(previous: routine.exerciseList[indexOfExercise], newSets: newSets as! [PeleExerciseSet])
+//        completedWorkout.add(new: [updatedExercise])
+//        print("here")
+//    }
+
 }
 
-class SetViewModel: ObservableObject, Hashable {
-    
-    // this will belong to a specific exercise
-    // it can have an undetermined number of LogExerciseViewModel (one for each set of that exercise)
-    @Published var setsInProgress: [PeleExerciseSet]
-    @Published var completedSets: [PeleExerciseSet]
-    
-    var id = UUID()
-    
-    init() {
-        setsInProgress = []
-        completedSets = []
-        self.generateAdditionalSet()
-        self.generateAdditionalSet()
-        self.generateAdditionalSet()
-    }
-    
-    
-    func generateAdditionalSet() {
-        setsInProgress.append(PeleExerciseSet())
-    }
-    
-    func logSet(finishedSet: PeleExerciseSet) {
-        completedSets.append(finishedSet)
-    }
-}
-
-extension SetViewModel {
-    
-    public static func == (lhs: SetViewModel, rhs: SetViewModel) -> Bool {
-       return (lhs.id == rhs.id)
-    }
-     
-    // id is enough to uniquley identify an Exercise
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-   }
-}

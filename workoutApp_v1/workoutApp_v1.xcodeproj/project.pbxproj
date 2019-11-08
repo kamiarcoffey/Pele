@@ -43,7 +43,7 @@
 		1C6721BB23650E11005A5C7A /* EditRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6721BA23650E11005A5C7A /* EditRoutine.swift */; };
 		1C6721BD23650E2C005A5C7A /* AddExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6721BC23650E2C005A5C7A /* AddExercise.swift */; };
 		1C6782392370805E00F0EA81 /* PlayRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6782382370805E00F0EA81 /* PlayRoutineViewModel.swift */; };
-		1C67823B2370839B00F0EA81 /* SetLogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C67823A2370839B00F0EA81 /* SetLogPost.swift */; };
+		1C67823B2370839B00F0EA81 /* LogSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C67823A2370839B00F0EA81 /* LogSet.swift */; };
 		1C74CA53236280150027F826 /* AddRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74CA52236280150027F826 /* AddRoutine.swift */; };
 		1C818EDD236CEB6900FE279D /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C818EDC236CEB6900FE279D /* Arrays.swift */; };
 		1C944D1623736142007C4E45 /* RoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C944D1523736142007C4E45 /* RoutineViewModel.swift */; };
@@ -121,7 +121,7 @@
 		1C6721BA23650E11005A5C7A /* EditRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoutine.swift; sourceTree = "<group>"; };
 		1C6721BC23650E2C005A5C7A /* AddExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExercise.swift; sourceTree = "<group>"; };
 		1C6782382370805E00F0EA81 /* PlayRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayRoutineViewModel.swift; sourceTree = "<group>"; };
-		1C67823A2370839B00F0EA81 /* SetLogPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLogPost.swift; sourceTree = "<group>"; };
+		1C67823A2370839B00F0EA81 /* LogSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSet.swift; sourceTree = "<group>"; };
 		1C74CA52236280150027F826 /* AddRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutine.swift; sourceTree = "<group>"; };
 		1C818EDC236CEB6900FE279D /* Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
 		1C944D1523736142007C4E45 /* RoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewModel.swift; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		1C0B46122359FBE700C9AB24 /* workoutApp_v1 */ = {
 			isa = PBXGroup;
 			children = (
-				1C74CA552362801F0027F826 /* Views and ViewModels */,
+				1C74CA552362801F0027F826 /* Views */,
 				1C74CA5123620AC90027F826 /* ViewModels */,
 				1CAF20E52369D94F00D365BC /* Managers */,
 				1C3111DC236008DB00AB6413 /* Models */,
@@ -238,7 +238,7 @@
 		1C3105CC2370BC0B0037BBC9 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
-				1C67823A2370839B00F0EA81 /* SetLogPost.swift */,
+				1C67823A2370839B00F0EA81 /* LogSet.swift */,
 				1C3105CA2370B6240037BBC9 /* LogExercise.swift */,
 				1C4960C72369ED6200B81498 /* PlayRoutine.swift */,
 			);
@@ -313,7 +313,7 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		1C74CA552362801F0027F826 /* Views and ViewModels */ = {
+		1C74CA552362801F0027F826 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				1C0B461A2359FBE700C9AB24 /* ContentView.swift */,
@@ -324,7 +324,7 @@
 				1C3105CE2370BC480037BBC9 /* History */,
 				1C4960F6236A5C6D00B81498 /* Posts */,
 			);
-			path = "Views and ViewModels";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1C9709B6235A2553003DE2C7 /* Extensions */ = {
@@ -537,7 +537,7 @@
 				1C0B46162359FBE700C9AB24 /* SceneDelegate.swift in Sources */,
 				1CC1C84F2369CE21008D5542 /* RoutineTab.swift in Sources */,
 				1C3843EE2371EA1E00C5D498 /* PeleWorkout.swift in Sources */,
-				1C67823B2370839B00F0EA81 /* SetLogPost.swift in Sources */,
+				1C67823B2370839B00F0EA81 /* LogSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
