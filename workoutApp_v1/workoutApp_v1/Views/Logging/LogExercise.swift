@@ -19,7 +19,10 @@ struct LogExercise: View {
     var completedExercise: (PeleExercise) -> ()
     
     var body: some View {
-        VStack {
+        
+        
+    
+        VStack(alignment: .center, spacing: 15) {
             Text(logExerciseViewModel.displayName())
             ScrollView {
                 VStack {

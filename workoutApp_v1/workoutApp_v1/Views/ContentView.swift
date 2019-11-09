@@ -33,11 +33,11 @@ struct ContentView: View {
                     Image(systemName: "clock")
                     Text("History")
             }.tag(1)
-            PagesView()
-                .tabItem {
-                    Image(systemName: "clock")
-                    Text("History")
-            }.tag(2)
+//            PagesView()
+//                .tabItem {
+//                    Image(systemName: "clock")
+//                    Text("History")
+//            }.tag(2)
         }
     }
 }
