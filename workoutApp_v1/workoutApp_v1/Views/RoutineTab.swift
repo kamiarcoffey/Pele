@@ -20,10 +20,8 @@ struct RoutineTab : View {
         NavigationView {
             List {
                 ForEach(routines.playlists, id: \.self) { routine in
-                    Section(header: Text("Weights Routines")) {
                         RoutineRow(routine: routine)
                     }
-                }
                 .onDelete(perform: routines.deleteItem)
                 .onMove(perform: routines.move)
             }
@@ -45,6 +43,6 @@ struct RoutineTab : View {
     }
 }
 
-
+//Section(header: Text("Weights Routines")) {}
 
 

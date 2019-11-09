@@ -14,40 +14,45 @@ import SwiftUI
 // the view for each exercise in a routine. This view will have a variable number of subViews
 
 struct LogExercise: View {
-        
-    @ObservedObject var setViewModel: SetViewModel
+    
+    @ObservedObject var logExerciseViewModel: LogExerciseViewModel
     var completedExercise: (PeleExercise) -> ()
     
     var body: some View {
         VStack {
+            Text(logExerciseViewModel.displayName())
             ScrollView {
                 VStack {
-                    ForEach(setViewModel.setsInProgress, id: \.id) { setInProgress in
+                    ForEach(logExerciseViewModel.setsInProgress, id: \.id) { setInProgress in
                         LogSet(setInProgress: setInProgress, completedSet: { newSet in
-                            self.setViewModel.logSet(finishedSet: newSet)
+                            self.logExerciseViewModel.logSet(finishedSet: newSet)
                         })
                     }
                     Button(action: {
-                        self.setViewModel.generateAdditionalSet()
+                        self.logExerciseViewModel.generateAdditionalSet()
                     }, label: {
                         Text("Do Another Set")
                             .padding(.all, 16)
                     })
                     Button(action: {
-                        let name = "test"
-                        let sets = self.setViewModel.completedSets
-                        self.completedExercise(PeleExercise(name, sets: sets))
+                        let (name, id, targetMuscle) = self.logExerciseViewModel.getExerciseDetails()
+                        let sets = self.logExerciseViewModel.completedSets
+                        // TODO: should ID be regenerated for a logged exercise vs an exercise from the Routine world? -> decide based on how you want to view history
+                        self.completedExercise(PeleExercise(name, id: id, target: targetMuscle, sets: sets))
                     }, label: {
-                        Text("Next Exercise")
-                            .padding(.all, 16)
+                        HStack {
+                            Image(systemName: "forward")
+                            Text("Next Exercise")
+                                .padding(.all, 16)
+                        }
                     })
                 }
                 .frame(minWidth: 200, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-        //        .background(Color.gray)
-                .border(Color.gray.opacity(0.5), width: 0.5)
+                    //        .background(Color.gray)
+                    .border(Color.gray.opacity(0.5), width: 0.5)
             }
         }
-
+        
     }
 }
 
@@ -57,3 +62,4 @@ struct LogExercise: View {
  SetLogPost(setInProgress: setInProgress, exerciseInProgress: self.exercise) { self.exercise.generateAdditionalSet()
  }
  */
+               

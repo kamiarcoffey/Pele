@@ -7,8 +7,9 @@
 //
 
 
-import SwiftUI
 import Foundation
+import SwiftUI
+import Combine
 
 // TODO: Fix the alert button
 //        .navigationBarTitle(Text(routine.name), displayMode: .inline).onTapGesture {
@@ -31,8 +32,7 @@ struct PlayRoutine: View {
     var body: some View {
         VStack {
             Button(action: {
-                print("Logging")
-                // playRoutineModel.save
+                self.playRoutineViewModel.saveWorkout()
             }, label: {
                 Text("Finish This Workout")
                     .foregroundColor(.white)
@@ -42,8 +42,8 @@ struct PlayRoutine: View {
             Divider()
             ScrollView(.horizontal, content: {
                 HStack{
-                    ForEach(playRoutineViewModel.workoutsInProgress, id: \.id) { exerciseViewModel in
-                        LogExercise(setViewModel: exerciseViewModel, completedExercise: { newExercise in
+                    ForEach(playRoutineViewModel.exercisesInProgress, id: \.id) { exerciseViewModel in
+                        LogExercise(logExerciseViewModel: exerciseViewModel, completedExercise: { newExercise in
                             self.playRoutineViewModel.addExercise(new: newExercise)
                         })
                     }

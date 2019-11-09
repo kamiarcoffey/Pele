@@ -14,8 +14,7 @@ struct WorkoutDetailView: View {
     @State var workout: WorkoutViewModel
     
     var body: some View {
-        List {
-        
+        VStack {
             Text(workout.name)
         }
         .navigationBarItems(trailing: Button(action: {
@@ -25,6 +24,4 @@ struct WorkoutDetailView: View {
             Image(systemName: "trash")
         }))
     }
-    
 }
-

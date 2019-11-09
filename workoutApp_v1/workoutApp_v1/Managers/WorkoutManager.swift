@@ -29,7 +29,6 @@ class WorkoutManager {
         Workout.insert(into: self.moc, loggedWorkout: PeleWorkout(name: "test"))
         
         //implements let workoutReqest: NSFetchRequest<Workout> = Workout.fetchRequest() using defined protocols
-        print("attempting to fetch all workouts")
         let workoutReqest = Workout.sortedFetchRequest
         workoutReqest.fetchBatchSize = 20
         workoutReqest.returnsObjectsAsFaults = false // dont want to deal with faulting just now - do later.

@@ -11,7 +11,8 @@ import SwiftUI
 import Combine
 
 class PlayRoutineViewModel: ObservableObject {
-    @Published var workoutsInProgress: [SetViewModel]
+//    @Published var exercisesInProgress: [SetViewModel]
+    @Published var exercisesInProgress: [LogExerciseViewModel]
     @Published var completedWorkout: PeleWorkout
     
     private var routine: PeleRoutine
@@ -22,9 +23,11 @@ class PlayRoutineViewModel: ObservableObject {
     init(with routine: PeleRoutine) {
         self.routine = routine
         self.completedWorkout = PeleWorkout(name: routine.getName)
-        workoutsInProgress = []
-        for _ in routine.exerciseList { // for exercise in 
-            workoutsInProgress.append(SetViewModel())
+        exercisesInProgress = []
+        
+        // routine.exerciseList contains a list of PeleExercises
+        for exercise in routine.exerciseList {
+            exercisesInProgress.append(LogExerciseViewModel(exercise: exercise))
         }
     }
     
@@ -32,12 +35,11 @@ class PlayRoutineViewModel: ObservableObject {
         completedWorkout.add(new: exercise)
     }
     
-//    public func updateWorkoutInProgress(with newSets: [Activity]) { // newSets are PeleExerciseSet
-//        let indexOfExercise = workoutsInProgress.firstIndex(of: exercise) ?? 0
-//        let updatedExercise = PeleExercise(previous: routine.exerciseList[indexOfExercise], newSets: newSets as! [PeleExerciseSet])
-//        completedWorkout.add(new: [updatedExercise])
-//        print("here")
-//    }
+    func saveWorkout() {
+        let saveWorkout = self.completedWorkout
+        WorkoutManager.shared.saveWorkout(workout: saveWorkout)
+    }
+    
 
 }
 

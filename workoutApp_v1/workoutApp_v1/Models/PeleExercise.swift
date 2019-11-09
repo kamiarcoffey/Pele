@@ -39,14 +39,24 @@ extension PeleExerciseSet {
    }
 }
 
-
+/// PeleExercises are an actual exercise - a name, and a muscle group. They are more than a collection of ExerciseSets
+/// PeleWorkout is a collection of PeleExercises with additional meta data corresponding to which routine they are generated from, their date etc.
 public struct PeleExercise : WeightsExercise, Identifiable, Codable, Hashable {
     
     public var id: UUID
     public var name: String
     public var targetMuscle: MuscleGroup
     public var sets: [PeleExerciseSet]
+    
+    init(_ name: String, id: UUID, target muscle: MuscleGroup, sets: [PeleExerciseSet]) {
+        self.name = name
+        self.id = id
+        self.targetMuscle = muscle
+        self.sets = sets
+    }
 
+    
+    // TODO: combine these convinience inits
     init(_ name: String, target muscle: MuscleGroup, sets: [PeleExerciseSet]) {
         self.name = name
         self.id = UUID()
@@ -60,7 +70,6 @@ public struct PeleExercise : WeightsExercise, Identifiable, Codable, Hashable {
     
     init(_ name: String, sets: [PeleExerciseSet]) {
         self.init(name, target: MuscleGroup.booty, sets: sets)
-        print("this one")
     }
     
     public func getName() -> String {
@@ -73,6 +82,7 @@ public struct PeleExercise : WeightsExercise, Identifiable, Codable, Hashable {
 //        self.targetMuscle = exercise.targetMuscle
 //        self.sets = exercise.sets + newSets
 //    }
+    
 }
 
 

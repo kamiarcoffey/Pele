@@ -11,59 +11,65 @@ import SwiftUI
 
 struct LogSet: View {
     
-    @State var setInProgress: PeleExerciseSet
-//    @ObservedObject var setReps = NumericalFieldViewModel()
-//    @ObservedObject var setWeight = NumericalFieldViewModel()
-    @State private var setReps = ""
-    @State private var setWeight = ""
+    @State var setInProgress: SetViewModel
+    @ObservedObject var setReps = NumericalFieldViewModel()
+    @ObservedObject var setWeight = NumericalFieldViewModel()
+    //    @State private var setReps = ""
+    //    @State private var setWeight = ""
+    @State private var didLog = false
+    @State private var showingAlert = false
     var completedSet: (PeleExerciseSet) -> ()
     
-    // var generateSet: () -> //
-    // pipe it all the way back up or save it here?
-    // pipe it
-
-    
-    //    init() {
-    //        self.setReps =  NumericalFieldViewModel()
-    //        self.setWeight = NumericalFieldViewModel()
-    //    }
+//    init() {
+//        self.setReps =  NumericalFieldViewModel()
+//        self.setWeight = NumericalFieldViewModel()
+//    }
     
     var body: some View {
         VStack {
-            Text("Log Set")
-                .padding(10)
+//            Text("Log Set")
+//                .padding(10)
             HStack {
                 VStack {
                     Text("Reps")
-                    TextField("", text: $setReps)
+                    //                    TextField("", text: $setReps)
+                    TextField("reps", text: $setReps.text)
                         .background(Color.gray).opacity(0.5)
-                     .foregroundColor(.white)
-
-//                    TextField("reps", text: $setReps.text)
+                        .foregroundColor(.white)
                 }
-                    .border(Color.gray.opacity(0.5), width: 0.5)
-
+                .border(Color.gray.opacity(0.5), width: 0.5)
+                    
                 .padding(10)
                 VStack {
                     Text("Weight")
-                    TextField("", text: $setWeight)
+                    //                    TextField("", text: $setWeight)
+                    TextField("weight", text: $setWeight.text)
                         .background(Color(.gray).opacity(0.5))
-                    .foregroundColor(.white)
-
-
-//                    TextField("weight", text: $setWeight.text)
+                        .foregroundColor(.white)
                 }
-                    .border(Color.gray.opacity(0.5), width: 0.5)
-
+                .border(Color.gray.opacity(0.5), width: 0.5)
                 .padding(10)
+                Button(action: {
+                    if !self.didLog {
+                        let reps = [Rep](repeating: Rep(weightLifted: Int(self.setWeight.text) ?? 0), count: Int(self.setReps.text) ?? 0)
+                        self.didLog = true
+                        self.completedSet(PeleExerciseSet(reps: reps))
+                    } else {
+                        self.showingAlert.toggle()
+                    }
+                }, label: {
+                    if didLog {
+                        Image(systemName: "lock.fill")
+                            .padding(.all, 16)
+                    } else {
+                        Image(systemName: "lock.open.fill")
+                            .padding(.all, 16)
+                    }
+                })
             }
-            Button(action: {
-                let reps = [Rep](repeating: Rep(weightLifted: Int(self.setWeight) ?? 0), count: Int(self.setReps) ?? 0)
-                self.completedSet(PeleExerciseSet(reps: reps))
-            }, label: {
-                Text("Log This Set")
-                    .padding(.all, 16)
-            })
+        }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Set is already logged"), message: Text("Don't worry, we're tracking all your hard work. If you want to do another set, add a new set"), dismissButton: .default(Text("OK").foregroundColor(Color.green)))
         }
     }
 }

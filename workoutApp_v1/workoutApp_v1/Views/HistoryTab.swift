@@ -20,10 +20,11 @@ struct HistoryTab: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(self.workoutListViewModel.workouts, id: \.name) { workout in
+                ForEach(self.workoutListViewModel.workouts, id: \.id) { workout in
                     WorkoutRow(workout: workout)
                 }
             }
+            .navigationBarTitle(Text("Workout History"))
         }
     }
 }

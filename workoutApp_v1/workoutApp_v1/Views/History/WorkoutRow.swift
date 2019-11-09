@@ -14,9 +14,9 @@ struct WorkoutRow: View {
     
     var body: some View {
         NavigationLink(destination: WorkoutDetailView(workout: workout)) {
-            List {
+            HStack {
                 Text(workout.name)
-                    .fontWeight(.semibold)
+                Text(workout.getDate)
             }
         }
     }
