@@ -14,7 +14,7 @@ struct RoutineRow: View {
     @State var isPresentingEditRoutineModal = false
     
     var body: some View {
-        NavigationLink(destination:  PagesView(routine: routine)) {
+        NavigationLink(destination:  PlayRoutine(routine: routine)) {
             HStack {
                 HStack {
                     VStack {

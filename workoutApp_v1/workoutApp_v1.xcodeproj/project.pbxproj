@@ -30,7 +30,6 @@
 		1C42AB25237242D3004CED33 /* WeightsExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42AB24237242D3004CED33 /* WeightsExercise.swift */; };
 		1C42AB27237242E9004CED33 /* MuscleGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42AB26237242E9004CED33 /* MuscleGroups.swift */; };
 		1C42AB29237242F9004CED33 /* RepProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42AB28237242F9004CED33 /* RepProtocol.swift */; };
-		1C4960C82369ED6200B81498 /* PlayRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4960C72369ED6200B81498 /* PlayRoutine.swift */; };
 		1C5D7D2A236F48E600106802 /* RoutineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D7D29236F48E600106802 /* RoutineManager.swift */; };
 		1C5D7D2C236F496800106802 /* PeleExerciseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D7D2B236F496800106802 /* PeleExerciseManager.swift */; };
 		1C5D7D3B236F4DA300106802 /* ExerciseSet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D7D39236F4DA300106802 /* ExerciseSet+CoreDataProperties.swift */; };
@@ -44,7 +43,7 @@
 		1C6721BD23650E2C005A5C7A /* AddExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6721BC23650E2C005A5C7A /* AddExercise.swift */; };
 		1C6782392370805E00F0EA81 /* PlayRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6782382370805E00F0EA81 /* PlayRoutineViewModel.swift */; };
 		1C67823B2370839B00F0EA81 /* LogSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C67823A2370839B00F0EA81 /* LogSet.swift */; };
-		1C73C84C23771EB30082BE12 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C73C84B23771EB30082BE12 /* PageView.swift */; };
+		1C73C84C23771EB30082BE12 /* PlayRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C73C84B23771EB30082BE12 /* PlayRoutine.swift */; };
 		1C73C84E23772EA10082BE12 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C73C84D23772EA10082BE12 /* WorkoutViewModel.swift */; };
 		1C74CA53236280150027F826 /* AddRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74CA52236280150027F826 /* AddRoutine.swift */; };
 		1C818EDD236CEB6900FE279D /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C818EDC236CEB6900FE279D /* Arrays.swift */; };
@@ -110,7 +109,6 @@
 		1C42AB24237242D3004CED33 /* WeightsExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightsExercise.swift; sourceTree = "<group>"; };
 		1C42AB26237242E9004CED33 /* MuscleGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroups.swift; sourceTree = "<group>"; };
 		1C42AB28237242F9004CED33 /* RepProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepProtocol.swift; sourceTree = "<group>"; };
-		1C4960C72369ED6200B81498 /* PlayRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayRoutine.swift; sourceTree = "<group>"; };
 		1C5D7D29236F48E600106802 /* RoutineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineManager.swift; sourceTree = "<group>"; };
 		1C5D7D2B236F496800106802 /* PeleExerciseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeleExerciseManager.swift; sourceTree = "<group>"; };
 		1C5D7D39236F4DA300106802 /* ExerciseSet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseSet+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -124,7 +122,7 @@
 		1C6721BC23650E2C005A5C7A /* AddExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExercise.swift; sourceTree = "<group>"; };
 		1C6782382370805E00F0EA81 /* PlayRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayRoutineViewModel.swift; sourceTree = "<group>"; };
 		1C67823A2370839B00F0EA81 /* LogSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSet.swift; sourceTree = "<group>"; };
-		1C73C84B23771EB30082BE12 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		1C73C84B23771EB30082BE12 /* PlayRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayRoutine.swift; sourceTree = "<group>"; };
 		1C73C84D23772EA10082BE12 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
 		1C74CA52236280150027F826 /* AddRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutine.swift; sourceTree = "<group>"; };
 		1C818EDC236CEB6900FE279D /* Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
@@ -244,7 +242,7 @@
 			children = (
 				1C67823A2370839B00F0EA81 /* LogSet.swift */,
 				1C3105CA2370B6240037BBC9 /* LogExercise.swift */,
-				1C4960C72369ED6200B81498 /* PlayRoutine.swift */,
+				1C73C84B23771EB30082BE12 /* PlayRoutine.swift */,
 			);
 			path = Logging;
 			sourceTree = "<group>";
@@ -328,7 +326,6 @@
 				1C3105CD2370BC210037BBC9 /* Routine Management */,
 				1C3105CE2370BC480037BBC9 /* History */,
 				1C4960F6236A5C6D00B81498 /* Posts */,
-				1C73C84B23771EB30082BE12 /* PageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -526,7 +523,6 @@
 				1C3843EA2371E94400C5D498 /* Activity.swift in Sources */,
 				1CAF20E42369D69300D365BC /* NSManagedObjectContextExtension.swift in Sources */,
 				1C42AB23237242BA004CED33 /* CardioExercise.swift in Sources */,
-				1C4960C82369ED6200B81498 /* PlayRoutine.swift in Sources */,
 				1C3843EC2371E9F900C5D498 /* PeleRoutine.swift in Sources */,
 				1C9709B4235A2548003DE2C7 /* UserDefaults+Keys.swift in Sources */,
 				1CC719772360A2060091193B /* UserDefaults+Exercises.swift in Sources */,
@@ -535,7 +531,7 @@
 				1C818EDD236CEB6900FE279D /* Arrays.swift in Sources */,
 				1C10A873236F43F20094E7F2 /* DataModel.xcdatamodeld in Sources */,
 				1C944D1623736142007C4E45 /* RoutineViewModel.swift in Sources */,
-				1C73C84C23771EB30082BE12 /* PageView.swift in Sources */,
+				1C73C84C23771EB30082BE12 /* PlayRoutine.swift in Sources */,
 				1C6721BB23650E11005A5C7A /* EditRoutine.swift in Sources */,
 				1C9709AF235A2491003DE2C7 /* Session.swift in Sources */,
 				1C73C84E23772EA10082BE12 /* WorkoutViewModel.swift in Sources */,
