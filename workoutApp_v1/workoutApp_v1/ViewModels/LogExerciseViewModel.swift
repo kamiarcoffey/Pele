@@ -44,7 +44,6 @@ class LogExerciseViewModel: ObservableObject {
     }
 }
 
-
 class SetViewModel: ObservableObject {
     var id = UUID()
 }
