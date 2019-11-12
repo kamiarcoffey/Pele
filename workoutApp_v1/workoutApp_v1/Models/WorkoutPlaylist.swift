@@ -29,10 +29,10 @@ public class WorkoutPlaylist : ObservableObject {
     }
 
     init() {
-//        self.playlists = UserDefaults.routinePlaylists()
-        self.playlists = [
-            .init(with: "Leg Day", with: [PeleExercise("Squats", true)])
-            ]
+        self.playlists = UserDefaults.routinePlaylists()
+//        self.playlists = [
+//            .init(with: "Leg Day", with: [PeleExercise("Squats", sets: true)])
+//            ]
     }
 
     private func setPlaylists() {

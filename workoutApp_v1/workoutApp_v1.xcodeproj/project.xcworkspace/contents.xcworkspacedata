@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:workoutApp_v1.xcodeproj">
+      location = "group:/Users/kamiar/github/fall2019/iOS-individual-project/workoutApp_v1/workoutApp_v1/CoreDataModels/ExerciseSet+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/kamiar/github/fall2019/iOS-individual-project/workoutApp_v1/workoutApp_v1/CoreDataModels/Workout+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/kamiar/github/fall2019/iOS-individual-project/workoutApp_v1/workoutApp_v1/CoreDataModels/WorkoutPlaylist.swift">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
