@@ -36,7 +36,7 @@ class PlayRoutineViewModel: ObservableObject {
     }
     
     func saveWorkout() {
-        let saveWorkout = self.completedWorkout
+        let saveWorkout = self.completedWorkout // the workout has all the sets saved already
         WorkoutManager.shared.saveWorkout(workout: saveWorkout)
     }
     

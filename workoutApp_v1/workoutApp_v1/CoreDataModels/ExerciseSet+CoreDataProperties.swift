@@ -28,3 +28,9 @@ extension ExerciseSet {
     @NSManaged public var workout: Workout?
 
 }
+
+extension ExerciseSet: Manged {
+    static var defaultSortDescriptors: [NSSortDescriptor] {
+        return [NSSortDescriptor(key: #keyPath(exerciseName), ascending: false)]
+    }
+}

@@ -43,8 +43,10 @@ class WorkoutManager {
         return workouts
     }
 
+    
     func saveWorkout(workout: Session) { // Workout is an NSManagedObject type
         self.moc.performChanges {
+            // the workout has all sets filled in already
             _ = Workout.insert(into: self.moc, loggedWorkout: workout) // where loggedWorkout is Activity protocol
         }
     }

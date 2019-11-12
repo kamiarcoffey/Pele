@@ -20,8 +20,6 @@ struct LogExercise: View {
     
     var body: some View {
         
-        
-    
         VStack(alignment: .center, spacing: 15) {
             Text(logExerciseViewModel.displayName())
             ScrollView {

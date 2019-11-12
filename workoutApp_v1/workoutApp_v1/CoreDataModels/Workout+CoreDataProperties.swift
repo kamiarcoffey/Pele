@@ -58,6 +58,18 @@ extension Workout {
         let workout: Workout = context.insertObject()
         workout.name = loggedWorkout.name
         workout.date = Date() // date gets set when the workout is completed - not when started, or anything to do with UI
+        for exercise in loggedWorkout.exercises {
+            for set in exercise.sets {
+                let singleSet: ExerciseSet = context.insertObject()
+                singleSet.exerciseName = exercise.name
+                singleSet.isWeights = exercise.isWeights
+                singleSet.numReps = Int64(set.repCount)
+                singleSet.weight = Int64(set.reps.compactMap{ $0.weight }.max() ?? 0)
+                singleSet.workout = workout
+                workout.addToSets(singleSet)
+            }
+        }
+        print(workout)
         return workout
     }
 }
@@ -68,7 +80,7 @@ extension Workout: ConvertableToLocal {
 
    // convert yourself to an NSObject T
     func convertToLocal() -> T {
-        return T(self.name ?? "DB obhect has no name", date: self.date ?? Date(), id: self.id ?? UUID(), with: [PeleExercise]())
+        return T(self.name ?? "DB object has no name", date: self.date ?? Date(), id: self.id ?? UUID(), with: [PeleExercise]())
     }
 }
 
