@@ -35,6 +35,8 @@ class WorkoutViewModel: Hashable, ObservableObject {
         return date
     }
     
+    // TODO: delete objects
+    // will have to run a fetch predicate match then delete those since we are using Pele objects, not NSManaged ones
 }
 
 // MARK: Conform to hashable to display a list

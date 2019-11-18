@@ -24,7 +24,7 @@ struct WorkoutDetailView: View {
         }
         .navigationBarItems(trailing: Button(action: {
             print("deleting workout")
-            //
+            // TODO: let the VC do the hard work
         }, label: {
             Image(systemName: "trash")
         }))
