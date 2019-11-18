@@ -21,12 +21,8 @@ class WorkoutListViewModel: ObservableObject {
     
     func fetchAllWorkouts() {
         self.workouts = WorkoutManager.shared.getAllPeleWorkouts().map(WorkoutViewModel.init)
-//        self.workouts = WorkoutManager.shared.getAllWorkouts().map(WorkoutViewModel.init)
     }
     
-//    func saveExercise(exercise: Exercise) {
-//        CoreDataManager.shared.saveExercise(exercise: <#T##Exercise#>)
-//    }
     
 }
 

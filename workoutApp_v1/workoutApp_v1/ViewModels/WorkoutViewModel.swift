@@ -10,16 +10,13 @@ import Foundation
 import SwiftUI
 import Combine
 
-class WorkoutViewModel: Hashable { // is this the same thing as NSManagedObject? NO. This should turn PeleWorkout into something the view can handle...
-    // it will matter more when I start manipulating PeleWorkout things
-    static func == (lhs: WorkoutViewModel, rhs: WorkoutViewModel) -> Bool {
-        return lhs.id == rhs.id
-    }
+class WorkoutViewModel: Hashable, ObservableObject {
+
     
-    var name = ""
-    var date = ""
-    var id = UUID()
-    var exercises: [Activity]
+    @Published var name = ""
+    @Published var date = ""
+    @Published var id = UUID()
+    @Published var exercises: [PeleExercise]
     
     let formatter = DateFormatter()
     
@@ -38,4 +35,12 @@ class WorkoutViewModel: Hashable { // is this the same thing as NSManagedObject?
         return date
     }
     
+}
+
+// MARK: Conform to hashable to display a list
+
+extension WorkoutViewModel {
+    static func == (lhs: WorkoutViewModel, rhs: WorkoutViewModel) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

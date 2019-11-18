@@ -25,9 +25,7 @@ class WorkoutManager {
 
     func getAllWorkouts() -> [Workout] { // Workout is an NSManagedObject type
         var workouts = [Workout]()
-        
-        Workout.insert(into: self.moc, loggedWorkout: PeleWorkout(name: "test"))
-        
+                
         //implements let workoutReqest: NSFetchRequest<Workout> = Workout.fetchRequest() using defined protocols
         let workoutReqest = Workout.sortedFetchRequest
         workoutReqest.fetchBatchSize = 20
