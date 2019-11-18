@@ -33,6 +33,7 @@ class LogExerciseViewModel: ObservableObject {
     
     func logSet(finishedSet: PeleExerciseSet) {
         completedSets.append(finishedSet)
+        
     }
     
     public func displayName() -> String {

@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1C05B81F236B5DC60053F6A0 /* NumberFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C05B81E236B5DC60053F6A0 /* NumberFieldViewModel.swift */; };
+		1C05E9E8237A2C52005D307D /* WorkoutPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C05E9E7237A2C52005D307D /* WorkoutPlaylist.swift */; };
 		1C074234236C859200C15C80 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C074233236C859200C15C80 /* Builder.swift */; };
+		1C08E0412382FE010008BBB0 /* ExerciseDetailGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C08E0402382FE010008BBB0 /* ExerciseDetailGraphView.swift */; };
 		1C0B46142359FBE700C9AB24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B46132359FBE700C9AB24 /* AppDelegate.swift */; };
 		1C0B46162359FBE700C9AB24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B46152359FBE700C9AB24 /* SceneDelegate.swift */; };
 		1C0B461B2359FBE700C9AB24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0B461A2359FBE700C9AB24 /* ContentView.swift */; };
@@ -80,7 +82,9 @@
 
 /* Begin PBXFileReference section */
 		1C05B81E236B5DC60053F6A0 /* NumberFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFieldViewModel.swift; sourceTree = "<group>"; };
+		1C05E9E7237A2C52005D307D /* WorkoutPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlaylist.swift; sourceTree = "<group>"; };
 		1C074233236C859200C15C80 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		1C08E0402382FE010008BBB0 /* ExerciseDetailGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailGraphView.swift; sourceTree = "<group>"; };
 		1C0B46102359FBE700C9AB24 /* workoutApp_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workoutApp_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C0B46132359FBE700C9AB24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C0B46152359FBE700C9AB24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -251,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				1C6721B823650DE0005A5C7A /* RoutineRow.swift */,
-				1C6721B623650DCB005A5C7A /* ExerciseRow.swift */,
 				1C6721B323650D9E005A5C7A /* BoxView.swift */,
 				1C6721BC23650E2C005A5C7A /* AddExercise.swift */,
 				1C74CA52236280150027F826 /* AddRoutine.swift */,
@@ -265,6 +268,7 @@
 			children = (
 				1C5D7D41236F5EB400106802 /* WorkoutRow.swift */,
 				1C3105CF2370BC860037BBC9 /* WorkoutDetailView.swift */,
+				1C08E0402382FE010008BBB0 /* ExerciseDetailGraphView.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -292,6 +296,7 @@
 				1C3843EB2371E9F900C5D498 /* PeleRoutine.swift */,
 				1C3843ED2371EA1E00C5D498 /* PeleWorkout.swift */,
 				1C3843EF2371EB8200C5D498 /* PeleExercise.swift */,
+				1C05E9E7237A2C52005D307D /* WorkoutPlaylist.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				1C0B461A2359FBE700C9AB24 /* ContentView.swift */,
 				1CC1C84E2369CE21008D5542 /* RoutineTab.swift */,
 				1CC1C8482369CA85008D5542 /* HistoryTab.swift */,
+				1C6721B623650DCB005A5C7A /* ExerciseRow.swift */,
 				1C3105CC2370BC0B0037BBC9 /* Logging */,
 				1C3105CD2370BC210037BBC9 /* Routine Management */,
 				1C3105CE2370BC480037BBC9 /* History */,
@@ -508,10 +514,12 @@
 				1C3105CB2370B6240037BBC9 /* LogExercise.swift in Sources */,
 				1CC7197D2360E3930091193B /* UserExerciseFactory.swift in Sources */,
 				1C42AB2123724293004CED33 /* SetProtocol.swift in Sources */,
+				1C05E9E8237A2C52005D307D /* WorkoutPlaylist.swift in Sources */,
 				1CAF20E22369D5F500D365BC /* WorkoutManager.swift in Sources */,
 				1C5D7D2A236F48E600106802 /* RoutineManager.swift in Sources */,
 				1CC1C8492369CA85008D5542 /* HistoryTab.swift in Sources */,
 				1C0B46142359FBE700C9AB24 /* AppDelegate.swift in Sources */,
+				1C08E0412382FE010008BBB0 /* ExerciseDetailGraphView.swift in Sources */,
 				1C6721B923650DE0005A5C7A /* RoutineRow.swift in Sources */,
 				1C5D7D2C236F496800106802 /* PeleExerciseManager.swift in Sources */,
 				1C74CA53236280150027F826 /* AddRoutine.swift in Sources */,

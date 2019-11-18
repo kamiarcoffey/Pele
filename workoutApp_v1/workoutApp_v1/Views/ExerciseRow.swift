@@ -6,6 +6,8 @@
 //  Copyright © 2019 Kamiar Coffey. All rights reserved.
 //
 
+// used by both routine management and history viewing
+
 import SwiftUI
 
 struct ExerciseRow: View {
@@ -13,8 +15,10 @@ struct ExerciseRow: View {
     @State var exercise: PeleExercise
     
     var body: some View {
-        HStack {
-            Text(exercise.getName())
+        NavigationLink(destination: ExerciseDetailGraphView(exercise: exercise)) {
+            HStack {
+                Text(exercise.getName())
+            }
         }
     }
 }

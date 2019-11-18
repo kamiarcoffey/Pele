@@ -16,10 +16,15 @@ struct WorkoutDetailView: View {
     var body: some View {
         VStack {
             Text(workout.name)
+            List {
+                ForEach(workout.exercises, id: \.self) { thisExercise in
+                    ExerciseRow(exercise: thisExercise)
+                }
+            }
         }
         .navigationBarItems(trailing: Button(action: {
             print("deleting workout")
-            //
+            // TODO: let the VC do the hard work
         }, label: {
             Image(systemName: "trash")
         }))
