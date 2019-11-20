@@ -14,6 +14,9 @@ struct AddExercise: View {
     
     @State private var newExerciseName = ""
     @State private var isWeights = true
+    @State private var pickerSelection = 0
+    let muscleGroups: [String] = MuscleGroup.allCases.map{ $0.rawValue }
+
     
     var didAddExercise: (PeleExercise) -> () // (Activity)
     
@@ -30,6 +33,18 @@ struct AddExercise: View {
                 Text("This Excercise is weights-based?")
                 .padding(.all, 16)
             }
+            
+            Picker(selection: $pickerSelection, label: Text("Muscle Group"))
+            {
+                Text("Legs").tag(0)
+                Text("Back").tag(1)
+                // actually gonna require some thought for this https://stackoverflow.com/questions/56645647/how-to-have-a-dynamic-list-of-views-using-swiftui
+//                for (idx, muscle) in muscleGroups.enumerated() {
+//                    Text(muscle).tag(idx)
+//                }
+            }.pickerStyle(SegmentedPickerStyle())
+                .padding(.horizontal, 10)
+            
             Button(action: {
                 self.didAddExercise(PeleExercise(self.newExerciseName))
                 self.isPresenting.toggle()

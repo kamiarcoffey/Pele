@@ -24,7 +24,7 @@ struct EditRoutine: View {
     
     // the pool of all exercises
     //    @State var exercises: [Exercise] = ExerciseManager().getExercisePool
-    @State var exercises = ExerciseManager()
+    @State var exercises = PeleExerciseManager()
     
     /* Perhaps this is for the view controller */
     @State var selectedExercises: [PeleExercise] = []

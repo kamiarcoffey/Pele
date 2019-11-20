@@ -1,16 +1,18 @@
 //
-//  ExercisePost.swift
+//  ExerciseHistoryPost.swift
 //  workoutApp_v1
 //
-//  Created by Kamiar Coffey on 10/26/19.
+//  Created by Kamiar Coffey on 11/20/19.
 //  Copyright © 2019 Kamiar Coffey. All rights reserved.
 //
 
-// used by both routine management and history viewing
+import Foundation
+
+// used by just history viewing
 
 import SwiftUI
 
-struct ExerciseRow: View {
+struct ExerciseHistoryPost: View {
     
     @State var exercise: PeleExercise
     
@@ -18,6 +20,8 @@ struct ExerciseRow: View {
         NavigationLink(destination: ExerciseDetailGraphView(exercise: exercise)) {
             HStack {
                 Text(exercise.getName())
+                Text(exercise.targetMuscle.rawValue)
+                Text("\(exercise.sets.count) Sets")
             }
         }
     }

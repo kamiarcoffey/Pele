@@ -48,13 +48,5 @@ class WorkoutManager {
             _ = Workout.insert(into: self.moc, loggedWorkout: workout) // where loggedWorkout is Activity protocol
         }
     }
-    
-    
-    
-    
-
-        
-
-    
 }
 

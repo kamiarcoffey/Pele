@@ -18,7 +18,7 @@ struct WorkoutDetailView: View {
             Text(workout.name)
             List {
                 ForEach(workout.exercises, id: \.self) { thisExercise in
-                    ExerciseRow(exercise: thisExercise)
+                    ExerciseHistoryPost(exercise: thisExercise)
                 }
             }
         }

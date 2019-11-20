@@ -16,14 +16,17 @@ struct ExerciseDetailGraphView: View {
     var exercise: PeleExercise
     @State var pickerSelection = 0
     var displayBarValues : [[CGFloat]]
+    private let exerciseHistoryViewModel: ExerciseHistoryViewModel
     
     init(exercise: PeleExercise) {
         self.exercise = exercise
+        self.exerciseHistoryViewModel = ExerciseHistoryViewModel(activity: self.exercise)
         UISegmentedControl.appearance().selectedSegmentTintColor = .darkGray
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
         
-        self.displayBarValues = [exercise.sets.compactMap{ CGFloat($0.reps.count) }, exercise.sets.flatMap{ $0.reps.map{ CGFloat($0.weight)}}]
+        self.displayBarValues = self.exerciseHistoryViewModel.barChartFormattedValues
+        
     }
     
     var body: some View {

@@ -25,6 +25,10 @@ public struct PeleExerciseSet: SetProtocol, Hashable {
     init(reps: [Rep]) {
         self.reps = reps
     }
+    
+    var repWeight: Int {
+        return self.reps.compactMap{ $0.weight }.max() ?? 0
+    }
 }
 
 extension PeleExerciseSet {

@@ -1,5 +1,5 @@
 //
-//  ExerciseManager.swift
+//  PeleExerciseManager.swift
 //  workoutApp_v1
 //
 //  Created by Kamiar Coffey on 11/3/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ExerciseManager: ObservableObject {
+public class PeleExerciseManager: ObservableObject {
     
     @Published var exercisePool: [PeleExercise]
     

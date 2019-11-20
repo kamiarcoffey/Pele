@@ -10,7 +10,7 @@ import Foundation
 
 
 // weights based activities have a MuscleGroup
-public enum MuscleGroup: String, Codable {
+public enum MuscleGroup: String, Codable, CaseIterable {
     public typealias RawValue = String
     case legs, back, chest, biceps, triceps, shoudlers, booty
     // TODO: pull exercises will be back and bi
