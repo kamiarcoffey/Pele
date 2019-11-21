@@ -18,7 +18,7 @@ struct ExerciseHistoryPost: View {
     
     var body: some View {
         NavigationLink(destination: ExerciseDetailGraphView(exercise: exercise)) {
-            HStack {
+            VStack {
                 Text(exercise.getName())
                 Text(exercise.targetMuscle.rawValue)
                 Text("\(exercise.sets.count) Sets")

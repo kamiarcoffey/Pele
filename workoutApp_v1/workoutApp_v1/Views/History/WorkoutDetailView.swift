@@ -17,7 +17,7 @@ struct WorkoutDetailView: View {
         VStack {
             Text(workout.name)
             List {
-                ForEach(workout.exercises, id: \.self) { thisExercise in
+                ForEach(workout.exercises.filterUniques(), id: \.self) { thisExercise in
                     ExerciseHistoryPost(exercise: thisExercise)
                 }
             }
