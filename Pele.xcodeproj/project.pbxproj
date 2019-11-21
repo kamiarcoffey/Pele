@@ -212,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				1C3C145A2386FEA300F64D46 /* Pele */,
+				1C3C14C42386FEFB00F64D46 /* UserExerciseFactory.swift */,
 				1C3C14742386FEA500F64D46 /* PeleTests */,
 				1C3C147F2386FEA500F64D46 /* PeleUITests */,
 				1C3C14592386FEA300F64D46 /* Products */,
@@ -237,12 +238,11 @@
 				1C3C14C92386FEFC00F64D46 /* Extensions */,
 				1C3C14922386FEFB00F64D46 /* Protocols */,
 				1C3C14CF2386FEFC00F64D46 /* Models */,
-				1C3C14C42386FEFB00F64D46 /* UserExerciseFactory.swift */,
 				1C3C14C62386FEFC00F64D46 /* CoreDataModels */,
-				1C3C146C2386FEA500F64D46 /* Info.plist */,
-				1C3C14D62386FEFC00F64D46 /* DataModel.xcdatamodeld */,
 				1C3C14662386FEA500F64D46 /* Preview Content */,
 				1C3C148E2386FEBA00F64D46 /* Supporting Files */,
+				1C3C146C2386FEA500F64D46 /* Info.plist */,
+				1C3C14D62386FEFC00F64D46 /* DataModel.xcdatamodeld */,
 			);
 			path = Pele;
 			sourceTree = "<group>";
