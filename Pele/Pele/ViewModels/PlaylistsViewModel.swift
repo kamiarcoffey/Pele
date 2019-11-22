@@ -9,30 +9,40 @@
 // TODO: Replace PeleExercise with Activity where appropriate
 
 import Foundation
+import Combine
 
-public class PlaylistsManager : ObservableObject {
+// THE VIEW MODEL
+public class PlaylistsViewModel : ObservableObject {
     
-    @Published var playlists: [PeleRoutine]
-    
-    static let shared = PlaylistsManager()
+    @Published var playlists = UserDefaults.routinePlaylists() {
+        didSet {
+            UserDefaults.setRoutinePlaylists(with: self.playlists)
+        }
+    }
+
+
     
     public func deleteItem(at indexSet: IndexSet) {
         self.playlists.remove(atOffsets: indexSet)
-        self.setPlaylists()
+        // UserDefaults.setRoutinePlaylists(with: self.playlists) // playlists has a didSet
     }
     
     func move(from source: IndexSet, to destination: Int) {
         self.playlists.move(fromOffsets: source, toOffset: destination)
-        self.setPlaylists()
+        // UserDefaults.setRoutinePlaylists(with: self.playlists) // playlists has a didSet
     }
-            
-    init() {
-        self.playlists = UserDefaults.routinePlaylists()
-    }
-
-    private func setPlaylists() {
-        UserDefaults.setRoutinePlaylists(with: self.playlists)
-    }
+          
+    
+        // UserDefaults is thread safe so we dont actually need this...
+    //    static let shared = PlaylistsManager()
+//    private var notificationSubscription: AnyCancellable?
+//    init() {
+//        notificationSubscription = NotificationCenter.default.publisher(for: UserDefaults.didChangeNotification).sink { _ in
+//            self.objectWillChange.send()
+//        }
+//    }
+    
+    
         
     // MARK: For the ViewModel
     public func getAllExercises() -> [PeleExercise] {
@@ -70,18 +80,9 @@ public class PlaylistsManager : ObservableObject {
 //    }
     
  
-    public func removeExercise(from routine: PeleRoutine, having exercise: PeleExercise) {
-        if let index = self.playlists.firstIndex(of: routine) {
-            let updateRoutine = self.playlists.remove(at: index)
-            let updatedExercises = updateRoutine.exerciseList.filter{ $0 != exercise }
-            updateRoutine.exerciseList = updatedExercises
-            self.playlists.insert(updateRoutine, at: index)
-            UserDefaults.setRoutinePlaylists(with: self.playlists)
-        }
-    }
+
     
-    
-    // MARK: for the view/controller -- NOT needed with Observable?
+    // MARK: For workout - all exercices - keep for now else delete
     func getPlaylists() -> [PeleRoutine] {
         let newRoutine = PeleRoutine(with: "All Exercises", with: self.getAllExercises())
         return self.playlists + [newRoutine]
@@ -98,3 +99,22 @@ public class PlaylistsManager : ObservableObject {
     }
     
 }
+
+
+// To delete
+//private func setPlaylists() {
+//    UserDefaults.setRoutinePlaylists(with: self.playlists)
+//}
+//
+
+// replaced by delete item at row index
+//public func removeExercise(from routine: PeleRoutine, having exercise: PeleExercise) {
+//    if let index = self.playlists.firstIndex(of: routine) {
+//        let updateRoutine = self.playlists.remove(at: index)
+//        let updatedExercises = updateRoutine.exerciseList.filter{ $0 != exercise }
+//        updateRoutine.exerciseList = updatedExercises
+//        self.playlists.insert(updateRoutine, at: index)
+//        UserDefaults.setRoutinePlaylists(with: self.playlists)
+//    }
+//}
+
