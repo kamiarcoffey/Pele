@@ -20,37 +20,43 @@ struct LogSet: View {
     @State private var showingAlert = false
     var completedSet: (PeleExerciseSet) -> ()
     
-//    init() {
-//        self.setReps =  NumericalFieldViewModel()
-//        self.setWeight = NumericalFieldViewModel()
-//    }
+    //    init() {
+    //        self.setReps =  NumericalFieldViewModel()
+    //        self.setWeight = NumericalFieldViewModel()
+    //    }
     
     var body: some View {
         VStack {
-//            Text("Log Set")
-//                .padding(10)
+            //            Text("Log Set")
+            //                .padding(10)
             HStack {
                 VStack {
-                    Text("Reps")
+                    Text("Reps")                        .font(.system(size: 20))
+                    
                     //                    TextField("", text: $setReps)
                     TextField(String(setInProgress.previousReps), text: $setReps.text)
                         .keyboardType(.numberPad)
                         .background(Color.gray).opacity(0.5)
                         .foregroundColor(.white)
+                        .font(.system(size: 20))
+                        .scaledToFill()
                 }
                 .border(Color.gray.opacity(0.5), width: 0.5)
                     
                 .padding(10)
                 VStack {
-                    Text("Weight")
+                    Text("Weight")                        .font(.system(size: 20))
+                    
                     //                    TextField("", text: $setWeight)
                     TextField(String(setInProgress.previousWeight), text: $setWeight.text)
                         .keyboardType(.numberPad)
                         .background(Color(.gray).opacity(0.5))
                         .foregroundColor(.white)
-
+                        .font(.system(size: 20))
+                        .scaledToFill()
+                    
                 }
-                .border(Color.gray.opacity(0.5), width: 0.5)
+                .border(Color.gray.opacity(0.5), width: 1.5)
                 .padding(10)
                 Button(action: {
                     if !self.didLog {
@@ -64,9 +70,12 @@ struct LogSet: View {
                     if didLog {
                         Image(systemName: "lock.fill")
                             .padding(.all, 16)
+                            .foregroundColor(Color.orange)
                     } else {
                         Image(systemName: "lock.open.fill")
                             .padding(.all, 16)
+                        .foregroundColor(Color.gray)
+
                     }
                 })
             }
