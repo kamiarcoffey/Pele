@@ -23,6 +23,8 @@ struct LogExercise: View {
         
         VStack(alignment: .center, spacing: 15) {
             Text(logExerciseViewModel.displayName())
+                .fontWeight(.bold)
+                .font(.system(size: 20))
             ScrollView {
                 VStack {
                     ForEach(logExerciseViewModel.setsInProgress, id: \.id) { setInProgress in
@@ -35,6 +37,9 @@ struct LogExercise: View {
                     }, label: {
                         Text("Do Another Set")
                             .padding(.all, 16)
+                            .font(.system(size: 20))
+                        .scaledToFill()
+
                     })
                     Button(action: {
                         self.showingAlert.toggle()
@@ -43,12 +48,14 @@ struct LogExercise: View {
                             Image(systemName: "forward")
                             Text("Next Exercise")
                                 .padding(.all, 16)
+                                .font(.system(size: 20))
+                            .scaledToFill()
+
                         }
                     })
                 }
                 .frame(minWidth: 200, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-                    //        .background(Color.gray)
-                    .border(Color.gray.opacity(0.5), width: 0.5)
+                    .border(Color.orange, width: 0.5)
             }
         }
         .alert(isPresented: $showingAlert) {
@@ -69,29 +76,3 @@ struct LogExercise: View {
 }
 
 
-// for empty callback trigger
-/*
- SetLogPost(setInProgress: setInProgress, exerciseInProgress: self.exercise) { self.exercise.generateAdditionalSet()
- }
- */
-               
-//Button(action: {
-//self.showingAlert = false
-//    }, label: {
-//        Text("Nope")
-//            .padding(.all, 16)
-//         .foregroundColor(Color.red)
-//    }),
-//
-//
-//Button(action: {
-//let (name, id, targetMuscle) = self.logExerciseViewModel.getExerciseDetails()
-//let sets = self.logExerciseViewModel.completedSets
-//// TODO: should ID be regenerated for a logged exercise vs an exercise from the Routine world? -> decide based on how you want to view history
-//self.completedExercise(PeleExercise(name, id: id, target: targetMuscle, sets: sets))
-//self.showingAlert = false
-//    }, label: {
-//        Text("Yes")
-//            .padding(.all, 16)
-//         .foregroundColor(Color.green)
-//    })

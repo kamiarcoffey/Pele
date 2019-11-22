@@ -1,3 +1,26 @@
+#### Checkpoint HW5
+
+###### Included in this checkpoint:
+ * Updated UI
+
+ * Switch to Combine Framework for updating routines
+
+ * History fetching implemented
+
+
+###### Major Architecture Changes
+ * Using 'home-made' shapes to construct graph rather than CocoaPods Charts
+
+ * Using Combine now
+
+###### Items from scheduled checkpoints that have been completed:
+
+11/22 Charts display. Includes:
+
+1) Setting up dependencies viaCocoPods -> Done but depricated in favor or using a different method
+
+2) Creating UI visuals for charts: Mostly done - still need to configure UI labels for different color coding for legend.
+
 #### Checkpoint HW4
 
 ###### Included in this checkpoint:
@@ -23,7 +46,7 @@
  * SwiftUI (rather than UIKit and/or IB)
   * SwiftUI was released from Beta this summer (Aug 2019). As a result I have decided to entirely re-do the front end with SwiftUI
   * allows declarative, programatic construction of UI rather than InterfaceBuilder
-  
+
  * Switched to MVVM rather than MVC
   * with SwiftUI, there are new bindings and state patterns that make MVVM preferred to MVC
   * this change will not affect the back end models or high-level protocols.

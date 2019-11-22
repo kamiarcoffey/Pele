@@ -12,15 +12,26 @@
 import SwiftUI
 
 struct EditRoutine: View {
+    @ObservedObject var routinesViewModel = RoutinesViewModel()
     @State var routineBeingEdited: PeleRoutine
+    @State var exercises = ExercisePoolManager()
     @State var isPresentingAddExercise = false
     @Binding var isPresenting: Bool
-    @State var exercises = ExercisePoolManager()
-    @ObservedObject var playlistManager = PlaylistsManager.shared
+  
     @State var selectedExercises: [PeleExercise] = []
+    
+    var didEditExercises: ([PeleExercise], Bool) -> ()
     
     mutating func addToSelected(new exercise: PeleExercise) {
         self.selectedExercises.append(exercise)
+    }
+    
+    // TODO: Delete 
+    func delete(at offsets: IndexSet) {
+        if let idx = routinesViewModel.playlists.firstIndex(of: routineBeingEdited) {
+            routinesViewModel.playlists[idx].exerciseList.remove(atOffsets: offsets)
+            print(routinesViewModel.playlists[idx].exerciseList)
+        }
     }
     
     var body: some View {
@@ -34,12 +45,11 @@ struct EditRoutine: View {
                         ForEach(exercises.getExercisePool.filter({self.routineBeingEdited.containsExercise($0)}), id: \.self) { thisExercise in
                             ExerciseRow(exercise: thisExercise)
                         }
-                        .onDelete(perform: exercises.deleteItem)
-                        .onMove(perform: exercises.move)
+                        .onDelete(perform: delete)
                     }
                     
                     VStack {
-                        ForEach(self.exercises.getExercisePool) { thisExercise in
+                        ForEach(self.exercises.getExercisePool.filter({!self.routineBeingEdited.containsExercise($0)})) { thisExercise in
                             BoxView(exercise: thisExercise, isSelected: self.selectedExercises.contains(thisExercise)) {
                                 if self.selectedExercises.contains(thisExercise) {
                                     self.selectedExercises.removeAll(where: { $0 == thisExercise })
@@ -66,10 +76,7 @@ struct EditRoutine: View {
                     trailing:
                     HStack {
                         Button(action: {
-                            self.selectedExercises.forEach { (localExerciseVar) in
-                                self.playlistManager.addExercise(to: self.routineBeingEdited, localExerciseVar)
-                            }
-                            self.routineBeingEdited.addExercises(self.selectedExercises)
+                            self.didEditExercises(self.selectedExercises, true)
                             self.isPresenting.toggle()
                         }, label: {
                             Text("Add Selected Exercises")

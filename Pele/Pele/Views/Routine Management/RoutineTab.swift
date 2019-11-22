@@ -12,17 +12,17 @@ import Foundation
 struct RoutineTab : View {
     
     // var named routines is the observer
-    @ObservedObject var routines = PlaylistsManager.shared
+    @ObservedObject var routinesViewModel = RoutinesViewModel()
     @State var isPresentingAddRoutineModal = false
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(routines.playlists, id: \.self) { routine in
-                        RoutineRow(routine: routine)
+                ForEach(routinesViewModel.playlists, id: \.self) { routine in
+                    RoutineRow(routine: routine, routinesViewModel: self.routinesViewModel)
                     }
-                .onDelete(perform: routines.deleteItem)
-                .onMove(perform: routines.move)
+                .onDelete(perform: routinesViewModel.deleteItem)
+                .onMove(perform: routinesViewModel.move)
             }
             .navigationBarTitle(Text("Your Current Routines"))
             .navigationBarItems(trailing: Button(action: {
@@ -35,7 +35,7 @@ struct RoutineTab : View {
             }))
             .popover(isPresented: $isPresentingAddRoutineModal, content: {
                 AddRoutine(isPresenting: self.$isPresentingAddRoutineModal, didAddRoutine: { routine in
-                        self.routines.addPlaylists(with: routine)
+                        self.routinesViewModel.addPlaylist(with: routine)
                 })
             })
         }

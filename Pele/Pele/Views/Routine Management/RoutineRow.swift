@@ -11,7 +11,7 @@ import SwiftUI
 
 struct RoutineRow: View {
     @State var routine: PeleRoutine
-    @ObservedObject var routines = PlaylistsManager.shared
+    @ObservedObject var routinesViewModel: RoutinesViewModel
     @State var isPresentingEditRoutineModal = false
     
     var body: some View {
@@ -39,7 +39,9 @@ struct RoutineRow: View {
             }
         }
         .sheet(isPresented: $isPresentingEditRoutineModal, content: {
-            EditRoutine(routineBeingEdited: self.routine, isPresenting: self.$isPresentingEditRoutineModal)
+            EditRoutine(routineBeingEdited: self.routine, isPresenting: self.$isPresentingEditRoutineModal, didEditExercises: { (newExercises, didAdd) in
+                self.routinesViewModel.editExercises(to: self.routine, newExercises, didAdd)
+            })
         })
     }
 }
