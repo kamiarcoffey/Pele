@@ -21,7 +21,12 @@ struct ExerciseHistoryPost: View {
             VStack {
                 Text(exercise.getName()).fontWeight(.semibold)
                 Text("\tTarget Muscle Group: \(exercise.targetMuscle.rawValue)")
-                Text("\tSets Done This Time:\(exercise.sets.count)")
+                ForEach (exercise.sets, id: \.self) { set in
+                    HStack {
+                        Text("Reps: \(String(set.reps.count))\t")
+                        Text("Weight: \(String(set.repWeight))")
+                    }
+                }
             }
         }
     }

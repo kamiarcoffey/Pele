@@ -16,6 +16,7 @@ struct ExerciseDetailGraphView: View {
     var exercise: PeleExercise
     @State var pickerSelection = 0
     var displayBarValues : [[CGFloat]]
+    var displayDateValues : [String]
     private let exerciseHistoryViewModel: ExerciseHistoryViewModel
     
     init(exercise: PeleExercise) {
@@ -26,6 +27,7 @@ struct ExerciseDetailGraphView: View {
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
         
         self.displayBarValues = self.exerciseHistoryViewModel.barChartFormattedValues
+        self.displayDateValues = self.exerciseHistoryViewModel.barChartLabels
         
     }
     
@@ -60,54 +62,23 @@ struct ExerciseDetailGraphView: View {
 struct BarView: View{
 
     var value: CGFloat
-    let label: String
-//    let legend: Legend
+    var label: String
     var cornerRadius: CGFloat
     
     var body: some View {
         VStack {
 
             ZStack (alignment: .bottom) {
+                
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .frame(width: 30, height: 200).foregroundColor(.white)
-                    .accessibility(label: Text(label))
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .frame(width: 30, height: value).foregroundColor(.green)
-                    .accessibility(label: Text(label))
-                
+                Text(label)
+
             }.padding(.bottom, 8)
         }
         
     }
 }
 
-struct Legend: Hashable {
-    let color: Color
-    let label: String
-}
-
-
-struct LabelsView: View {
-    let bars: [BarView]
-    let labelsCount: Int
-
-    private var threshold: Int {
-        let threshold = bars.count / labelsCount
-        return threshold == 0 ? 1 : threshold
-    }
-
-    var body: some View {
-        HStack {
-            ForEach(0..<bars.count, id: \.self) { index in
-                Group {
-                    if index % self.threshold == 0 {
-                        Spacer()
-                        Text(self.bars[index].label)
-                            .font(.caption)
-                        Spacer()
-                    }
-                }
-            }
-        }
-    }
-}

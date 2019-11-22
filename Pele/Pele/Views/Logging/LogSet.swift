@@ -34,7 +34,9 @@ struct LogSet: View {
                     Text("Reps")                        .font(.system(size: 20))
                     
                     //                    TextField("", text: $setReps)
-                    TextField(String(setInProgress.previousReps), text: $setReps.text)
+                    TextField(String(setInProgress.previousReps), text: $setReps.text){
+                        UIApplication.shared.endEditing()
+                    }
                         .keyboardType(.numberPad)
                         .background(Color.gray).opacity(0.5)
                         .foregroundColor(.white)
@@ -48,7 +50,9 @@ struct LogSet: View {
                     Text("Weight")                        .font(.system(size: 20))
                     
                     //                    TextField("", text: $setWeight)
-                    TextField(String(setInProgress.previousWeight), text: $setWeight.text)
+                    TextField(String(setInProgress.previousWeight), text: $setWeight.text){
+                        UIApplication.shared.endEditing()
+                    }
                         .keyboardType(.numberPad)
                         .background(Color(.gray).opacity(0.5))
                         .foregroundColor(.white)
