@@ -15,9 +15,9 @@ struct ExerciseDetailGraphView: View {
     
     var exercise: PeleExercise
     @State var pickerSelection = 0
-    var displayBarValues : [[CGFloat]]
-    var displayDateValues : [String]
+    var displayBarValues : [[(data: CGFloat, label: String)]]
     private let exerciseHistoryViewModel: ExerciseHistoryViewModel
+    @State var historySize = 3
     
     init(exercise: PeleExercise) {
         self.exercise = exercise
@@ -26,33 +26,45 @@ struct ExerciseDetailGraphView: View {
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
         
-        self.displayBarValues = self.exerciseHistoryViewModel.barChartFormattedValues
-        self.displayDateValues = self.exerciseHistoryViewModel.barChartLabels
+//        self.displayBarValues = self.exerciseHistoryViewModel.barChartFormattedValues
+        self.displayBarValues = [
+                                [(data: CGFloat(10), label: "yes"), (data: CGFloat(10), label: "yes")],
+                                [(data: CGFloat(10), label: "yes"), (data: CGFloat(10), label: "yes")]
+                                ]
         
     }
     
     var body: some View {
         VStack {
-            ZStack{
-                VStack{
+                VStack {
                     Text(self.exercise.name)
                         .font(.largeTitle)
-                    
+
                     Picker(selection: $pickerSelection, label: Text("View Reps or View Weight"))
                     {
                         Text("Reps").tag(0)
                         Text("Weight").tag(1)
                     }.pickerStyle(SegmentedPickerStyle())
-                        .padding(.horizontal, 10)
+//                        .padding(.horizontal, 10)
                     
-                    HStack(alignment: .center, spacing: 10)
-                    {
-                        ForEach(displayBarValues[pickerSelection], id: \.self){ data in
-                            BarView(value: data, label: "hi", cornerRadius: CGFloat(integerLiteral: 10*self.pickerSelection))
-                            
-                        }
+                    HStack(alignment: .center, spacing: 10) {
+//                      BarChartView(data: self.displayBarValues[pickerSelection].map{Double($0.data)}, title:"test")
+                        BarGraphView(data: self.displayBarValues[pickerSelection], pickerSelection: self.pickerSelection)
                     }.padding(.top, 24).animation(.default)
                 }
+        }
+    }
+}
+
+struct BarGraphView: View {
+    
+    var data: [(CGFloat, String)]
+    var pickerSelection: Int
+    
+    var body: some View {
+        HStack {
+            ForEach(data, id:\.1 ) { datum in
+                BarView(value: datum.0, label: "hi", cornerRadius: CGFloat(integerLiteral: 10*self.pickerSelection))
             }
         }
     }
@@ -67,16 +79,14 @@ struct BarView: View{
     
     var body: some View {
         VStack {
-
             ZStack (alignment: .bottom) {
-                
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .frame(width: 30, height: 200).foregroundColor(.white)
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .frame(width: 30, height: value).foregroundColor(.green)
-                Text(label)
 
             }.padding(.bottom, 8)
+            Text(String(label))
         }
         
     }

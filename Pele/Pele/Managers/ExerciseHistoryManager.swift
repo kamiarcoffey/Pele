@@ -8,28 +8,7 @@
 
 import Foundation
 import CoreData
-
-// adapted support code for formatting dates from NSDate https://stackoverflow.com/questions/35688952/how-fetch-objects-with-nsdate-of-today-using-nspredicate
-
-class DateHelper{
-    internal class func startOfDay(day: Date) -> Date {
-        let gregorian = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
-        let unitFlags: NSCalendar.Unit = [.minute, .hour, .day, .month, .year]
-        var todayComponents = gregorian!.components(unitFlags, from: day as Date)
-        todayComponents.hour = 0
-        todayComponents.minute = 0
-        return (gregorian?.date(from: todayComponents))! as Date
-    }
-
-    internal class func endOfDay(day: Date) -> Date {
-        let gregorian = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
-        let unitFlags: NSCalendar.Unit = [.minute, .hour, .day, .month, .year]
-        var todayComponents = gregorian!.components(unitFlags, from: day as Date)
-        todayComponents.hour = 23
-        todayComponents.minute = 59
-        return (gregorian?.date(from: todayComponents))! as Date
-    }
-}
+import SwiftUI
 
 class ExerciseHistoryManager {
     
@@ -111,5 +90,3 @@ class ExerciseHistoryManager {
 //    }
 //
 }
-
-

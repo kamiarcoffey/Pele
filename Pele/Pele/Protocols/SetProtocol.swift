@@ -8,6 +8,10 @@
 
 import Foundation
 
+public protocol RepProtocol: Codable {
+    var weight: Int { get }
+}
+
 public protocol SetProtocol: Codable {
     associatedtype typeOfRep: RepProtocol
     var reps: [typeOfRep] { get set }

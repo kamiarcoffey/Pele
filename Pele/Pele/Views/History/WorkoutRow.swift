@@ -14,9 +14,9 @@ struct WorkoutRow: View {
     
     var body: some View {
         NavigationLink(destination: WorkoutDetailView(workout: workout)) {
-            HStack {
+            VStack {
                 Text(workout.name)
-                Text(workout.getDate)
+                Text(workout.date)
             }
         }
     }

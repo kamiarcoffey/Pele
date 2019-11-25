@@ -16,7 +16,10 @@ class WorkoutListViewModel: ObservableObject {
     
     init() {
         fetchAllWorkouts()
-
+    }
+    
+    public func refresh() {
+        self.fetchAllWorkouts()
     }
     
     func fetchAllWorkouts() {
