@@ -38,9 +38,6 @@ struct EditRoutine: View {
         VStack {
             NavigationView {
                 VStack {
-                    Text(routineBeingEdited.name)
-                    Divider()
-                    
                     List {
                         ForEach(exercises.getExercisePool.filter({self.routineBeingEdited.containsExercise($0)}), id: \.self) { thisExercise in
                             ExerciseRow(exercise: thisExercise)

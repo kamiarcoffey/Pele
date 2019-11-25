@@ -17,6 +17,6 @@ public enum displayType {
 }
 
 public protocol TimeSeriesDisplayable {
-//    func displayableTimeSeries(displaying: displayType) throws -> [(CGFloat, Date)]
-    func displayableTimeSeries(displaying: displayType) -> [(CGFloat, String)]
+//    func displayableTimeSeries(displaying: displayType) throws -> [(Double, Date)]
+    func displayableTimeSeries(displaying: displayType) -> [(Double, String)]
 }

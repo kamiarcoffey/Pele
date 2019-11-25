@@ -31,15 +31,27 @@ enum displayTypeError: Error {
 
 extension WeightsExercise {
     
-    public func displayableTimeSeries(displaying: displayType) -> [(CGFloat, String)] {
+    public func displayableTimeSeries(displaying: displayType) -> [(Double, String)] {
+        
+        var dateFormatter: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            formatter.timeStyle = .none
+            return formatter
+        }
+        
         switch displaying {
         case .reps:
-            return self.sets.map{ (CGFloat($0.reps.count), self.date.description(with: .current)) }
+            return self.sets.map{ (Double($0.reps.count), dateFormatter.string(from: self.date))}
+        
         case .weight:
-            return self.sets.map{ (CGFloat($0.repWeight), self.date.description(with: .current)) }
+            return self.sets.map{ (Double($0.repWeight), dateFormatter.string(from: self.date))}
             
         default:
-            return [(CGFloat, String)]()
+            return [(Double, String)]()
         }
     }
 }
+
+
+//self.date.description(with: .autoupdatingCurrent

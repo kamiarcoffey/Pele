@@ -12,7 +12,7 @@ import SwiftUI
 
 class ExerciseHistoryViewModel: ObservableObject {
     
-    @Published var barChartFormattedValues = [[(CGFloat, String)]]()
+    @Published var barChartFormattedValues = [[(Double, String)]]()
 
     private let activity: Activity
     
@@ -23,11 +23,10 @@ class ExerciseHistoryViewModel: ObservableObject {
     
     func fetchDisplayBarValues() {
         let exercises = ExerciseHistoryManager.shared.getAllPeleExercises(activity: self.activity)
-
         let repsData = exercises.flatMap{ $0.displayableTimeSeries(displaying: .reps)}
         let weightsData = exercises.flatMap{ $0.displayableTimeSeries(displaying: .weight)}
         self.barChartFormattedValues = [repsData, weightsData]
-
+        print(self.$barChartFormattedValues)
     }
 }
 

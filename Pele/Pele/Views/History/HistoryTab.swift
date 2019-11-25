@@ -17,15 +17,14 @@ struct HistoryTab: View {
         self.workoutListViewModel = WorkoutListViewModel()
     }
     
-
     var body: some View {
-        
         
         NavigationView {
             List {
                 ForEach(self.workoutListViewModel.workouts, id: \.id) { workout in
                     WorkoutRow(workout: workout)
                 }
+//                .onDelete(perform: workoutListViewModel.deleteItem)
             }
             .navigationBarTitle(Text("Workout History"))
         }.onAppear{
@@ -33,3 +32,5 @@ struct HistoryTab: View {
         }
     }
 }
+
+

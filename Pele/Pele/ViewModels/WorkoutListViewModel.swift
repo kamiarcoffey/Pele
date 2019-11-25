@@ -22,6 +22,13 @@ class WorkoutListViewModel: ObservableObject {
         self.fetchAllWorkouts()
     }
     
+//    public func deleteItem(at indexSet: IndexSet) {
+//        let workout = self.workouts at: OffsetShape
+//        self.workouts.remove(atOffsets: indexSet)
+//        WorkoutHistoryManager.shared.deleteWorkoutdeleteWorkout(with: workout.id)
+//
+//    }
+    
     func fetchAllWorkouts() {
         self.workouts = WorkoutHistoryManager.shared.getAllPeleWorkouts().map(WorkoutViewModel.init)
     }

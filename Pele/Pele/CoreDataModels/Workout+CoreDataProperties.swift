@@ -73,6 +73,11 @@ extension Workout {
         print("Saved\n", workout)
         return workout
     }
+    
+    static func delete(from context: NSManagedObjectContext, deleteWorkout: Workout) -> Workout {
+        return deleteWorkout
+    }
+
 }
 
 extension Workout: ConvertableToLocal {
@@ -86,5 +91,3 @@ extension Workout: ConvertableToLocal {
 
     }
 }
-
-
