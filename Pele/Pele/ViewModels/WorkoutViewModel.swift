@@ -17,13 +17,11 @@ class WorkoutViewModel: Hashable, ObservableObject {
     @Published var date = ""
     @Published var id = UUID()
     @Published var exercises: [PeleExercise]
-    
-    let formatter = DateFormatter()
-    
+        
     // MARK: if you change workoutReqest.returnsObjectsAsFaults = false, make sure you convert the NSObject before piping it to the View
     init(workout: Session) {
         self.name = workout.name
-        self.date = formatter.string(from: workout.date)
+        self.date = String(workout.date.description(with: .current))
         self.exercises = workout.exercises
     }
     

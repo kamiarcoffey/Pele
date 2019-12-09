@@ -15,99 +15,45 @@ struct ExerciseDetailGraphView: View {
     
     var exercise: PeleExercise
     @State var pickerSelection = 0
-    var displayBarValues : [[CGFloat]]
-    private let exerciseHistoryViewModel: ExerciseHistoryViewModel
+    var displayBarValues: [[(data: Double, label: String)]]
+    @State var historySize = 3
     
     init(exercise: PeleExercise) {
-        self.exercise = exercise
-        self.exerciseHistoryViewModel = ExerciseHistoryViewModel(activity: self.exercise)
-        UISegmentedControl.appearance().selectedSegmentTintColor = .darkGray
+        UISegmentedControl.appearance().selectedSegmentTintColor = .orange
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
-        
-        self.displayBarValues = self.exerciseHistoryViewModel.barChartFormattedValues
-        
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.darkGray], for: .normal)
+        self.exercise = exercise
+        self.displayBarValues = ExerciseHistoryViewModel(activity: exercise).barChartFormattedValues
+    }
+    
+    mutating private func setData() {
+        let exerciseHistoryViewModel = ExerciseHistoryViewModel(activity: self.exercise)
+        self.displayBarValues = exerciseHistoryViewModel.barChartFormattedValues
     }
     
     var body: some View {
         VStack {
-            ZStack{
-                VStack{
-                    Text(self.exercise.name)
-                        .font(.largeTitle)
-                    
-                    Picker(selection: $pickerSelection, label: Text("View Reps or View Weight"))
-                    {
-                        Text("Reps").tag(0)
-                        Text("Weight").tag(1)
-                    }.pickerStyle(SegmentedPickerStyle())
-                        .padding(.horizontal, 10)
-                    
-                    HStack(alignment: .center, spacing: 10)
-                    {
-                        ForEach(displayBarValues[pickerSelection], id: \.self){ data in
-                            BarView(value: data, label: "hi", cornerRadius: CGFloat(integerLiteral: 10*self.pickerSelection))
-                            
-                        }
-                    }.padding(.top, 24).animation(.default)
+            VStack {                
+                Picker(selection: $pickerSelection, label: Text("View Reps or View Weight")) {
+                    Text("Reps").tag(0)
+                    Text("Weight").tag(1)
                 }
-            }
-        }
-    }
-}
-
-
-struct BarView: View{
-
-    var value: CGFloat
-    let label: String
-//    let legend: Legend
-    var cornerRadius: CGFloat
-    
-    var body: some View {
-        VStack {
-
-            ZStack (alignment: .bottom) {
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .frame(width: 30, height: 200).foregroundColor(.white)
-                    .accessibility(label: Text(label))
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .frame(width: 30, height: value).foregroundColor(.green)
-                    .accessibility(label: Text(label))
+                .pickerStyle(SegmentedPickerStyle()).padding(.horizontal, 10)
                 
-            }.padding(.bottom, 8)
-        }
-        
-    }
-}
-
-struct Legend: Hashable {
-    let color: Color
-    let label: String
-}
-
-
-struct LabelsView: View {
-    let bars: [BarView]
-    let labelsCount: Int
-
-    private var threshold: Int {
-        let threshold = bars.count / labelsCount
-        return threshold == 0 ? 1 : threshold
-    }
-
-    var body: some View {
-        HStack {
-            ForEach(0..<bars.count, id: \.self) { index in
-                Group {
-                    if index % self.threshold == 0 {
-                        Spacer()
-                        Text(self.bars[index].label)
-                            .font(.caption)
-                        Spacer()
-                    }
+                if (self.displayBarValues[0].count > 0) {
+                    BarChartView(series: self.displayBarValues[self.pickerSelection], title: self.exercise.name)
                 }
             }
         }
     }
 }
+
+
+
+
+
+// Dummy Testing
+//        self.displayBarValues = [
+//            [(data: Double(10), label: "yes"), (data: Double(5), label: "yes")],
+//            [(data: Double(5), label: "yes"), (data: Double(10), label: "yes")]
+//        ]

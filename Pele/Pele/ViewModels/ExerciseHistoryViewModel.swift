@@ -12,22 +12,22 @@ import SwiftUI
 
 class ExerciseHistoryViewModel: ObservableObject {
     
-    @Published var barChartFormattedValues: [[CGFloat]]
+    @Published var barChartFormattedValues = [[(Double, String)]]()
+
     private let activity: Activity
     
     init(activity: Activity) {
         self.activity = activity
-        self.barChartFormattedValues = [[CGFloat]]()
         self.fetchDisplayBarValues()
     }
     
     func fetchDisplayBarValues() {
         let exercises = ExerciseHistoryManager.shared.getAllPeleExercises(activity: self.activity)
-        let repNums = exercises.flatMap{ $0.sets.compactMap{ CGFloat($0.reps.count)}}
-        let weightNums = exercises.flatMap{ $0.sets.compactMap{ CGFloat($0.repWeight)}}
-        self.barChartFormattedValues = [repNums, weightNums]
+        let repsData = exercises.flatMap{ $0.displayableTimeSeries(displaying: .reps)}
+        let weightsData = exercises.flatMap{ $0.displayableTimeSeries(displaying: .weight)}
+        self.barChartFormattedValues = [repsData, weightsData]
+        print(self.$barChartFormattedValues)
     }
-
 }
 
 

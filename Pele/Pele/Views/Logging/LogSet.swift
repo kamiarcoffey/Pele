@@ -14,49 +14,54 @@ struct LogSet: View {
     @State var setInProgress: SetViewModel
     @ObservedObject var setReps = NumericalFieldViewModel()
     @ObservedObject var setWeight = NumericalFieldViewModel()
-    //    @State private var setReps = ""
-    //    @State private var setWeight = ""
     @State private var didLog = false
     @State private var showingAlert = false
     var completedSet: (PeleExerciseSet) -> ()
     
-    //    init() {
-    //        self.setReps =  NumericalFieldViewModel()
-    //        self.setWeight = NumericalFieldViewModel()
-    //    }
-    
+
     var body: some View {
         VStack {
-            //            Text("Log Set")
-            //                .padding(10)
+            Text("Log Set")
+                .padding(10)
             HStack {
                 VStack {
-                    Text("Reps")                        .font(.system(size: 20))
+                    Text("Reps").font(.system(size: 20))
+//                    
+//                    if (!self.didLog) {
+                        TextField(String(setInProgress.previousReps), text: $setReps.text)
+                        {
+                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
+
+                        }
+//                    } else {
+//                        TextField(String(setInProgress.previousReps), text: self.setInProgress.previousReps)
+//                    }
                     
-                    //                    TextField("", text: $setReps)
-                    TextField(String(setInProgress.previousReps), text: $setReps.text)
-                        .keyboardType(.numberPad)
-                        .background(Color.gray).opacity(0.5)
-                        .foregroundColor(.white)
-                        .font(.system(size: 20))
-                        .scaledToFill()
+                   
+                    .keyboardType(.numberPad)
+                    .background(Color.white).opacity(0.5)
+                    .foregroundColor(.red)
+                    .font(.system(size: 20))
+                    .scaledToFill()
                 }
-                .border(Color.gray.opacity(0.5), width: 0.5)
+                .border(Color.black.opacity(0.5), width: 1.5)
                     
                 .padding(10)
                 VStack {
                     Text("Weight")                        .font(.system(size: 20))
                     
-                    //                    TextField("", text: $setWeight)
-                    TextField(String(setInProgress.previousWeight), text: $setWeight.text)
-                        .keyboardType(.numberPad)
-                        .background(Color(.gray).opacity(0.5))
-                        .foregroundColor(.white)
-                        .font(.system(size: 20))
-                        .scaledToFill()
+                    TextField(String(setInProgress.previousWeight), text: $setWeight.text) {
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
+                    }
+
+                    .keyboardType(.namePhonePad)
+                    .background(Color(.white).opacity(0.5))
+                    .foregroundColor(.red)
+                    .font(.system(size: 20))
+                    .scaledToFill()
                     
                 }
-                .border(Color.gray.opacity(0.5), width: 1.5)
+                .border(Color.black.opacity(0.5), width: 1.5)
                 .padding(10)
                 Button(action: {
                     if !self.didLog {
@@ -74,8 +79,8 @@ struct LogSet: View {
                     } else {
                         Image(systemName: "lock.open.fill")
                             .padding(.all, 16)
-                        .foregroundColor(Color.gray)
-
+                            .foregroundColor(Color.gray)
+                        
                     }
                 })
             }
@@ -85,8 +90,6 @@ struct LogSet: View {
         }
     }
 }
-
-
 
 
 

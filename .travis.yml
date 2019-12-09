@@ -1,0 +1,6 @@
+language: swift
+# xcode_workspace:
+# xcode_project: Pele.xcproject #if you're not using cocoapods
+xcode_scheme: Pele
+xcode_sdk: iphonesimulator11.1
+script: xcodebuild -workspace Pele.xcworkspace -scheme Pele -sdk iphonesimulator11.1 -configuration Debug build test

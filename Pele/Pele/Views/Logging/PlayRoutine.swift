@@ -31,33 +31,46 @@ struct PlayRoutine : View {
     @State var progress: Double = 0
     
     var body: some View {
-        VStack {
-            Button(action: {
-                self.playRoutineViewModel.saveWorkout()
-            }, label: {
-                Text("Finish This Workout")
-                    .foregroundColor(.white)
-                    .padding(.all, 6)
-                    .background(Color.orange)
-                    .font(.system(size: 20))
-                .scaledToFill()
-                 .shadow(radius: 5)
+        ZStack {
+            
+            VStack {
+                Button(action: {
+                    self.playRoutineViewModel.saveWorkout()
+                    print(self.playRoutineViewModel.completedWorkout)
+                }, label: {
+                    Text("Finish This Workout")
+                        .foregroundColor(.white)
+                        .padding(.all, 6)
+                        .background(Color.orange, alignment: .top)
+                        .font(.system(size: 20))
+                     .shadow(radius: 5)
 
-            })
-            ZStack {
-                if (pages.count > 0) {
-                    LogExercise(logExerciseViewModel: pages[currentIndex], completedExercise: { newExercise in
-                        self.playRoutineViewModel.addExercise(new: newExercise)
-                        self.refreshAnimatingViews()
-                    })
-                        .offset(x: -CGFloat(pow(2, self.progress)))
-                    
-                    if (pages.count > 1) {
-                        LogExercise(logExerciseViewModel: pages[nextIndex], completedExercise: { newExercise in
+                })
+                ZStack {
+                    if (pages.count > 0) {
+                        LogExercise(logExerciseViewModel: pages[currentIndex], completedExercise: { newExercise in
                             self.playRoutineViewModel.addExercise(new: newExercise)
                             self.refreshAnimatingViews()
                         })
-                            .offset(x: CGFloat(pow(2, (self.limit - self.progress))))
+                            .offset(x: -CGFloat(pow(2, self.progress)))
+//                            .frame(minWidth: 0, maxWidth: 380, minHeight: 0, maxHeight: .infinity)
+                            .padding(.horizontal, 20)
+                        .padding(.bottom, 20)
+                            .animation(.easeIn)
+
+
+                        if (pages.count > 1) {
+                            LogExercise(logExerciseViewModel: pages[nextIndex], completedExercise: { newExercise in
+                                self.playRoutineViewModel.addExercise(new: newExercise)
+                                self.refreshAnimatingViews()
+                            })
+                                .offset(x: CGFloat(pow(2, (self.limit - self.progress))))
+//                                .frame(minWidth: 0, maxWidth: 380, minHeight: 0, maxHeight: .infinity)
+                            .padding(.horizontal, 20)
+                                .padding(.bottom, 20)
+                            .animation(.easeIn)
+
+                        }
                     }
                 }
             }

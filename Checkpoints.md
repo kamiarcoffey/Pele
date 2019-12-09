@@ -1,4 +1,38 @@
-#### Checkpoint HW5
+#### Checkpoint HW5 - Final
+
+###### Included in this checkpoint:
+* Fully functional UI
+  * programatic views
+  * MVVM controlled subviews
+  * reactive closures for message passing
+  * navigation
+  * layout, design/color
+* Fully functional CoreData Architecture
+  * One-to-many DB relationship
+  * Object fetching and saving
+  * Local object generation
+  * custom Managed protocol
+* Fully functional UserDefaults Architecture
+  * type safe keys
+* Fully functional back-end protocol interface for polymorphic workouts
+  * shared functionality across protocol composition
+
+
+Screenshots from checkpoint 5 largely resemble those from checkpoint 4 since the graphing and logging functional was implemented them. Checkpoint 5 includes updates, bug fixes, tests, accessibility services, color/formatting changes, enhanced features and optimization of existing routine management functionality, and other back-end improvements.
+
+###### Items from scheduled checkpoints that have been completed:
+12/6: Accessibility Services and View Optimization. Includes
+  1) Finish UI auto layout and optimize for different devices (iPhone, iPad). DONE!
+  2) Ensure all accessibility services work properly: font size overflow, language support. Done
+
+###### Additional items completed
+  1) Unit testing
+
+
+###### Note on features that could still be added
+* Interfacing with Apple Health Kit
+
+#### Checkpoint HW5 - Midpoint
 
 ###### Included in this checkpoint:
  * Updated UI
