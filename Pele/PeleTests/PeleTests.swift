@@ -9,19 +9,26 @@
 import XCTest
 @testable import Pele
 
+var sutRoutine: PeleRoutine!
+var sutExercise: [PeleExercise]!
+
 class PeleTests: XCTestCase {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        sutExercise = [PeleExercise("exercise1"), PeleExercise("exercise2")]
+        sutRoutine = PeleRoutine(with: "test", with: sutExercise)
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testRoutineContainer() {
+        
+        XCTAssertEqual(sutRoutine.exerciseCount, "2", "Routine contains the wrong number of exercises")
+        XCTAssertEqual(sutRoutine.containsExercise(sutExercise[0]), true, "Routine does not contain an exercise it should")
+        XCTAssertEqual(sutRoutine.containsExercise(PeleExercise("falseExercise")), false, "Routine does not contain an exercise it should")
     }
 
     func testPerformanceExample() {

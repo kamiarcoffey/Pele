@@ -44,21 +44,21 @@ struct EditRoutine: View {
                         }
                         .onDelete(perform: delete)
                     }
-                    
-                    VStack {
-                        ForEach(self.exercises.getExercisePool.filter({!self.routineBeingEdited.containsExercise($0)})) { thisExercise in
-                            BoxView(exercise: thisExercise, isSelected: self.selectedExercises.contains(thisExercise)) {
-                                if self.selectedExercises.contains(thisExercise) {
-                                    self.selectedExercises.removeAll(where: { $0 == thisExercise })
-                                }
-                                else {
-                                    self.selectedExercises.append(thisExercise)
+                    ScrollView {
+                        VStack {
+                            ForEach(self.exercises.getExercisePool.filter({!self.routineBeingEdited.containsExercise($0)})) { thisExercise in
+                                BoxView(exercise: thisExercise, isSelected: self.selectedExercises.contains(thisExercise)) {
+                                    if self.selectedExercises.contains(thisExercise) {
+                                        self.selectedExercises.removeAll(where: { $0 == thisExercise })
+                                    }
+                                    else {
+                                        self.selectedExercises.append(thisExercise)
+                                    }
                                 }
                             }
                         }
+                        .padding(EdgeInsets.init(top: +10, leading: +10, bottom: +10, trailing: +10))
                     }
-                    .padding(EdgeInsets.init(top: +10, leading: +10, bottom: +10, trailing: +10))
-                    
                 }
                 .navigationBarTitle(Text(routineBeingEdited.getName))
             

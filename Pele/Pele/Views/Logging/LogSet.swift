@@ -29,6 +29,10 @@ struct LogSet: View {
 //                    
 //                    if (!self.didLog) {
                         TextField(String(setInProgress.previousReps), text: $setReps.text)
+                        {
+                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
+
+                        }
 //                    } else {
 //                        TextField(String(setInProgress.previousReps), text: self.setInProgress.previousReps)
 //                    }
@@ -36,7 +40,7 @@ struct LogSet: View {
                    
                     .keyboardType(.numberPad)
                     .background(Color.white).opacity(0.5)
-                    .foregroundColor(.black)
+                    .foregroundColor(.red)
                     .font(.system(size: 20))
                     .scaledToFill()
                 }
@@ -46,12 +50,13 @@ struct LogSet: View {
                 VStack {
                     Text("Weight")                        .font(.system(size: 20))
                     
-                    TextField(String(setInProgress.previousWeight), text: $setWeight.text){
-                        UIApplication.shared.endEditing()
+                    TextField(String(setInProgress.previousWeight), text: $setWeight.text) {
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
                     }
-                    .keyboardType(.numberPad)
+
+                    .keyboardType(.namePhonePad)
                     .background(Color(.white).opacity(0.5))
-                    .foregroundColor(.black)
+                    .foregroundColor(.red)
                     .font(.system(size: 20))
                     .scaledToFill()
                     
@@ -88,12 +93,3 @@ struct LogSet: View {
 
 
 
-
-//
-//    init() {
-//        self.setReps =  NumericalFieldViewModel()
-//        self.setWeight = NumericalFieldViewModel()
-//    }
-
-//    @State private var setReps = ""
-//    @State private var setWeight = ""
