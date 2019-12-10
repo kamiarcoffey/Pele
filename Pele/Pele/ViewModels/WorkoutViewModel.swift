@@ -16,7 +16,7 @@ class WorkoutViewModel: Hashable, ObservableObject {
     @Published var name = ""
     @Published var date = ""
     @Published var id = UUID()
-    @Published var exercises: [PeleExercise]
+    @Published var exercises: [Exercise]
         
     // MARK: if you change workoutReqest.returnsObjectsAsFaults = false, make sure you convert the NSObject before piping it to the View
     init(workout: Session) {

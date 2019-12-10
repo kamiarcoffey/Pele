@@ -11,8 +11,30 @@ import Foundation
 
 // weights based activities have a MuscleGroup
 public enum MuscleGroup: String, Codable, CaseIterable {
+    
     public typealias RawValue = String
-    case legs, back, chest, biceps, triceps, shoudlers, booty
-    // TODO: pull exercises will be back and bi
+    
+    case legs, back, chest, biceps, triceps, shoudlers, booty, unknown
+    
+    static func get(from: String) -> MuscleGroup {
+        switch from {
+        case "legs":
+            return MuscleGroup.legs
+        case "back":
+            return MuscleGroup.back
+        case "chest":
+            return MuscleGroup.chest
+        case "biceps":
+            return MuscleGroup.biceps
+        case "triceps":
+            return MuscleGroup.triceps
+        case "shoulders":
+            return MuscleGroup.shoudlers
+        case "booty":
+            return MuscleGroup.booty
+        default:
+            return MuscleGroup.unknown
+        }
+    }
 }
 

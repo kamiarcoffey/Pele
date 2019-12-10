@@ -15,20 +15,20 @@ public struct PeleWorkout: Session, Codable {
     public var name: String
     public var date: Date
     public var id: UUID
-    public var exercises: [PeleExercise] //[PeleExercise]
+    public var exercises: [Exercise] //[PeleExercise]
     
     public func getName() -> String {
         return name
     }
     
-    init(_ name: String, with exercises: [PeleExercise]) {  //[PeleExercise]
+    init(_ name: String, with exercises: [Exercise]) {  //[PeleExercise]
         self.name = name
         self.date = Date()
         self.id = UUID()
         self.exercises = exercises
     }
     
-    init(_ name: String, date: Date, id: UUID,  with exercises: [PeleExercise]) {  //[PeleExercise]
+    init(_ name: String, date: Date, id: UUID,  with exercises: [Exercise]) {  //[PeleExercise]
         self.name = name
         self.date = date
         self.id = id
@@ -37,7 +37,7 @@ public struct PeleWorkout: Session, Codable {
     
     // convinience init with empty PeleExercise list
     init(name: String) {
-        self.init(name, with: [PeleExercise]()) // [PeleExercise]
+        self.init(name, with: [Exercise]()) // [PeleExercise]
     }
 
     
@@ -46,7 +46,7 @@ public struct PeleWorkout: Session, Codable {
     }
     
     // TODO: make this variadic
-    mutating public func add(new exercise: PeleExercise) {
+    mutating public func add(new exercise: Exercise) {
         self.exercises.append(exercise)
     }
     

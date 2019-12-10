@@ -10,7 +10,7 @@ import Foundation
 
 public class ExercisePoolManager: ObservableObject {
     
-    @Published var exercisePool: [PeleExercise]
+    @Published var exercisePool: [Exercise]
     
     static let shared = ExercisePoolManager()
     
@@ -33,7 +33,7 @@ public class ExercisePoolManager: ObservableObject {
         UserDefaults.setExercisePool(with: self.exercisePool)
     }
     
-    private func setPool(_ updatedPool: [PeleExercise]) {
+    private func setPool(_ updatedPool: [Exercise]) {
         self.exercisePool = updatedPool
         UserDefaults.setExercisePool(with: self.exercisePool)
     }
@@ -44,20 +44,20 @@ public class ExercisePoolManager: ObservableObject {
     
     
     // MARK: public functions
-    public func addExercise(exercise: PeleExercise) {
+    public func addExercise(exercise: Exercise) {
         self.exercisePool.append(exercise)
         UserDefaults.setExercisePool(with: self.exercisePool)
 
     }
     
-    func deleteExercise(exercise: PeleExercise) {
+    func deleteExercise(exercise: Exercise) {
         if let index = exercisePool.firstIndex(of: exercise) {
             exercisePool.remove(at: index)
             self.setExercisePool()
         }
     }
  
-    func deleteExercises(exercises: [PeleExercise]) {
+    func deleteExercises(exercises: [Exercise]) {
         exercises.forEach { (exercise) in
             if let index = self.exercisePool.firstIndex(of: exercise) {
                 self.exercisePool.remove(at: index)
@@ -66,7 +66,7 @@ public class ExercisePoolManager: ObservableObject {
         self.setExercisePool()
     }
     
-    var getExercisePool: [PeleExercise] {
+    var getExercisePool: [Exercise] {
         return Array(self.exercisePool)
     }
     

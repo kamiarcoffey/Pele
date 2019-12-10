@@ -10,13 +10,13 @@ import XCTest
 @testable import Pele
 
 var sutRoutine: PeleRoutine!
-var sutExercise: [PeleExercise]!
+var sutExercise: [Exercise]!
 
 class PeleTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        sutExercise = [PeleExercise("exercise1"), PeleExercise("exercise2")]
+        sutExercise = [Exercise("exercise1"), Exercise("exercise2")]
         sutRoutine = PeleRoutine(with: "test", with: sutExercise)
     }
 
@@ -28,7 +28,7 @@ class PeleTests: XCTestCase {
         
         XCTAssertEqual(sutRoutine.exerciseCount, "2", "Routine contains the wrong number of exercises")
         XCTAssertEqual(sutRoutine.containsExercise(sutExercise[0]), true, "Routine does not contain an exercise it should")
-        XCTAssertEqual(sutRoutine.containsExercise(PeleExercise("falseExercise")), false, "Routine does not contain an exercise it should")
+        XCTAssertEqual(sutRoutine.containsExercise(Exercise("falseExercise")), false, "Routine does not contain an exercise it should")
     }
 
     func testPerformanceExample() {

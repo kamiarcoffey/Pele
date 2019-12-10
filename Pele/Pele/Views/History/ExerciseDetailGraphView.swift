@@ -13,12 +13,12 @@ import SwiftUI
 
 struct ExerciseDetailGraphView: View {
     
-    var exercise: PeleExercise
+    var exercise: Exercise
     @State var pickerSelection = 0
     var displayBarValues: [[(data: Double, label: String)]]
     @State var historySize = 3
     
-    init(exercise: PeleExercise) {
+    init(exercise: Exercise) {
         UISegmentedControl.appearance().selectedSegmentTintColor = .orange
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.darkGray], for: .normal)

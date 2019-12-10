@@ -16,7 +16,7 @@ import SwiftUI
 struct LogExercise: View {
     
     @ObservedObject var logExerciseViewModel: LogExerciseViewModel
-    var completedExercise: (PeleExercise) -> ()
+    var completedExercise: (Exercise) -> ()
     @State private var showingAlert = false
     
     var body: some View {
@@ -49,7 +49,7 @@ struct LogExercise: View {
                             let (name, id, targetMuscle) = self.logExerciseViewModel.getExerciseDetails()
                             let sets = self.logExerciseViewModel.completedSets
                             // TODO: should ID be regenerated for a logged exercise vs an exercise from the Routine world? -> decide based on how you want to view history
-                            self.completedExercise(PeleExercise(name, id: id, target: targetMuscle, sets: sets))
+                            self.completedExercise(Exercise(name, id: id, target: targetMuscle, sets: sets))
                         }, label: {
                             HStack {
                                 Image(systemName: "forward")
@@ -74,7 +74,7 @@ struct LogExercise: View {
                     let (name, id, targetMuscle) = self.logExerciseViewModel.getExerciseDetails()
                     let sets = self.logExerciseViewModel.completedSets
                     // TODO: should ID be regenerated for a logged exercise vs an exercise from the Routine world? -> decide based on how you want to view history
-                    self.completedExercise(PeleExercise(name, id: id, target: targetMuscle, sets: sets))
+                    self.completedExercise(Exercise(name, id: id, target: targetMuscle, sets: sets))
                     self.showingAlert = false
                   })
             )

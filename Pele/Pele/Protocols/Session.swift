@@ -14,7 +14,7 @@ public protocol Session : Codable {
 //    associatedtype T: PeleExercise
     var name: String { get set }
     var date: Date { get set }
-    var exercises: [PeleExercise] { get set } // [PeleExercise]
+    var exercises: [Exercise] { get set } // [PeleExercise]
     func getName() -> String
 }
 

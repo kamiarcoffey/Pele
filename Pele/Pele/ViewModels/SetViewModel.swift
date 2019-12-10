@@ -12,9 +12,9 @@ class SetViewModel: ObservableObject {
     @Published var previousWeight = 0
     @Published var previousReps = 0
     var id = UUID()
-    private var exercise: PeleExercise
+    private var exercise: Exercise
     
-    init(exercise: PeleExercise) {
+    init(exercise: Exercise) {
         self.exercise = exercise
         self.populatePreviousValues()
     }

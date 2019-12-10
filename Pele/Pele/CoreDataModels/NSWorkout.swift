@@ -85,7 +85,7 @@ extension NSWorkout: ConvertableToLocal {
 
    // convert yourself to an NSObject T
     func convertToLocal() -> T {
-        let peleExercises: [PeleExercise] = self.sets?.compactMap{PeleExercise.init(exerciseSet: $0 as? NSExerciseSet ?? NSExerciseSet())} ?? [PeleExercise]()
+        let peleExercises: [Exercise] = self.sets?.compactMap{Exercise.init(exerciseSet: $0 as? NSExerciseSet ?? NSExerciseSet())} ?? [Exercise]()
         return T(self.name ?? "DB object has no name", date: self.date ?? Date(), id: self.id ?? UUID(), with: peleExercises)
 
     }

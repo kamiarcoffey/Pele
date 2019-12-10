@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1C174EEE23A0332800A65783 /* NSRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C174EEA23A0332800A65783 /* NSRoutine.swift */; };
 		1C174EF123A0332800A65783 /* NSExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C174EED23A0332800A65783 /* NSExercise.swift */; };
+		1C174EF423A0439B00A65783 /* PlaylistsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C174EF323A0439B00A65783 /* PlaylistsManager.swift */; };
+		1C174EF623A0477D00A65783 /* PlaylistListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C174EF523A0477D00A65783 /* PlaylistListViewModel.swift */; };
+		1C174EF823A04C5C00A65783 /* RoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C174EF723A04C5C00A65783 /* RoutineViewModel.swift */; };
+		1C174EFA23A054AF00A65783 /* PlaylistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C174EF923A054AF00A65783 /* PlaylistsView.swift */; };
 		1C3E4896238B3A4F00CBC15C /* TimeSeriesDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3E4895238B3A4F00CBC15C /* TimeSeriesDisplayable.swift */; };
 		1C3E4898238B422D00CBC15C /* PeleRep + PeleSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3E4897238B422D00CBC15C /* PeleRep + PeleSet.swift */; };
 		1C3EEC092387611600FC4BAA /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EEC082387611600FC4BAA /* UIApplication.swift */; };
@@ -40,7 +44,7 @@
 		1CFEDC522387441F00EDE618 /* ExerciseHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC192387441F00EDE618 /* ExerciseHistoryManager.swift */; };
 		1CFEDC532387441F00EDE618 /* PeleRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC1B2387441F00EDE618 /* PeleRoutine.swift */; };
 		1CFEDC552387441F00EDE618 /* PeleWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC1D2387441F00EDE618 /* PeleWorkout.swift */; };
-		1CFEDC562387441F00EDE618 /* PeleExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC1E2387441F00EDE618 /* PeleExercise.swift */; };
+		1CFEDC562387441F00EDE618 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC1E2387441F00EDE618 /* Exercise.swift */; };
 		1CFEDC572387441F00EDE618 /* MuscleGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC1F2387441F00EDE618 /* MuscleGroups.swift */; };
 		1CFEDC582387441F00EDE618 /* LogExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC212387441F00EDE618 /* LogExerciseViewModel.swift */; };
 		1CFEDC592387441F00EDE618 /* NumberFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC222387441F00EDE618 /* NumberFieldViewModel.swift */; };
@@ -57,7 +61,6 @@
 		1CFEDC652387441F00EDE618 /* EditRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC312387441F00EDE618 /* EditRoutine.swift */; };
 		1CFEDC662387441F00EDE618 /* ExerciseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC322387441F00EDE618 /* ExerciseRow.swift */; };
 		1CFEDC672387441F00EDE618 /* RoutineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC332387441F00EDE618 /* RoutineRow.swift */; };
-		1CFEDC682387441F00EDE618 /* RoutineTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC342387441F00EDE618 /* RoutineTab.swift */; };
 		1CFEDC692387441F00EDE618 /* HistoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC362387441F00EDE618 /* HistoryTab.swift */; };
 		1CFEDC6A2387441F00EDE618 /* ExerciseHistoryPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC372387441F00EDE618 /* ExerciseHistoryPost.swift */; };
 		1CFEDC6B2387441F00EDE618 /* WorkoutRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC382387441F00EDE618 /* WorkoutRow.swift */; };
@@ -105,6 +108,10 @@
 /* Begin PBXFileReference section */
 		1C174EEA23A0332800A65783 /* NSRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRoutine.swift; sourceTree = "<group>"; };
 		1C174EED23A0332800A65783 /* NSExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExercise.swift; sourceTree = "<group>"; };
+		1C174EF323A0439B00A65783 /* PlaylistsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsManager.swift; sourceTree = "<group>"; };
+		1C174EF523A0477D00A65783 /* PlaylistListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistListViewModel.swift; sourceTree = "<group>"; };
+		1C174EF723A04C5C00A65783 /* RoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewModel.swift; sourceTree = "<group>"; };
+		1C174EF923A054AF00A65783 /* PlaylistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsView.swift; sourceTree = "<group>"; };
 		1C3E4895238B3A4F00CBC15C /* TimeSeriesDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesDisplayable.swift; sourceTree = "<group>"; };
 		1C3E4897238B422D00CBC15C /* PeleRep + PeleSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeleRep + PeleSet.swift"; sourceTree = "<group>"; };
 		1C3EEC082387611600FC4BAA /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -142,7 +149,7 @@
 		1CFEDC192387441F00EDE618 /* ExerciseHistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseHistoryManager.swift; sourceTree = "<group>"; };
 		1CFEDC1B2387441F00EDE618 /* PeleRoutine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeleRoutine.swift; sourceTree = "<group>"; };
 		1CFEDC1D2387441F00EDE618 /* PeleWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeleWorkout.swift; sourceTree = "<group>"; };
-		1CFEDC1E2387441F00EDE618 /* PeleExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeleExercise.swift; sourceTree = "<group>"; };
+		1CFEDC1E2387441F00EDE618 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		1CFEDC1F2387441F00EDE618 /* MuscleGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuscleGroups.swift; sourceTree = "<group>"; };
 		1CFEDC212387441F00EDE618 /* LogExerciseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogExerciseViewModel.swift; sourceTree = "<group>"; };
 		1CFEDC222387441F00EDE618 /* NumberFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFieldViewModel.swift; sourceTree = "<group>"; };
@@ -159,7 +166,6 @@
 		1CFEDC312387441F00EDE618 /* EditRoutine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRoutine.swift; sourceTree = "<group>"; };
 		1CFEDC322387441F00EDE618 /* ExerciseRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRow.swift; sourceTree = "<group>"; };
 		1CFEDC332387441F00EDE618 /* RoutineRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineRow.swift; sourceTree = "<group>"; };
-		1CFEDC342387441F00EDE618 /* RoutineTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineTab.swift; sourceTree = "<group>"; };
 		1CFEDC362387441F00EDE618 /* HistoryTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTab.swift; sourceTree = "<group>"; };
 		1CFEDC372387441F00EDE618 /* ExerciseHistoryPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseHistoryPost.swift; sourceTree = "<group>"; };
 		1CFEDC382387441F00EDE618 /* WorkoutRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutRow.swift; sourceTree = "<group>"; };
@@ -320,6 +326,7 @@
 		1CFEDC152387441F00EDE618 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				1C174EF323A0439B00A65783 /* PlaylistsManager.swift */,
 				1CFEDC172387441F00EDE618 /* ExercisePoolManager.swift */,
 				1CFEDC182387441F00EDE618 /* WorkoutHistoryManager.swift */,
 				1CFEDC192387441F00EDE618 /* ExerciseHistoryManager.swift */,
@@ -332,7 +339,7 @@
 			children = (
 				1CFEDC1B2387441F00EDE618 /* PeleRoutine.swift */,
 				1CFEDC1D2387441F00EDE618 /* PeleWorkout.swift */,
-				1CFEDC1E2387441F00EDE618 /* PeleExercise.swift */,
+				1CFEDC1E2387441F00EDE618 /* Exercise.swift */,
 				1C3E4897238B422D00CBC15C /* PeleRep + PeleSet.swift */,
 				1CFEDC1F2387441F00EDE618 /* MuscleGroups.swift */,
 			);
@@ -350,6 +357,8 @@
 				1CFEDC252387441F00EDE618 /* PlayRoutineViewModel.swift */,
 				1CFEDC262387441F00EDE618 /* ExerciseHistoryViewModel.swift */,
 				1CFEDC272387441F00EDE618 /* WorkoutViewModel.swift */,
+				1C174EF523A0477D00A65783 /* PlaylistListViewModel.swift */,
+				1C174EF723A04C5C00A65783 /* RoutineViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -379,13 +388,13 @@
 		1CFEDC2D2387441F00EDE618 /* Routine Management */ = {
 			isa = PBXGroup;
 			children = (
-				1CFEDC342387441F00EDE618 /* RoutineTab.swift */,
 				1CFEDC312387441F00EDE618 /* EditRoutine.swift */,
 				1CFEDC332387441F00EDE618 /* RoutineRow.swift */,
 				1CFEDC2E2387441F00EDE618 /* BoxView.swift */,
 				1CFEDC2F2387441F00EDE618 /* AddExercise.swift */,
 				1CFEDC302387441F00EDE618 /* AddRoutine.swift */,
 				1CFEDC322387441F00EDE618 /* ExerciseRow.swift */,
+				1C174EF923A054AF00A65783 /* PlaylistsView.swift */,
 			);
 			path = "Routine Management";
 			sourceTree = "<group>";
@@ -608,7 +617,7 @@
 				1CFEDC602387441F00EDE618 /* NSWorkout.swift in Sources */,
 				1CFEDC462387441F00EDE618 /* Builder.swift in Sources */,
 				1CFEDC6D2387441F00EDE618 /* WorkoutDetailView.swift in Sources */,
-				1CFEDC562387441F00EDE618 /* PeleExercise.swift in Sources */,
+				1CFEDC562387441F00EDE618 /* Exercise.swift in Sources */,
 				1CFEDC5D2387441F00EDE618 /* ExerciseHistoryViewModel.swift in Sources */,
 				1CFEDC662387441F00EDE618 /* ExerciseRow.swift in Sources */,
 				1CFEDC6E2387441F00EDE618 /* ContentView.swift in Sources */,
@@ -619,22 +628,25 @@
 				1CFEDC432387441F00EDE618 /* WeightsExercise.swift in Sources */,
 				1CFEDBBF2387438800EDE618 /* SceneDelegate.swift in Sources */,
 				1CFEDC5F2387441F00EDE618 /* NSExerciseSet.swift in Sources */,
-				1CFEDC682387441F00EDE618 /* RoutineTab.swift in Sources */,
 				1CFEDC4E2387441F00EDE618 /* UserDefaults+Exercises.swift in Sources */,
 				1CFEDC472387441F00EDE618 /* NSManagedConvertable.swift in Sources */,
 				1CFEDC422387441F00EDE618 /* CardioExercise.swift in Sources */,
 				1CFEDC5B2387441F00EDE618 /* WorkoutListViewModel.swift in Sources */,
 				1CFEDC572387441F00EDE618 /* MuscleGroups.swift in Sources */,
 				1CFEDC712387441F00EDE618 /* PlayRoutine.swift in Sources */,
+				1C174EFA23A054AF00A65783 /* PlaylistsView.swift in Sources */,
 				1CFEDC6A2387441F00EDE618 /* ExerciseHistoryPost.swift in Sources */,
+				1C174EF623A0477D00A65783 /* PlaylistListViewModel.swift in Sources */,
 				1CFEDC4F2387441F00EDE618 /* RoutinesViewModel.swift in Sources */,
 				1CFEDC642387441F00EDE618 /* AddRoutine.swift in Sources */,
 				1CFEDC5C2387441F00EDE618 /* PlayRoutineViewModel.swift in Sources */,
 				1CFEDC6F2387441F00EDE618 /* LogSet.swift in Sources */,
+				1C174EF823A04C5C00A65783 /* RoutineViewModel.swift in Sources */,
 				1C3E4898238B422D00CBC15C /* PeleRep + PeleSet.swift in Sources */,
 				1CFEDC652387441F00EDE618 /* EditRoutine.swift in Sources */,
 				1CFEDC552387441F00EDE618 /* PeleWorkout.swift in Sources */,
 				1CFEDC582387441F00EDE618 /* LogExerciseViewModel.swift in Sources */,
+				1C174EF423A0439B00A65783 /* PlaylistsManager.swift in Sources */,
 				1CFEDC502387441F00EDE618 /* ExercisePoolManager.swift in Sources */,
 				1CFEDC702387441F00EDE618 /* LogExercise.swift in Sources */,
 				1CFEDC442387441F00EDE618 /* Session.swift in Sources */,

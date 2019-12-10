@@ -10,7 +10,7 @@ import SwiftUI
 
 struct BoxView: View {
     
-    var exercise: PeleExercise
+    var exercise: Exercise
     var isSelected: Bool
     
     var action: () -> Void

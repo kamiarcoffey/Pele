@@ -11,7 +11,7 @@ import Foundation
 
 /// PeleExercises are an actual exercise - a name, and a muscle group. They are more than a collection of ExerciseSets
 /// PeleWorkout is a collection of PeleExercises with additional meta data corresponding to which routine they are generated from, their date etc.
-public struct PeleExercise : WeightsExercise, Identifiable, Codable, Hashable {
+public struct Exercise : WeightsExercise, Identifiable, Codable, Hashable {
     
     public var id: UUID
     public var name: String
@@ -58,9 +58,9 @@ public struct PeleExercise : WeightsExercise, Identifiable, Codable, Hashable {
 
 
 // MARK: conform to Hashable
-extension PeleExercise {
+extension Exercise {
     
-    public static func == (lhs: PeleExercise, rhs: PeleExercise) -> Bool {
+    public static func == (lhs: Exercise, rhs: Exercise) -> Bool {
         return (lhs.getName() == rhs.getName())
     }
     

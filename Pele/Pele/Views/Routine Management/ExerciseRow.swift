@@ -12,7 +12,7 @@ import SwiftUI
 
 struct ExerciseRow: View {
     
-    @State var exercise: PeleExercise
+    @State var exercise: Exercise
     
     var body: some View {
         HStack {

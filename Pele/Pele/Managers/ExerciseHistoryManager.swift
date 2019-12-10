@@ -20,8 +20,8 @@ class ExerciseHistoryManager {
         self.moc = moc
     }
     
-    func getAllPeleExercises(activity: Activity) -> [PeleExercise] {
-        getAllExercises(activity: activity).map{ PeleExercise(exerciseSet: $0) }
+    func getAllPeleExercises(activity: Activity) -> [Exercise] {
+        getAllExercises(activity: activity).map{ Exercise(exerciseSet: $0) }
     }
 
     func getAllExercises(activity: Activity) -> [NSExerciseSet] { // Workout is an NSManagedObject type

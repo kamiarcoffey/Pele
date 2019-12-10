@@ -21,7 +21,7 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            RoutineTab()
+            PlaylistsView()
                 .padding(.top)
                 .tabItem {
                     Image(systemName: "list.dash")

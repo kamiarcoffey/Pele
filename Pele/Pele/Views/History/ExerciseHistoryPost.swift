@@ -14,7 +14,7 @@ import SwiftUI
 
 struct ExerciseHistoryPost: View {
     
-    @State var exercise: PeleExercise
+    @State var exercise: Exercise
     
     var body: some View {
         NavigationLink(destination: ExerciseDetailGraphView(exercise: exercise)) {

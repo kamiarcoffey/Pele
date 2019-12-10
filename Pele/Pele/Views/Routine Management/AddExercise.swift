@@ -18,7 +18,7 @@ struct AddExercise: View {
     let muscleGroups: [String] = MuscleGroup.allCases.map{ $0.rawValue }
 
     
-    var didCreateExercise: (PeleExercise) -> () // (Activity)
+    var didCreateExercise: (Exercise) -> () // (Activity)
     
     var body: some View {
         VStack {
@@ -46,7 +46,7 @@ struct AddExercise: View {
                 .padding(.horizontal, 10)
             
             Button(action: {
-                self.didCreateExercise(PeleExercise(self.newExerciseName))
+                self.didCreateExercise(Exercise(self.newExerciseName))
                 self.isPresenting.toggle()
             }, label: {
                 Text("Done")

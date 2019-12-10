@@ -12,9 +12,9 @@ public class PeleRoutine: Identifiable, Codable, Hashable {
     public let id: UUID
     var orderRank: Int
     var name: String
-    var exerciseList: [PeleExercise] // [Activity]
+    var exerciseList: [Exercise] // [Activity]
     
-    init(with name: String, with exericses: [PeleExercise]) {
+    init(with name: String, with exericses: [Exercise]) {
         self.name = name
         self.exerciseList = exericses
         self.id = UUID()
@@ -29,7 +29,7 @@ public class PeleRoutine: Identifiable, Codable, Hashable {
         self.exerciseList.move(fromOffsets: source, toOffset: destination)
     }
     
-    var getExerciseList: [PeleExercise]  { // [Activity]
+    var getExerciseList: [Exercise]  { // [Activity]
         return exerciseList
     }
     
@@ -41,13 +41,13 @@ public class PeleRoutine: Identifiable, Codable, Hashable {
         return name
     }
     
-    func containsExercise(_ checkExercise: PeleExercise) -> Bool {
+    func containsExercise(_ checkExercise: Exercise) -> Bool {
         return self.exerciseList.contains(checkExercise)
         // guard let concreteType = checkExercise as? PeleExercise else { return false }
         // return self.exerciseList.map{}.contains(concreteType)
     }
     
-    func addExercises(_ newExercises: [PeleExercise]) {
+    func addExercises(_ newExercises: [Exercise]) {
         self.exerciseList += newExercises
     }
 }
@@ -60,5 +60,25 @@ extension PeleRoutine {
      // name is enough to uniquley identify an Exercise
      public func hash(into hasher: inout Hasher) {
          hasher.combine(id)
+    }
+}
+
+struct Routine: Identifiable, Codable, Hashable {
+    
+    public let id = UUID()
+    var orderRank: Int
+    var name: String
+    var exerciseList: [Exercise]
+    
+    init(from NSRoutine: NSRoutine) {
+        self.orderRank = Int(NSRoutine.orderRank)
+        self.name = NSRoutine.name!
+        self.exerciseList = NSRoutine.exercises?.map{Exercise($0 as! NSExercise)} ?? [Exercise]()
+    }
+    
+    func containsExercise(_ checkExercise: Exercise) -> Bool {
+        return self.exerciseList.contains(checkExercise)
+        // guard let concreteType = checkExercise as? PeleExercise else { return false }
+        // return self.exerciseList.map{}.contains(concreteType)
     }
 }

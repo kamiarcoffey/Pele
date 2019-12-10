@@ -14,11 +14,11 @@ class LogExerciseViewModel: ObservableObject {
     // it can have an undetermined number of SetViewModel (one for each set of that exercise)
     @Published var setsInProgress: [SetViewModel]
     @Published var completedSets: [PeleExerciseSet]
-    private var exercise: PeleExercise
+    private var exercise: Exercise
     
     var id = UUID()
     
-    init(exercise: PeleExercise) {
+    init(exercise: Exercise) {
         self.exercise = exercise
         setsInProgress = []
         completedSets = []

@@ -33,7 +33,7 @@ extension NSExercise: Managed {
 }
 
 extension NSExercise {
-    static func insert(into context: NSManagedObjectContext, newExercise: PeleExercise, parent routine: PeleRoutine? = nil) -> NSExercise {
+    static func insert(into context: NSManagedObjectContext, newExercise: Exercise, parent routine: PeleRoutine? = nil) -> NSExercise {
         let exercise: NSExercise = context.insertObject()
         exercise.name = newExercise.name
         exercise.muscleGroup = newExercise.targetMuscle.rawValue

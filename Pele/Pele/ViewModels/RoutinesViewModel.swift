@@ -31,13 +31,13 @@ public class RoutinesViewModel : ObservableObject {
 
     }
           
-    public func addPlaylist(with name: String, having exercises: [PeleExercise] = [PeleExercise]()) {
+    public func addPlaylist(with name: String, having exercises: [Exercise] = [Exercise]()) {
         let newRoutine = PeleRoutine(with: name, with: exercises)
         playlists.append(newRoutine)
         UserDefaults.setRoutinePlaylists(with: self.playlists)
     }
     
-    public func editExercises(to routine: PeleRoutine, _ exercises: [PeleExercise], _ didAdd: Bool) {
+    public func editExercises(to routine: PeleRoutine, _ exercises: [Exercise], _ didAdd: Bool) {
         if didAdd {
             self.addExercises(to: routine, exercises)
         } else {
@@ -45,7 +45,7 @@ public class RoutinesViewModel : ObservableObject {
         }
     }
     
-    public func addExercises(to routine: PeleRoutine, _ exercises: [PeleExercise]) {
+    public func addExercises(to routine: PeleRoutine, _ exercises: [Exercise]) {
         exercises.forEach { exercise in
             if let index = self.playlists.firstIndex(of: routine) {
                 self.playlists[index].exerciseList.append(exercise)
@@ -55,7 +55,7 @@ public class RoutinesViewModel : ObservableObject {
         UserDefaults.setRoutinePlaylists(with: self.playlists)
     }
     
-    public func removeExercise(from routine: PeleRoutine, _ exercise: PeleExercise) {
+    public func removeExercise(from routine: PeleRoutine, _ exercise: Exercise) {
         if let routineIndex = self.playlists.firstIndex(of: routine) {
             if let exerciseIndex = self.playlists[routineIndex].exerciseList.firstIndex(of: exercise) {
                 self.playlists[routineIndex].exerciseList.remove(at: exerciseIndex)
