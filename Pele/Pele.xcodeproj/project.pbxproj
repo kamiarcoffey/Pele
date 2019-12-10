@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C174EEE23A0332800A65783 /* NSRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C174EEA23A0332800A65783 /* NSRoutine.swift */; };
+		1C174EF123A0332800A65783 /* NSExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C174EED23A0332800A65783 /* NSExercise.swift */; };
 		1C3E4896238B3A4F00CBC15C /* TimeSeriesDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3E4895238B3A4F00CBC15C /* TimeSeriesDisplayable.swift */; };
 		1C3E4898238B422D00CBC15C /* PeleRep + PeleSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3E4897238B422D00CBC15C /* PeleRep + PeleSet.swift */; };
 		1C3EEC092387611600FC4BAA /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EEC082387611600FC4BAA /* UIApplication.swift */; };
@@ -47,8 +49,8 @@
 		1CFEDC5C2387441F00EDE618 /* PlayRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC252387441F00EDE618 /* PlayRoutineViewModel.swift */; };
 		1CFEDC5D2387441F00EDE618 /* ExerciseHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC262387441F00EDE618 /* ExerciseHistoryViewModel.swift */; };
 		1CFEDC5E2387441F00EDE618 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC272387441F00EDE618 /* WorkoutViewModel.swift */; };
-		1CFEDC5F2387441F00EDE618 /* ExerciseSet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC292387441F00EDE618 /* ExerciseSet+CoreDataProperties.swift */; };
-		1CFEDC602387441F00EDE618 /* Workout+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC2A2387441F00EDE618 /* Workout+CoreDataProperties.swift */; };
+		1CFEDC5F2387441F00EDE618 /* NSExerciseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC292387441F00EDE618 /* NSExerciseSet.swift */; };
+		1CFEDC602387441F00EDE618 /* NSWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC2A2387441F00EDE618 /* NSWorkout.swift */; };
 		1CFEDC622387441F00EDE618 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC2E2387441F00EDE618 /* BoxView.swift */; };
 		1CFEDC632387441F00EDE618 /* AddExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC2F2387441F00EDE618 /* AddExercise.swift */; };
 		1CFEDC642387441F00EDE618 /* AddRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEDC302387441F00EDE618 /* AddRoutine.swift */; };
@@ -101,6 +103,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C174EEA23A0332800A65783 /* NSRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRoutine.swift; sourceTree = "<group>"; };
+		1C174EED23A0332800A65783 /* NSExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExercise.swift; sourceTree = "<group>"; };
 		1C3E4895238B3A4F00CBC15C /* TimeSeriesDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesDisplayable.swift; sourceTree = "<group>"; };
 		1C3E4897238B422D00CBC15C /* PeleRep + PeleSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeleRep + PeleSet.swift"; sourceTree = "<group>"; };
 		1C3EEC082387611600FC4BAA /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -147,8 +151,8 @@
 		1CFEDC252387441F00EDE618 /* PlayRoutineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayRoutineViewModel.swift; sourceTree = "<group>"; };
 		1CFEDC262387441F00EDE618 /* ExerciseHistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseHistoryViewModel.swift; sourceTree = "<group>"; };
 		1CFEDC272387441F00EDE618 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
-		1CFEDC292387441F00EDE618 /* ExerciseSet+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExerciseSet+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1CFEDC2A2387441F00EDE618 /* Workout+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Workout+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1CFEDC292387441F00EDE618 /* NSExerciseSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSExerciseSet.swift; sourceTree = "<group>"; };
+		1CFEDC2A2387441F00EDE618 /* NSWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSWorkout.swift; sourceTree = "<group>"; };
 		1CFEDC2E2387441F00EDE618 /* BoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
 		1CFEDC2F2387441F00EDE618 /* AddExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExercise.swift; sourceTree = "<group>"; };
 		1CFEDC302387441F00EDE618 /* AddRoutine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRoutine.swift; sourceTree = "<group>"; };
@@ -353,8 +357,10 @@
 		1CFEDC282387441F00EDE618 /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
-				1CFEDC292387441F00EDE618 /* ExerciseSet+CoreDataProperties.swift */,
-				1CFEDC2A2387441F00EDE618 /* Workout+CoreDataProperties.swift */,
+				1C174EEA23A0332800A65783 /* NSRoutine.swift */,
+				1C174EED23A0332800A65783 /* NSExercise.swift */,
+				1CFEDC2A2387441F00EDE618 /* NSWorkout.swift */,
+				1CFEDC292387441F00EDE618 /* NSExerciseSet.swift */,
 			);
 			path = CoreDataModels;
 			sourceTree = "<group>";
@@ -578,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C3EEC092387611600FC4BAA /* UIApplication.swift in Sources */,
+				1C174EEE23A0332800A65783 /* NSRoutine.swift in Sources */,
 				1CFEDC6C2387441F00EDE618 /* ExerciseDetailGraphView.swift in Sources */,
 				1CFEDC532387441F00EDE618 /* PeleRoutine.swift in Sources */,
 				1CFEDC4B2387441F00EDE618 /* UserDefaults+Keys.swift in Sources */,
@@ -587,6 +594,7 @@
 				1CFEDC632387441F00EDE618 /* AddExercise.swift in Sources */,
 				1CFEDC492387441F00EDE618 /* Activity.swift in Sources */,
 				1CFEDC5A2387441F00EDE618 /* SetViewModel.swift in Sources */,
+				1C174EF123A0332800A65783 /* NSExercise.swift in Sources */,
 				1CFEDC4A2387441F00EDE618 /* Arrays.swift in Sources */,
 				1CFEDC512387441F00EDE618 /* WorkoutHistoryManager.swift in Sources */,
 				1CFEDC452387441F00EDE618 /* SetProtocol.swift in Sources */,
@@ -597,7 +605,7 @@
 				1CFEDC522387441F00EDE618 /* ExerciseHistoryManager.swift in Sources */,
 				1CFEDC6B2387441F00EDE618 /* WorkoutRow.swift in Sources */,
 				1CFEDC622387441F00EDE618 /* BoxView.swift in Sources */,
-				1CFEDC602387441F00EDE618 /* Workout+CoreDataProperties.swift in Sources */,
+				1CFEDC602387441F00EDE618 /* NSWorkout.swift in Sources */,
 				1CFEDC462387441F00EDE618 /* Builder.swift in Sources */,
 				1CFEDC6D2387441F00EDE618 /* WorkoutDetailView.swift in Sources */,
 				1CFEDC562387441F00EDE618 /* PeleExercise.swift in Sources */,
@@ -610,7 +618,7 @@
 				1C3E4896238B3A4F00CBC15C /* TimeSeriesDisplayable.swift in Sources */,
 				1CFEDC432387441F00EDE618 /* WeightsExercise.swift in Sources */,
 				1CFEDBBF2387438800EDE618 /* SceneDelegate.swift in Sources */,
-				1CFEDC5F2387441F00EDE618 /* ExerciseSet+CoreDataProperties.swift in Sources */,
+				1CFEDC5F2387441F00EDE618 /* NSExerciseSet.swift in Sources */,
 				1CFEDC682387441F00EDE618 /* RoutineTab.swift in Sources */,
 				1CFEDC4E2387441F00EDE618 /* UserDefaults+Exercises.swift in Sources */,
 				1CFEDC472387441F00EDE618 /* NSManagedConvertable.swift in Sources */,

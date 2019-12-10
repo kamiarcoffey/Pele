@@ -24,7 +24,7 @@ extension NSManagedObjectContext {
 // generic over A where A is a subtype of NSMangedObject and conforms to Managed
 // Capturing Values (for A)
 extension NSManagedObjectContext {
-    func insertObject<A: NSManagedObject> () -> A where A:Manged {
+    func insertObject<A: NSManagedObject> () -> A where A:Managed {
         guard let obj = NSEntityDescription.insertNewObject(forEntityName: A.entityName, into: self) as? A
             else {fatalError("Object insertion error (find me in NSManagedObjectContextExtension.swift")}
         return obj

@@ -10,14 +10,13 @@
 import Foundation
 import CoreData
 
-final class Workout: NSManagedObject {
-    
+final class NSWorkout: NSManagedObject {
 }
 
-extension Workout {
+extension NSWorkout {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Workout> {
-        return NSFetchRequest<Workout>(entityName: "Workout")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<NSWorkout> {
+        return NSFetchRequest<NSWorkout>(entityName: "NSWorkout")
     }
 
     @NSManaged public var date: Date?
@@ -28,13 +27,13 @@ extension Workout {
 }
 
 // MARK: Generated accessors for sets
-extension Workout {
+extension NSWorkout {
 
     @objc(addSetsObject:)
-    @NSManaged public func addToSets(_ value: ExerciseSet)
+    @NSManaged public func addToSets(_ value: NSExerciseSet)
 
     @objc(removeSetsObject:)
-    @NSManaged public func removeFromSets(_ value: ExerciseSet)
+    @NSManaged public func removeFromSets(_ value: NSExerciseSet)
 
     @objc(addSets:)
     @NSManaged public func addToSets(_ values: NSSet)
@@ -46,22 +45,22 @@ extension Workout {
 
 /* Make Workout conform to Manged */
 /* give workouts a default sorting by date */
-extension Workout: Manged {
+extension NSWorkout: Managed {
     static var defaultSortDescriptors: [NSSortDescriptor] {
         return [NSSortDescriptor(key: #keyPath(date), ascending: false)]
     }
 }
 
 /* implement insertion behavior */
-extension Workout {
-    static func insert(into context: NSManagedObjectContext, loggedWorkout: Session) -> Workout {
-        let workout: Workout = context.insertObject()
+extension NSWorkout {
+    static func insert(into context: NSManagedObjectContext, loggedWorkout: Session) -> NSWorkout {
+        let workout: NSWorkout = context.insertObject()
         workout.name = loggedWorkout.name
         workout.date = Date() // date gets set when the workout is completed - not when started, or anything to do with UI
         workout.id = UUID()
         for exercise in loggedWorkout.exercises {
             for set in exercise.sets {
-                let singleSet: ExerciseSet = context.insertObject()
+                let singleSet: NSExerciseSet = context.insertObject()
                 singleSet.exerciseName = exercise.name
                 singleSet.isWeights = exercise.isWeights
                 singleSet.numReps = Int64(set.repCount)
@@ -74,19 +73,19 @@ extension Workout {
         return workout
     }
     
-    static func delete(from context: NSManagedObjectContext, deleteWorkout: Workout) -> Workout {
+    static func delete(from context: NSManagedObjectContext, deleteWorkout: NSWorkout) -> NSWorkout {
         return deleteWorkout
     }
 
 }
 
-extension Workout: ConvertableToLocal {
+extension NSWorkout: ConvertableToLocal {
     
     typealias T = PeleWorkout
 
    // convert yourself to an NSObject T
     func convertToLocal() -> T {
-        let peleExercises: [PeleExercise] = self.sets?.compactMap{PeleExercise.init(exerciseSet: $0 as? ExerciseSet ?? ExerciseSet())} ?? [PeleExercise]()
+        let peleExercises: [PeleExercise] = self.sets?.compactMap{PeleExercise.init(exerciseSet: $0 as? NSExerciseSet ?? NSExerciseSet())} ?? [PeleExercise]()
         return T(self.name ?? "DB object has no name", date: self.date ?? Date(), id: self.id ?? UUID(), with: peleExercises)
 
     }

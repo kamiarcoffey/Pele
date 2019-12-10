@@ -10,6 +10,7 @@ import Foundation
 public class PeleRoutine: Identifiable, Codable, Hashable {
     
     public let id: UUID
+    var orderRank: Int
     var name: String
     var exerciseList: [PeleExercise] // [Activity]
     
@@ -17,6 +18,7 @@ public class PeleRoutine: Identifiable, Codable, Hashable {
         self.name = name
         self.exerciseList = exericses
         self.id = UUID()
+        self.orderRank = 1
     }
     
     public func deleteItem(at indexSet: IndexSet) {

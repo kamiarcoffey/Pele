@@ -11,7 +11,7 @@ import CoreData
 
 /* A protocol to enable re-use of custom sorting for fetching NSManged objects */
 
-protocol Manged: class, NSFetchRequestResult {
+protocol Managed: class, NSFetchRequestResult {
     static var entityName: String { get }
     static var defaultSortDescriptors: [NSSortDescriptor] { get }
 }
@@ -20,7 +20,7 @@ protocol Manged: class, NSFetchRequestResult {
 /* give a default implementation if empty*/
 /* implement Generic request structure */
 
-extension Manged {
+extension Managed {
     static var defaultSortDescriptors: [NSSortDescriptor] {
         return []
     }
@@ -33,7 +33,7 @@ extension Manged {
 }
 
 /* implement entityName for NSMangedObjects conformting to Manged */
-extension Manged where Self: NSManagedObject {
+extension Managed where Self: NSManagedObject {
     static var entityName: String {
         return entity().name ?? "empty"
     }

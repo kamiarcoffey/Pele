@@ -11,25 +11,23 @@ import Foundation
 import CoreData
 
 
-final class ExerciseSet : NSManagedObject {
-    
-}
+final class NSExerciseSet : NSManagedObject {}
 
-extension ExerciseSet {
+extension NSExerciseSet {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<ExerciseSet> {
-        return NSFetchRequest<ExerciseSet>(entityName: "ExerciseSet")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<NSExerciseSet> {
+        return NSFetchRequest<NSExerciseSet>(entityName: "NSExerciseSet")
     }
 
     @NSManaged public var exerciseName: String?
     @NSManaged public var isWeights: Bool
     @NSManaged public var numReps: Int64
     @NSManaged public var weight: Int64
-    @NSManaged public var workout: Workout?
+    @NSManaged public var workout: NSWorkout?
 
 }
 
-extension ExerciseSet: Manged {
+extension NSExerciseSet: Managed {
     static var defaultSortDescriptors: [NSSortDescriptor] {
         return [NSSortDescriptor(key: #keyPath(exerciseName), ascending: false)]
     }

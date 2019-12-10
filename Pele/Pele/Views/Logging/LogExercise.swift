@@ -20,6 +20,7 @@ struct LogExercise: View {
     @State private var showingAlert = false
     
     var body: some View {
+        
         ZStack {
             
 //        Color(#colorLiteral(red: 0.388677597, green: 0.136687398, blue: 0, alpha: 1)).edgesIgnoringSafeArea(.all)

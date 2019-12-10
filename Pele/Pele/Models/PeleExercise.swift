@@ -41,7 +41,7 @@ public struct PeleExercise : WeightsExercise, Identifiable, Codable, Hashable {
         self.init(name, target: MuscleGroup.booty, sets: sets)
     }
     
-    init(exerciseSet: ExerciseSet) {
+    init(exerciseSet: NSExerciseSet) {
         self.id = UUID()
         self.name = exerciseSet.exerciseName ?? "Un-named exercise"
         self.targetMuscle = .booty // TODO: update

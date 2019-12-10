@@ -24,11 +24,11 @@ class ExerciseHistoryManager {
         getAllExercises(activity: activity).map{ PeleExercise(exerciseSet: $0) }
     }
 
-    func getAllExercises(activity: Activity) -> [ExerciseSet] { // Workout is an NSManagedObject type
-        var exercises = [ExerciseSet]()
+    func getAllExercises(activity: Activity) -> [NSExerciseSet] { // Workout is an NSManagedObject type
+        var exercises = [NSExerciseSet]()
                 
         //implements let workoutReqest: NSFetchRequest<Workout> = Workout.fetchRequest() using defined protocols
-        let exerciseRequest = ExerciseSet.sortedFetchRequest
+        let exerciseRequest = NSExerciseSet.sortedFetchRequest
         exerciseRequest.fetchBatchSize = 20
         exerciseRequest.returnsObjectsAsFaults = false // dont want to deal with faulting just now - do later.
         

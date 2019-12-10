@@ -23,11 +23,11 @@ class WorkoutHistoryManager {
         getAllWorkouts().map{ $0.convertToLocal() }
     }
     
-    func getAllWorkouts() -> [Workout] { // Workout is an NSManagedObject type
-        var workouts = [Workout]()
+    func getAllWorkouts() -> [NSWorkout] { // Workout is an NSManagedObject type
+        var workouts = [NSWorkout]()
         
         //implements let workoutReqest: NSFetchRequest<Workout> = Workout.fetchRequest() using defined protocols
-        let workoutReqest = Workout.sortedFetchRequest
+        let workoutReqest = NSWorkout.sortedFetchRequest
         workoutReqest.fetchBatchSize = 20
         workoutReqest.returnsObjectsAsFaults = false // dont want to deal with faulting just now - do later.
         
@@ -43,9 +43,9 @@ class WorkoutHistoryManager {
     
     func deleteWorkoutdeleteWorkout(with id: UUID) {
         
-        var workouts = [Workout]()
+        var workouts = [NSWorkout]()
 
-        let workoutReqest = Workout.sortedFetchRequest
+        let workoutReqest = NSWorkout.sortedFetchRequest
         workoutReqest.fetchBatchSize = 1
         workoutReqest.returnsObjectsAsFaults = false
         workoutReqest.predicate = NSPredicate(format: "%K == %@", "projectId", id as CVarArg)
@@ -58,14 +58,14 @@ class WorkoutHistoryManager {
         }
         
         self.moc.performChanges {
-            _ = Workout.delete(from: self.moc, deleteWorkout: workouts[0])
+            _ = NSWorkout.delete(from: self.moc, deleteWorkout: workouts[0])
         }
     }
     
     func saveWorkout(workout: Session) { // Workout is an NSManagedObject type
         self.moc.performChanges {
             // the workout has all sets filled in already
-            _ = Workout.insert(into: self.moc, loggedWorkout: workout) // where loggedWorkout is Activity protocol
+            _ = NSWorkout.insert(into: self.moc, loggedWorkout: workout) // where loggedWorkout is Activity protocol
         }
     }
 }
