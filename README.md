@@ -7,4 +7,4 @@
 
 
 ##### For Checkpoint updates, refer to Checkpoints.md
-##### For Screenshots updates, refer to Screen Shots foler at the top level
+##### For Screenshots updates, refer to Screen Shots folder at the top level
